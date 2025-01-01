@@ -1,12 +1,13 @@
 import { Inspect } from "lucide-svelte";
 import type { PageServerLoad } from "./$types";
+import type {Payment} from "./columns"
 
-type Payment = {
-    id: string;
-    amount: number;
-    status: "pending" | "processing" | "success" | "failed";
-    email: string;
-};
+// type Payment = {
+//     id: string;
+//     amount: number;
+//     status: "pending" | "processing" | "success" | "failed";
+//     email: string;
+// };
 
 export const data: Payment[] = [
     {

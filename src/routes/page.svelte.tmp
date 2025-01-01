@@ -1,0 +1,9 @@
+<script lang="ts">
+    import DataTable from "./data-table/data-table.svelte";
+    import { columns } from "./columns.ts";
+    
+    let { data } = $props();
+    let {payments} = data
+   </script>
+    
+   <DataTable {payments} {columns} />

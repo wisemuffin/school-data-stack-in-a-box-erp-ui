@@ -1,6 +1,7 @@
 <script lang="ts">
     import ChevronDown from "lucide-svelte/icons/chevron-down";
     import {
+     type ColumnDef,
      type ColumnFiltersState,
      type PaginationState,
      type RowSelectionState,
@@ -11,6 +12,10 @@
      getPaginationRowModel,
      getSortedRowModel
     } from "@tanstack/table-core";
+    import { createRawSnippet } from "svelte";
+    import DataTableCheckbox from "./data-table/data-table-checkbox.svelte";
+    import DataTableEmailButton from "./data-table/data-table-email-button.svelte";
+    import DataTableActions from "./data-table/data-table-actions.svelte";
     import * as Table from "$lib/components/ui/table/index.js";
     import { Button } from "$lib/components/ui/button/index.js";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
@@ -18,13 +23,134 @@
     import {
      FlexRender,
      createSvelteTable,
+     renderComponent,
+     renderSnippet
     } from "$lib/components/ui/data-table/index.js";
 
-    import {columns} from "./columns"
+    import type {Payment} from "./columns"
+    
     
 
-    let { data } = $props();
-
+    
+    const data: Payment[] = [
+     {
+      id: "m5gr84i9",
+      amount: 316,
+      status: "success",
+      email: "ken99@yahoo.com"
+     },
+     {
+      id: "3u1reuv4",
+      amount: 242,
+      status: "success",
+      email: "Abe45@gmail.com"
+     },
+     {
+      id: "derv1ws0",
+      amount: 837,
+      status: "processing",
+      email: "Monserrat44@gmail.com"
+     },
+     {
+      id: "5kma53ae",
+      amount: 874,
+      status: "success",
+      email: "Silas22@gmail.com"
+     },
+     {
+      id: "bhqecj4p",
+      amount: 721,
+      status: "failed",
+      email: "carmella@hotmail.com"
+     }
+    ];
+    
+    const columns: ColumnDef<Payment>[] = [
+     {
+      id: "select",
+      header: ({ table }) =>
+       renderComponent(DataTableCheckbox, {
+        checked: table.getIsAllPageRowsSelected(),
+        indeterminate:
+         table.getIsSomePageRowsSelected() &&
+         !table.getIsAllPageRowsSelected(),
+        onCheckedChange: (value) => table.toggleAllPageRowsSelected(!!value),
+        "aria-label": "Select all"
+       }),
+      cell: ({ row }) =>
+       renderComponent(DataTableCheckbox, {
+        checked: row.getIsSelected(),
+        onCheckedChange: (value) => row.toggleSelected(!!value),
+        "aria-label": "Select row"
+       }),
+      enableSorting: false,
+      enableHiding: false
+     },
+     {
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => {
+       const statusSnippet = createRawSnippet<[string]>((getStatus) => {
+        const status = getStatus();
+        return {
+         render: () => `<div class="capitalize">${status}</div>`
+        };
+       });
+       return renderSnippet(statusSnippet, row.getValue("status"));
+      }
+     },
+     {
+      accessorKey: "email",
+      header: ({ column }) =>
+       renderComponent(DataTableEmailButton, {
+        onclick: () => column.toggleSorting(column.getIsSorted() === "asc")
+       }),
+      cell: ({ row }) => {
+       const emailSnippet = createRawSnippet<[string]>((getEmail) => {
+        const email = getEmail();
+        return {
+         render: () => `<div class="lowercase">${email}</div>`
+        };
+       });
+    
+       return renderSnippet(emailSnippet, row.getValue("email"));
+      }
+     },
+     {
+      accessorKey: "amount",
+      header: () => {
+       const amountHeaderSnippet = createRawSnippet(() => {
+        return {
+         render: () => `<div class="text-right">Amount</div>`
+        };
+       });
+       return renderSnippet(amountHeaderSnippet, "");
+      },
+      cell: ({ row }) => {
+       const amountCellSnippet = createRawSnippet<[string]>((getAmount) => {
+        const amount = getAmount();
+        return {
+         render: () => `<div class="text-right font-medium">${amount}</div>`
+        };
+       });
+       const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD"
+       });
+    
+       return renderSnippet(
+        amountCellSnippet,
+        formatter.format(Number.parseFloat(row.getValue("amount")))
+       );
+      }
+     },
+     {
+      id: "actions",
+      enableHiding: false,
+      cell: ({ row }) =>
+       renderComponent(DataTableActions, { id: row.original.id })
+     }
+    ];
     
     let pagination = $state<PaginationState>({ pageIndex: 0, pageSize: 10 });
     let sorting = $state<SortingState>([]);
@@ -34,7 +160,7 @@
     
     const table = createSvelteTable({
      get data() {
-      return data.payments;
+      return data;
      },
      columns,
      state: {
