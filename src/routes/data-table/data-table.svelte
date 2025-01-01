@@ -1,3 +1,5 @@
+<!-- not working yet. tried extracting this out into <DataTable columns={columns} data={data} /> -->
+<!-- as per https://next.shadcn-svelte.com/docs/components/data-table -->
 <script lang="ts" generics="TData, TValue">
     import { type ColumnDef, type PaginationState,type SortingState, getCoreRowModel, getPaginationRowModel,getSortedRowModel } from "@tanstack/table-core";
     import {
