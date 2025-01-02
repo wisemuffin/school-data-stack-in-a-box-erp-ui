@@ -3,13 +3,12 @@
 		type ColumnDef,
 		type PaginationState,
 		type SortingState,
-    type ColumnFiltersState,
-    type VisibilityState,
+		type ColumnFiltersState,
+		type VisibilityState,
 		getCoreRowModel,
 		getPaginationRowModel,
 		getSortedRowModel,
-    getFilteredRowModel,
-    
+		getFilteredRowModel
 	} from '@tanstack/table-core';
 	import { createSvelteTable, FlexRender } from '$lib/components/ui/data-table/index.js';
 	import ChevronDown from 'lucide-svelte/icons/chevron-down';
@@ -21,15 +20,16 @@
 	type DataTableProps<TData, TValue> = {
 		columns: ColumnDef<TData, TValue>[];
 		data: TData[];
-    filterColumn: string
+		filterColumns?: string[];
+		showColumnVisibility?: boolean;
 	};
 
-	let { data, columns, filterColumn }: DataTableProps<TData, TValue> = $props();
+	let { data, columns, filterColumns, showColumnVisibility = true }: DataTableProps<TData, TValue> = $props();
 
 	let pagination = $state<PaginationState>({ pageIndex: 0, pageSize: 10 });
 	let sorting = $state<SortingState>([]);
-  let columnFilters = $state<ColumnFiltersState>([]);
-    let columnVisibility = $state<VisibilityState>({});
+	let columnFilters = $state<ColumnFiltersState>([]);
+	let columnVisibility = $state<VisibilityState>({});
 
 	const table = createSvelteTable({
 		get data() {
@@ -39,7 +39,7 @@
 		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
 		onSortingChange: (updater) => {
 			if (typeof updater === 'function') {
 				sorting = updater(sorting);
@@ -54,20 +54,20 @@
 				pagination = updater;
 			}
 		},
-    onColumnFiltersChange: (updater) => {
-      if (typeof updater === "function") {
-        columnFilters = updater(columnFilters);
-      } else {
-        columnFilters = updater;
-      }
-    },
-    onColumnVisibilityChange: (updater) => {
-      if (typeof updater === "function") {
-        columnVisibility = updater(columnVisibility);
-      } else {
-        columnVisibility = updater;
-      }
-    },
+		onColumnFiltersChange: (updater) => {
+			if (typeof updater === 'function') {
+				columnFilters = updater(columnFilters);
+			} else {
+				columnFilters = updater;
+			}
+		},
+		onColumnVisibilityChange: (updater) => {
+			if (typeof updater === 'function') {
+				columnVisibility = updater(columnVisibility);
+			} else {
+				columnVisibility = updater;
+			}
+		},
 		state: {
 			get pagination() {
 				return pagination;
@@ -75,29 +75,33 @@
 			get sorting() {
 				return sorting;
 			},
-      get columnFilters() {
-        return columnFilters;
-      },
-      get columnVisibility() {
-        return columnVisibility;
-      },
+			get columnFilters() {
+				return columnFilters;
+			},
+			get columnVisibility() {
+				return columnVisibility;
+			}
 		}
 	});
-
-  // let filterColumn = "email"
 </script>
 
 <div class="w-full">
 	<div class="flex items-center py-4">
-		<Input
-			placeholder="Filter {filterColumn}..."
-			value={(table.getColumn(filterColumn)?.getFilterValue() as string) ?? ''}
-			oninput={(e) => table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value)}
-			onchange={(e) => {
-				table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value);
-			}}
-			class="max-w-sm"
-		/>
+		{#if filterColumns}
+			{#each filterColumns as filterColumn}
+				<Input
+					placeholder="Filter {filterColumn}..."
+					value={(table.getColumn(filterColumn)?.getFilterValue() as string) ?? ''}
+					oninput={(e) => table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value)}
+					onchange={(e) => {
+						table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value);
+					}}
+					class="max-w-sm"
+				/>
+			{/each}
+		{/if}
+
+		{#if showColumnVisibility}
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger>
 				{#snippet child({ props })}
@@ -119,6 +123,10 @@
 				{/each}
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
+			
+		{/if}
+
+		
 	</div>
 	<div class="rounded-md border">
 		<Table.Root>

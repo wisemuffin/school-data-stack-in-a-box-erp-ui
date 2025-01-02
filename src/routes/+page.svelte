@@ -7,11 +7,13 @@
 
     let { data } = $props();
 
+    const filterColumns = ["email","status"]
+
     
 
    </script>
     
     
-   <DataTableDg columns={columns} data={data.payments} filterColumn="email" />
+   <DataTableDg columns={columns} data={data.payments} filterColumns={filterColumns} showColumnVisibility={true} />
 
    
