@@ -1,9 +1,9 @@
 import type { ColumnDef } from "@tanstack/table-core";
 import { createRawSnippet } from "svelte";
 import { renderSnippet, renderComponent } from "$lib/components/ui/data-table/index.js";
-import DataTableActions from "./data-table/data-table-actions.svelte";
-import DataTableEmailButton from "./data-table/data-table-email-button.svelte";
-import DataTableCheckbox from "./data-table/data-table-checkbox.svelte";
+import DataTableActions from "./data-table-actions.svelte";
+import DataTableEmailButton from "./data-table-email-button.svelte";
+import DataTableCheckbox from "./data-table-checkbox.svelte";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
