@@ -49,7 +49,7 @@
 	  
 			</div>
 		  <ModeWatcher />
-		  {@render children?.()}
+		   {@render children()}
 
 		  <SiteFooter />
 				{#if dev}

@@ -81,7 +81,8 @@
 			get columnVisibility() {
 				return columnVisibility;
 			}
-		}
+		},
+		// rowCount: 100
 	});
 </script>
 

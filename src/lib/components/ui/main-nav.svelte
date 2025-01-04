@@ -42,6 +42,14 @@
 		>
 			Simple Table
 		</a>
-		
+		<a
+			href="/source-data"
+			class={cn(
+				"hover:text-foreground/80 transition-colors",
+				page.url.pathname.startsWith("/source-data") ? "text-foreground" : "text-foreground/60"
+			)}
+		>
+			Source Data
+		</a>
 	</nav>
 </div>

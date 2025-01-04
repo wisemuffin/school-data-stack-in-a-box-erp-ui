@@ -41,6 +41,8 @@
 				</a>
 				
 				<ModeToggle />
+                    <!-- <Search />
+                    <UserNav /> -->
 			</nav>
 		</div>
 	</div>
