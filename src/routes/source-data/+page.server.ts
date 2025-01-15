@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ( {fetch}) => {
     }
     console.log(schools)
 
-    const res_students = await fetch("http://127.0.0.1:8000/students")
+    const res_students = await fetch("http://127.0.0.1:8000/students?limit=1000000")
     const students = (await res_students.json()) as {
         items: Student[]
     }
