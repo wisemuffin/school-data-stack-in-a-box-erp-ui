@@ -55,7 +55,9 @@ export const columns: ColumnDef<School>[] = [
   {
    id: "actions",
    enableHiding: false,
-   cell: ({ row }) =>
-    renderComponent(DataTableActions, { id: row.original.id })
+   cell: ({ row }) => {
+     const id = row.getValue("id") as string;
+     return renderComponent(DataTableActions, { id });
+   }
   }
  ];

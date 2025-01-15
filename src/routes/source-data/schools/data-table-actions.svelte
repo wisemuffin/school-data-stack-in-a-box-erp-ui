@@ -1,7 +1,9 @@
 <script lang="ts">
+
     import Ellipsis from "lucide-svelte/icons/ellipsis";
     import { Button } from "$lib/components/ui/button/index.js";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+    import * as api from "$lib/api.ts";
     
     let { id }: { id: string } = $props();
    </script>
@@ -30,5 +32,8 @@
      <DropdownMenu.Separator />
      <DropdownMenu.Item>View customer</DropdownMenu.Item>
      <DropdownMenu.Item>View payment details</DropdownMenu.Item>
+     <DropdownMenu.Item onclick={() => api.del("schools/"+id)}>
+        Delete School
+       </DropdownMenu.Item>
     </DropdownMenu.Content>
    </DropdownMenu.Root>
