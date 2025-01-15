@@ -1,18 +1,20 @@
-<!-- <script lang="ts">
+<script lang="ts">
     import * as Form from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
     import { formSchema, type FormSchema } from "./schema";
-    import {
+    import SuperDebug, {
      type SuperValidated,
      type Infer,
      superForm,
     } from "sveltekit-superforms";
     import { zodClient } from "sveltekit-superforms/adapters";
     
+
     export let data: SuperValidated<Infer<FormSchema>>;
     
     const form = superForm(data, {
      validators: zodClient(formSchema),
+     dataType: 'json'
     });
     
     const { form: formData, enhance } = form;
@@ -28,4 +30,5 @@
      <Form.FieldErrors />
     </Form.Field>
     <Form.Button>Submit</Form.Button>
-   </form> -->
+   </form>
+   <SuperDebug data={$formData} /> 

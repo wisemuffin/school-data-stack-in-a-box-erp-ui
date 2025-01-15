@@ -20,7 +20,6 @@
 
 </script>
 
-
 	<Sidebar.Provider>
 		<AppSidebar />
 
