@@ -1,4 +1,5 @@
 <script lang="ts">
+   import { invalidate, invalidateAll } from '$app/navigation';
 
     import Ellipsis from "lucide-svelte/icons/ellipsis";
     import { Button } from "$lib/components/ui/button/index.js";
@@ -6,6 +7,11 @@
     import * as api from "$lib/api.ts";
     
     let { id }: { id: string } = $props();
+
+    const deleteRow = async (id: string) => {
+        await api.del("schools/"+id);
+        invalidateAll();
+    };
    </script>
     
    <DropdownMenu.Root>
@@ -26,13 +32,12 @@
      <DropdownMenu.Group>
       <DropdownMenu.GroupHeading>Actions</DropdownMenu.GroupHeading>
       <DropdownMenu.Item onclick={() => navigator.clipboard.writeText(id)}>
-       Copy payment ID
+       Copy school ID
       </DropdownMenu.Item>
      </DropdownMenu.Group>
      <DropdownMenu.Separator />
-     <DropdownMenu.Item>View customer</DropdownMenu.Item>
-     <DropdownMenu.Item>View payment details</DropdownMenu.Item>
-     <DropdownMenu.Item onclick={() => api.del("schools/"+id)}>
+     <DropdownMenu.Item>View students 🚧</DropdownMenu.Item>
+     <DropdownMenu.Item onclick={() => deleteRow(id)}>
         Delete School
        </DropdownMenu.Item>
     </DropdownMenu.Content>
