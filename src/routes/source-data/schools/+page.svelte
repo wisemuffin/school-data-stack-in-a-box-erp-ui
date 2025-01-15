@@ -22,7 +22,7 @@
    </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card class="col-span-4 p-4">
-                <Button onclick={greet}><PlusCircleIcon/>Add School</Button>
+                <Button href="/source-data/schools/add" onclick={greet}><PlusCircleIcon/>Add School</Button>
                 <DataTableDg columns={columns} data={data.schools} filterColumns={filterColumns} showColumnVisibility={true} />
 
             </Card>

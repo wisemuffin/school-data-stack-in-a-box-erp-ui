@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button } from "$lib/components/ui/button";
     import * as Form from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
     import { formSchema, type FormSchema } from "./schema";
@@ -30,5 +31,6 @@
      <Form.FieldErrors />
     </Form.Field>
     <Form.Button>Submit</Form.Button>
+    <Button  variant="secondary" href="/source-data/schools">Cancel</Button>
    </form>
-   <SuperDebug data={$formData} /> 
+   <!-- <SuperDebug data={$formData} />  -->

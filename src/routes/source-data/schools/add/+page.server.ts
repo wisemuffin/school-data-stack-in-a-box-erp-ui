@@ -1,5 +1,6 @@
 import type { PageServerLoad, Actions } from "./$types.js";
-import { fail } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
+import * as api from "$lib/api";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema.js";
 import { zod } from "sveltekit-superforms/adapters";
@@ -18,8 +19,14 @@ export const actions: Actions = {
           form,
         });
       }
-      return {
-        form,
-      };
+
+      await api.post(
+        "schools", form.data    
+    );
+    //   return {
+    //     form,
+    //   };
+    redirect(302,"/source-data/schools");
+
     },
   };
