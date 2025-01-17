@@ -31,6 +31,6 @@
      <Form.FieldErrors />
     </Form.Field>
     <Form.Button>Submit</Form.Button>
-    <Button  variant="secondary" href="/source-data/schools">Cancel</Button>
+    <Button  variant="secondary" href="/school-operations/schools">Cancel</Button>
    </form>
    <!-- <SuperDebug data={$formData} />  -->

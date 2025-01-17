@@ -23,33 +23,13 @@
 			Home
 		</a>
 		<a
-			href="/school-data-table"
-			class={cn(
-				"hover:text-foreground/80 transition-colors",
-				page.url.pathname.startsWith("/school-data-table")
-					? "text-foreground"
-					: "text-foreground/60"
-			)}
-		>
-			School Table
-		</a>
-		<a
-			href="/simple-data-table"
-			class={cn(
-				"hover:text-foreground/80 transition-colors",
-				page.url.pathname.startsWith("/simple-data-table") ? "text-foreground" : "text-foreground/60"
-			)}
-		>
-			Simple Table
-		</a>
-		<a
-			href="/source-data"
+			href="/school-operations"
 			class={cn(
 				"hover:text-foreground/80 transition-colors",
 				page.url.pathname.startsWith("/source-data") ? "text-foreground" : "text-foreground/60"
 			)}
 		>
-			Source Data
+			School Operations
 		</a>
 	</nav>
 </div>
