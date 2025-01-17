@@ -21,7 +21,7 @@ import type {
 	HTMLThAttributes,
 } from "svelte/elements";
 
-export function cn(...inputs: ClassValue[]) {
+export function cn(...inputs: ClassValue[]):any {
 	return twMerge(clsx(inputs));
 }
 

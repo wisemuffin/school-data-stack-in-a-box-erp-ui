@@ -21,32 +21,17 @@
 </script>
 
 	<Sidebar.Provider>
-		<AppSidebar />
+		<!-- <AppSidebar /> -->
 
 		
 		
-		<main>
+		<div class="w-screen">
 
 			<SiteHeader />
+			<!-- <Sidebar.Trigger /> -->
+
 	
-			
-			<div class="flex gap-4">
-				<Sidebar.Trigger />
 
-				
-
-				<h2 class="pb-2 text-3xl scroll-m-20">{$page.route.id}</h2>
-				<Button class="align-bottom" onclick={toggleMode} variant="outline" size="icon">
-				  <Sun
-					class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-				  />
-				  <Moon
-					class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-				  />
-				  <span class="sr-only">Toggle theme</span>
-				</Button>
-	  
-			</div>
 		  <ModeWatcher />
 		   {@render children()}
 
@@ -54,7 +39,7 @@
 				{#if dev}
 					<TailwindIndicator />
 				{/if}
-		</main>
+		</div>
 	  </Sidebar.Provider>
 
 	  
