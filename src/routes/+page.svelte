@@ -12,39 +12,9 @@
 	import type { EmblaOptionsType } from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
 	import * as Avatar from "$lib/components/ui/avatar";
+	import type { PageData } from './$types';
 
-	const testimonials = [
-		{
-			text: "This platform has completely transformed how we manage our daily operations. The efficiency gains are remarkable!",
-			author: "@sarah_educator",
-			time: "2 hours ago",
-			avatar: "https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/sites/docs/static/avatars/01.png"
-		},
-		{
-			text: "The student management system is intuitive and has made tracking attendance and progress so much easier.",
-			author: "@principal_jones",
-			time: "5 hours ago",
-			avatar: "https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/sites/docs/static/avatars/02.png"
-		},
-		{
-			text: "Data analytics features have given us incredible insights into our school's performance metrics.",
-			author: "@tech_admin_mike",
-			time: "1 day ago",
-			avatar: "https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/sites/docs/static/avatars/03.png"
-		},
-		{
-			text: "Resource planning has never been easier. We've reduced scheduling conflicts by 90%!",
-			author: "@ms_thompson",
-			time: "2 days ago",
-			avatar: "https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/sites/docs/static/avatars/04.png"
-		},
-		{
-			text: "The all-in-one solution we've been looking for. Highly recommend to all education administrators.",
-			author: "@dean_williams",
-			time: "3 days ago",
-			avatar: "https://raw.githubusercontent.com/huntabyte/shadcn-svelte/main/sites/docs/static/avatars/05.png"
-		}
-	];
+	let { data } = $props<{ data: PageData }>();
 
 	const carouselOptions: EmblaOptionsType = {
 		loop: true,
@@ -100,7 +70,7 @@
 			<div class="flex flex-col items-center gap-12">
 				<div class="text-center max-w-2xl">
 					<h2 class="text-4xl font-bold text-nsw-brand-dark dark:text-white mb-4">Powerful Features</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300">Everything you need to manage your school operations effectively</p>
+					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">Everything you need to manage your school operations effectively</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -108,8 +78,8 @@
 						<Card.Content class="pt-6">
 							<Image2 class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center dark:text-white">Student Management</Card.Title>
-								<Card.Description class="text-center text-gray-600 dark:text-gray-300">
+								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Student Management</Card.Title>
+								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
 									Efficiently manage student records, attendance, and academic progress all in one place.
 								</Card.Description>
 							</Card.Header>
@@ -120,8 +90,8 @@
 						<Card.Content class="pt-6">
 							<Image class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center dark:text-white">Resource Planning</Card.Title>
-								<Card.Description class="text-center text-gray-600 dark:text-gray-300">
+								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Resource Planning</Card.Title>
+								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
 									Optimize resource allocation and scheduling for better operational efficiency.
 								</Card.Description>
 							</Card.Header>
@@ -132,8 +102,8 @@
 						<Card.Content class="pt-6">
 							<SquiggleAndImage class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center dark:text-white">Data Analytics</Card.Title>
-								<Card.Description class="text-center text-gray-600 dark:text-gray-300">
+								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Data Analytics</Card.Title>
+								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
 									Make data-driven decisions with powerful analytics and reporting tools.
 								</Card.Description>
 							</Card.Header>
@@ -150,7 +120,7 @@
 			<div class="flex flex-col items-center gap-12">
 				<div class="text-center max-w-2xl">
 					<h2 class="text-4xl font-bold text-nsw-brand-dark dark:text-white mb-4">What People Say</h2>
-					<p class="text-xl text-gray-600 dark:text-gray-300">Trusted by education professionals worldwide</p>
+					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">Trusted by education professionals worldwide</p>
 				</div>
 
 				<div class="w-full max-w-4xl">
@@ -160,10 +130,10 @@
 						plugins={plugins}
 					>
 						<Carousel.Content class="-ml-4">
-							{#each testimonials as testimonial (testimonial.author)}
+							{#each data.testimonials as testimonial (testimonial.author)}
 								<Carousel.Item class="pl-4 md:basis-1/2">
 									<div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg h-full">
-										<p class="text-lg text-gray-800 dark:text-gray-100 mb-6">"{testimonial.text}"</p>
+										<p class="text-lg text-nsw-brand-dark dark:text-white mb-6">"{testimonial.text}"</p>
 										<div class="flex items-center gap-4">
 											<Avatar.Root>
 												<Avatar.Image
@@ -175,8 +145,8 @@
 												</Avatar.Fallback>
 											</Avatar.Root>
 											<div class="flex flex-col">
-												<span class="text-gray-900 dark:text-white font-medium">{testimonial.author}</span>
-												<span class="text-sm text-gray-500 dark:text-gray-400">{testimonial.time}</span>
+												<span class="text-nsw-brand-dark dark:text-white font-medium">{testimonial.author}</span>
+												<span class="text-sm text-nsw-brand-dark/60 dark:text-white/60">{testimonial.time}</span>
 											</div>
 										</div>
 									</div>
