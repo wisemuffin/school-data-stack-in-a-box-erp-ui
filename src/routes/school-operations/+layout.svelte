@@ -25,10 +25,10 @@ let { children } = $props();
 	
 	<div class="flex-1 space-y-4 p-8 pt-6">
 		<div class="flex items-center justify-between space-y-2">
-			<h2 class="text-3xl font-bold tracking-tight">School Operations</h2>
+			<h2 class="text-3xl font-bold tracking-tight text-nsw-brand-dark dark:text-white">School Operations</h2>
 			<div class="flex items-center space-x-2">
 				<DatePickerWithRange />
-				<Button size="sm">
+				<Button size="sm" class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
 					<Download class="mr-2 size-4" />
 					Download
 				</Button>
@@ -36,11 +36,21 @@ let { children } = $props();
 		</div>
 		<Tabs.Root value="overview" class="space-y-4">
 			<Tabs.List>
-				<Tabs.Trigger value="overview"><a href="/school-operations">Overview</a></Tabs.Trigger>
-				<Tabs.Trigger value="analytics" >Analytics</Tabs.Trigger>
-				<Tabs.Trigger value="schools" ><a href="/school-operations/schools">Schools</a></Tabs.Trigger>
-                <Tabs.Trigger value="students" ><a href="/school-operations/students">Students</a></Tabs.Trigger>
-				<Tabs.Trigger value="notifications" disabled>Notifications</Tabs.Trigger>
+				<Tabs.Trigger value="overview" class="text-nsw-brand-dark/80 dark:text-white/80">
+					<a href="/school-operations">Overview</a>
+				</Tabs.Trigger>
+				<Tabs.Trigger value="analytics" class="text-nsw-brand-dark/80 dark:text-white/80">
+					Analytics
+				</Tabs.Trigger>
+				<Tabs.Trigger value="schools" class="text-nsw-brand-dark/80 dark:text-white/80">
+					<a href="/school-operations/schools">Schools</a>
+				</Tabs.Trigger>
+				<Tabs.Trigger value="students" class="text-nsw-brand-dark/80 dark:text-white/80">
+					<a href="/school-operations/students">Students</a>
+				</Tabs.Trigger>
+				<Tabs.Trigger value="notifications" disabled class="text-nsw-brand-dark/60 dark:text-white/60">
+					Notifications
+				</Tabs.Trigger>
 			</Tabs.List>
 			<Tabs.Content value="overview" class="space-y-4">
 				<p>overview tab</p>

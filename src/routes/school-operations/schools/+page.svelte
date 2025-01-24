@@ -23,7 +23,13 @@
    </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card class="col-span-4 p-4">
-                <Button href="/school-operations/schools/add" onclick={greet}><PlusCircleIcon/>Add School</Button>
+                <Button 
+                    href="/school-operations/schools/add" 
+                    onclick={greet} 
+                    class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
+                >
+                    <PlusCircleIcon/>Add School
+                </Button>
                 <DataTableDg columns={columns} data={data.schools} filterColumns={filterColumns} showColumnVisibility={true} />
 
             </Card>

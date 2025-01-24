@@ -16,7 +16,13 @@
    </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card class="col-span-4 p-4">
-                <DataTableDg columns={columns} data={data.students} filterColumns={filterColumns} showColumnVisibility={true} />
+                <DataTableDg 
+                    columns={columns} 
+                    data={data.students} 
+                    filterColumns={filterColumns} 
+                    showColumnVisibility={true}
+                    class="text-nsw-brand-dark dark:text-white"
+                />
 
             </Card>
 

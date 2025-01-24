@@ -18,21 +18,25 @@
 >
 	<Svelte5Banner />
 	<div class="container flex h-14 max-w-screen-2xl items-center">
-		<MainNav />
+		<MainNav class="text-nsw-brand-dark dark:text-white" />
 		<!-- <MobileNav /> -->
 		<div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
 			<!-- <div class="w-full flex-1 md:w-auto md:flex-none">
 				<CommandMenu />
 			</div> -->
 			<nav class="flex items-center">
-				<a href={siteConfig.links.github} target="_blank" rel="noopener noreferrer">
+				<a 
+					href={siteConfig.links.github} 
+					target="_blank" 
+					rel="noopener noreferrer"
+				>
 					<div
 						class={cn(
 							buttonVariants({
 								size: "sm",
 								variant: "ghost",
 							}),
-							"h-8 w-8 px-0"
+							"h-8 w-8 px-0 text-nsw-brand-dark dark:text-white"
 						)}
 					>
 						<Icon.GitHub class="h-4 w-4" />
@@ -40,7 +44,7 @@
 					</div>
 				</a>
 				
-				<ModeToggle />
+				<ModeToggle class="text-nsw-brand-dark dark:text-white" />
                     <!-- <Search />
                     <UserNav /> -->
 			</nav>

@@ -45,7 +45,7 @@
 					<h1 class="text-6xl font-bold leading-tight text-nsw-brand-dark dark:text-white">
 						Transform Your School Operations
 					</h1>
-					<p class="text-xl text-gray-600 dark:text-gray-300">
+					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">
 						Streamline administration, enhance communication, and improve efficiency with our comprehensive school management platform.
 					</p>
 					<div class="flex gap-4">

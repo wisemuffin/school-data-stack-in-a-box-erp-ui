@@ -22,9 +22,20 @@
 		data: TData[];
 		filterColumns?: string[];
 		showColumnVisibility?: boolean;
+		textClass?: string;
+		textMutedClass?: string;
+		textSubtleClass?: string;
 	};
 
-	let { data, columns, filterColumns, showColumnVisibility = true }: DataTableProps<TData, TValue> = $props();
+	let { 
+		data, 
+		columns, 
+		filterColumns, 
+		showColumnVisibility = true,
+		textClass = "text-nsw-brand-dark dark:text-white",
+		textMutedClass = "text-nsw-brand-dark/80 dark:text-white/80",
+		textSubtleClass = "text-nsw-brand-dark/70 dark:text-white/70"
+	}: DataTableProps<TData, TValue> = $props();
 
 	let pagination = $state<PaginationState>({ pageIndex: 0, pageSize: 10 });
 	let sorting = $state<SortingState>([]);
@@ -97,7 +108,7 @@
 					onchange={(e) => {
 						table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value);
 					}}
-					class="max-w-sm"
+					class="max-w-sm {textClass}"
 				/>
 			{/each}
 		{/if}
@@ -106,7 +117,7 @@
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger>
 				{#snippet child({ props })}
-					<Button {...props} variant="outline" class="ml-auto">
+					<Button {...props} variant="outline" class="ml-auto {textClass}">
 						Columns <ChevronDown class="ml-2 size-4" />
 					</Button>
 				{/snippet}
@@ -114,7 +125,7 @@
 			<DropdownMenu.Content align="end">
 				{#each table.getAllColumns().filter((col) => col.getCanHide()) as column}
 					<DropdownMenu.CheckboxItem
-						class="capitalize"
+						class="capitalize {textClass}"
 						controlledChecked
 						checked={column.getIsVisible()}
 						onCheckedChange={(value) => column.toggleVisibility(!!value)}
@@ -135,7 +146,7 @@
 				{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
 					<Table.Row>
 						{#each headerGroup.headers as header (header.id)}
-							<Table.Head>
+							<Table.Head class={textClass}>
 								{#if !header.isPlaceholder}
 									<FlexRender
 										content={header.column.columnDef.header}
@@ -151,14 +162,16 @@
 				{#each table.getRowModel().rows as row (row.id)}
 					<Table.Row data-state={row.getIsSelected() && 'selected'}>
 						{#each row.getVisibleCells() as cell (cell.id)}
-							<Table.Cell>
+							<Table.Cell class={textMutedClass}>
 								<FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />
 							</Table.Cell>
 						{/each}
 					</Table.Row>
 				{:else}
 					<Table.Row>
-						<Table.Cell colspan={columns.length} class="h-24 text-center">No results.</Table.Cell>
+						<Table.Cell colspan={columns.length} class="h-24 text-center {textSubtleClass}">
+							No results.
+						</Table.Cell>
 					</Table.Row>
 				{/each}
 			</Table.Body>
@@ -170,6 +183,7 @@
 			size="sm"
 			onclick={() => table.previousPage()}
 			disabled={!table.getCanPreviousPage()}
+			class={textClass}
 		>
 			Previous
 		</Button>
@@ -178,6 +192,7 @@
 			size="sm"
 			onclick={() => table.nextPage()}
 			disabled={!table.getCanNextPage()}
+			class={textClass}
 		>
 			Next
 		</Button>

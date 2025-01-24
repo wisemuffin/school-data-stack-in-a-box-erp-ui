@@ -24,13 +24,23 @@
    <form method="POST" use:enhance>
     <Form.Field {form} name="name">
      <Form.Control let:attrs>
-      <Form.Label>School</Form.Label>
+      <Form.Label class="text-nsw-brand-dark dark:text-white">School</Form.Label>
       <Input {...attrs} bind:value={$formData.name} />
      </Form.Control>
-     <Form.Description>This is your public display name.</Form.Description>
+     <Form.Description class="text-nsw-brand-dark/70 dark:text-white/70">
+        This is your public display name.
+     </Form.Description>
      <Form.FieldErrors />
     </Form.Field>
-    <Form.Button>Submit</Form.Button>
-    <Button  variant="secondary" href="/school-operations/schools">Cancel</Button>
+    <Form.Button class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
+        Submit
+    </Form.Button>
+    <Button 
+        variant="outline" 
+        href="/school-operations/schools" 
+        class="border-nsw-brand-dark text-nsw-brand-dark dark:border-white dark:text-white hover:bg-nsw-brand-dark/10 dark:hover:bg-white/10"
+    >
+        Cancel
+    </Button>
    </form>
    <!-- <SuperDebug data={$formData} />  -->
