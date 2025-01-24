@@ -26,7 +26,7 @@ export const actions: Actions = {
     //   return {
     //     form,
     //   };
-    redirect(302,"/source-data/schools");
+    redirect(302,"/school-operations/schools");
 
     },
   };

@@ -26,7 +26,7 @@
                 <Button 
                     href="/school-operations/schools/add" 
                     onclick={greet} 
-                    class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
+                    class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
                 >
                     <PlusCircleIcon/>Add School
                 </Button>

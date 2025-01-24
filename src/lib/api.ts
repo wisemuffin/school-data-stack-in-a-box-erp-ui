@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import type { School, Student, ApiResponse } from './types/api';
 
 const base = 'http://127.0.0.1:8000';
 
@@ -36,7 +37,7 @@ async function send({ method, path, data, token }: SendOptions): Promise<any> {
     throw error(res.status);
 }
 
-export function get(path: string, token?: string): Promise<any> {
+export function get<T>(path: string, token?: string): Promise<ApiResponse<T>> {
     return send({ method: 'GET', path, token });
 }
 
@@ -44,7 +45,7 @@ export function del(path: string, token?: string): Promise<any> {
     return send({ method: 'DELETE', path, token });
 }
 
-export function post(path: string, data: any, token?: string): Promise<any> {
+export function post<T>(path: string, data: any, token?: string): Promise<T> {
     return send({ method: 'POST', path, data, token });
 }
 
