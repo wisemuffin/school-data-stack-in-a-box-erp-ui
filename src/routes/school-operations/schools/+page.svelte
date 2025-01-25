@@ -7,13 +7,25 @@
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
 	import { icons } from "lucide-svelte";
 
-    import {columns} from "./columns.js"
+    import {columns} from "./columns.ts"
     
 
     let { data } = $props();
 
     const filterColumns = ["name"]
     import { PlusCircleIcon } from "lucide-svelte";
+	import { deleteSchool } from "$lib/api/client.js";
+	import { invalidateAll } from "$app/navigation";
+
+    let checkedRows = $state(new Set<string>());
+    
+    const handleDelete = async (ids: string[]) => {
+        for (const id of ids) {
+            await deleteSchool(id);
+        }
+        checkedRows.clear();
+        await invalidateAll();
+    };
 
     function greet() {
 		alert('Welcome to Svelte!');
@@ -30,7 +42,12 @@
                 >
                     <PlusCircleIcon/>Add School
                 </Button>
-                <DataTableDg columns={columns} data={data.schools} filterColumns={filterColumns} showColumnVisibility={true} />
+                <DataTableDg 
+                    columns={columns(checkedRows, handleDelete)} 
+                    data={data.schools} 
+                    filterColumns={filterColumns} 
+                    showColumnVisibility={true} 
+                />
 
             </Card>
 

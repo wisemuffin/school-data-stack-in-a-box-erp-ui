@@ -6,11 +6,18 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import { deleteSchool } from "$lib/api/client";
     
-    let { id }: { id: string } = $props();
+    let { id, checkedRows, onDelete } = $props<{
+        id: string;
+        checkedRows: Set<string>;
+        onDelete: (ids: string[]) => Promise<void>;
+    }>();
 
-    const deleteRow = async (id: string) => {
-        await deleteSchool(id);
-        invalidateAll();
+    const deleteRow = async () => {
+        if (checkedRows.size > 0) {
+            await onDelete(Array.from(checkedRows));
+        } else {
+            await onDelete([id]);
+        }
     };
    </script>
     
@@ -45,9 +52,9 @@
       View students 🚧</DropdownMenu.Item>
      <DropdownMenu.Separator />
 
-     <DropdownMenu.Item onclick={() => deleteRow(id)}>
+     <DropdownMenu.Item onclick={deleteRow}>
         <Trash class="mr-2 h-4 w-4" />
-        Delete School
+        Delete {checkedRows.size > 0 ? 'Selected Schools' : 'School'}
        </DropdownMenu.Item>
     </DropdownMenu.Content>
    </DropdownMenu.Root>
