@@ -26,14 +26,7 @@ export const actions: Actions = {
             return fail(400, { form });
         }
 
-        try {
-            await createStudent(form.data);
-            throw redirect(302, "/school-operations/students");
-        } catch (error) {
-            return fail(500, { 
-                form, 
-                error: 'Failed to create student' 
-            });
-        }
+        await createStudent(form.data);
+        redirect(302, "/school-operations/students");
     },
 }; 

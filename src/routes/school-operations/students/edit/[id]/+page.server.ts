@@ -35,14 +35,7 @@ export const actions: Actions = {
             return fail(400, { form });
         }
 
-        try {
-            await updateStudent(params.id, form.data);
-            throw redirect(302, "/school-operations/students");
-        } catch (err) {
-            return fail(500, { 
-                form, 
-                error: 'Failed to update student' 
-            });
-        }
+        await updateStudent(params.id, form.data);
+        redirect(302, "/school-operations/students");
     },
 }; 
