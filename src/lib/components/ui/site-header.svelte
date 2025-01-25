@@ -4,13 +4,15 @@
 		// CommandMenu,
 		// Icons,
 		MainNav,
-		// MobileNav,
+		MobileNav,
 		ModeToggle,
+		// UserNav,
 	} from "$lib/components/ui/index.js";
     import * as Icon from "$lib/components/icons/index"
 	import { buttonVariants } from "$lib/components/ui/button";
 	import { siteConfig } from "$lib/config/site.js";
 	import { cn } from "$lib/utils.js";
+
 </script>
 
 <header
@@ -18,8 +20,10 @@
 >
 	<Svelte5Banner />
 	<div class="container flex h-14 max-w-screen-2xl items-center">
-		<MainNav class="text-nsw-brand-dark dark:text-white" />
-		<!-- <MobileNav /> -->
+		<MainNav class="hidden md:flex text-nsw-brand-dark dark:text-white" />
+		<div class="md:hidden">
+			<MobileNav />
+		</div>
 		<div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
 			<!-- <div class="w-full flex-1 md:w-auto md:flex-none">
 				<CommandMenu />
@@ -43,11 +47,12 @@
 						<span class="sr-only">GitHub</span>
 					</div>
 				</a>
-				
 				<ModeToggle class="text-nsw-brand-dark dark:text-white" />
-                    <!-- <Search />
-                    <UserNav /> -->
+				<!-- <Search />
+				<UserNav /> -->
 			</nav>
 		</div>
+
+		
 	</div>
 </header>

@@ -1,6 +1,6 @@
 import type { PageServerLoad, Actions } from "./$types.js";
 import { fail, redirect } from "@sveltejs/kit";
-import * as api from "$lib/api";
+import * as api from "$lib/api/client.ts";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema.js";
 import { zod } from "sveltekit-superforms/adapters";

@@ -6,3 +6,4 @@ export { default as TailwindIndicator } from "./tailwind-indicator.svelte";
 
 export {default as ModeToggle} from "./mode-toggle.svelte"
 export {default as MainNav} from "./main-nav.svelte"
+export {default as MobileNav} from "./mobile-nav.svelte"

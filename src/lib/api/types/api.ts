@@ -7,7 +7,6 @@ export interface Student {
     id: number;
     first_name: string;
     last_name: string;
-    school_id: number;
 }
 
 export interface ApiResponse<T> {
