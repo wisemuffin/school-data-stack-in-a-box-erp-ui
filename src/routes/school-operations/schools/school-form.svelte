@@ -4,7 +4,7 @@
     import { Input } from "$lib/components/ui/input";
     import * as Card from "$lib/components/ui/card";
     import type { SuperForm, Infer } from "sveltekit-superforms";
-    import type { FormSchema } from "./add/schema";
+    import type { FormSchema } from "./school-form-schema";
 
     let { form, title, description, submitLabel } = $props();
     const { form: formData, enhance } = form;

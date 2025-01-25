@@ -1,7 +1,7 @@
 import { Inspect } from "lucide-svelte";
 import type { PageServerLoad } from "./$types.ts";
-import type {School} from "./schools/columns.ts"
-import type {Student} from "./students/columns.ts"
+import type {School} from "./schools/data-table-columns.ts"
+import type {Student} from "./students/data-table-columns.ts"
 
 
 export const load: PageServerLoad = async ( {fetch}) => {

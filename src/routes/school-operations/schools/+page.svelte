@@ -7,7 +7,7 @@
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
 	import { icons } from "lucide-svelte";
 
-    import {columns} from "./columns.ts"
+    import {columns} from "./data-table-columns.ts"
     
 
     let { data } = $props();

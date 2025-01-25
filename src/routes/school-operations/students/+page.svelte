@@ -6,7 +6,7 @@
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
 	import { PlusCircleIcon } from "lucide-svelte";
 
-    import {columns} from "./columns.js"
+    import {columns} from "./data-table-columns.js"
     
     import { deleteStudent } from "$lib/api/client";
     import { invalidateAll } from "$app/navigation";

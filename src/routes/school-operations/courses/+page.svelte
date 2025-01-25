@@ -3,7 +3,7 @@
     import { Card } from "$lib/components/ui/card/index.js";
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
     import { PlusCircleIcon, Trash } from "lucide-svelte";
-    import { createColumns } from "./columns";
+    import { createColumns } from "./data-table-columns.js";
     import { deleteClass } from "$lib/api/client";
     import { invalidateAll } from "$app/navigation";
 
