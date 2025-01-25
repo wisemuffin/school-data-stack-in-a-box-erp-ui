@@ -44,6 +44,9 @@ let { children } = $props();
 				<Tabs.Trigger value="students" class="text-nsw-brand-dark/80 dark:text-white/80">
 					<a href="/school-operations/students">Students</a>
 				</Tabs.Trigger>
+				<Tabs.Trigger value="courses" class="text-nsw-brand-dark/80 dark:text-white/80">
+					<a href="/school-operations/courses">Courses</a>
+				</Tabs.Trigger>
 			</Tabs.List>
 		</Tabs.Root>
 	</div>
