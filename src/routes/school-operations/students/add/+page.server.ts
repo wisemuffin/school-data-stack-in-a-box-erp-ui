@@ -1,32 +1,39 @@
-import type { PageServerLoad, Actions } from "./$types.js";
+import type { PageServerLoad, Actions } from "./$types";
 import { fail, redirect } from "@sveltejs/kit";
-import * as api from "$lib/api/client.ts";
 import { superValidate } from "sveltekit-superforms/server";
-import { formSchema } from "./schema.js";
+import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
-import type { School, ApiResponse } from '$lib/api/types/api.js';
-
+import { getAllSchools, createStudent } from "$lib/api/client";
+import type { School } from "$lib/api/types/api";
 
 export const load: PageServerLoad = (async () => {
-    const form = await superValidate(zod(formSchema));
-    const schools = await api.get<School>("schools");
-    
+    const [form, schoolsResponse] = await Promise.all([
+        superValidate(zod(formSchema)),
+        getAllSchools()
+    ]);
+
     return {
         form,
-        schools: schools.items
+        schools: schoolsResponse.items
     };
-}) satisfies PageServerLoad;
+});
 
-export const actions: Actions  = {
-    default: async (event) => {
-        const form = await superValidate(event, zod(formSchema));
+export const actions: Actions = {
+    default: async ({ request }) => {
+        const form = await superValidate(request, zod(formSchema));
+
         if (!form.valid) {
-            return fail(400, {
-                form,
-            });
+            return fail(400, { form });
         }
 
-        await api.post("students", form.data);
-        redirect(302, "/school-operations/students");
+        try {
+            await createStudent(form.data);
+            throw redirect(302, "/school-operations/students");
+        } catch (error) {
+            return fail(500, { 
+                form, 
+                error: 'Failed to create student' 
+            });
+        }
     },
-} satisfies Actions; 
+}; 

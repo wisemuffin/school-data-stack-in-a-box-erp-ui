@@ -1,0 +1,2230 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+    "title": "FastAPI",
+    "version": "0.1.0"
+    },
+    "paths": {
+    "/geographies/": {
+    "get": {
+    "summary": "Read Geographies",
+    "operationId": "read_geographies_geographies__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of geographies to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of geographies to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of geographies to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of geographies to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Geography_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Geography",
+    "operationId": "create_geography_geographies__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/GeographyCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Geography"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/geographies/{geography_id}": {
+    "delete": {
+    "summary": "Delete Geography",
+    "operationId": "delete_geography_geographies__geography_id__delete",
+    "parameters": [
+    {
+    "name": "geography_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Geography Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Geography"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Geography By Id",
+    "operationId": "get_geography_by_id_geographies__geography_id__get",
+    "parameters": [
+    {
+    "name": "geography_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Geography Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Geography"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/schools/": {
+    "get": {
+    "summary": "Read Schools",
+    "operationId": "read_schools_schools__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of schools to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of schools to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of schools to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of schools to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_School_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create School",
+    "operationId": "create_school_schools__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/SchoolCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/School"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/schools/{school_id}": {
+    "delete": {
+    "summary": "Delete School",
+    "operationId": "delete_school_schools__school_id__delete",
+    "parameters": [
+    {
+    "name": "school_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "School Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/School"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get School By Id",
+    "operationId": "get_school_by_id_schools__school_id__get",
+    "parameters": [
+    {
+    "name": "school_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "School Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/School"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/students/": {
+    "get": {
+    "summary": "Read Students",
+    "operationId": "read_students_students__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of students to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of students to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of students to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of students to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Student_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Student",
+    "operationId": "create_student_students__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/StudentCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Student"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/students/{student_id}": {
+    "delete": {
+    "summary": "Delete Student",
+    "operationId": "delete_student_students__student_id__delete",
+    "parameters": [
+    {
+    "name": "student_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Student Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Student"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Student By Id",
+    "operationId": "get_student_by_id_students__student_id__get",
+    "parameters": [
+    {
+    "name": "student_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Student Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Student"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/classes/": {
+    "get": {
+    "summary": "Read Classes",
+    "operationId": "read_classes_classes__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of classes to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of classes to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of classes to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of classes to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Class_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Class",
+    "operationId": "create_class_classes__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/ClassCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Class"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/classes/{class_id}": {
+    "delete": {
+    "summary": "Delete Class",
+    "operationId": "delete_class_classes__class_id__delete",
+    "parameters": [
+    {
+    "name": "class_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Class Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Class"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Class By Id",
+    "operationId": "get_class_by_id_classes__class_id__get",
+    "parameters": [
+    {
+    "name": "class_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Class Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Class"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/attendances/": {
+    "get": {
+    "summary": "Read Attendances",
+    "operationId": "read_attendances_attendances__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of attendances to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of attendances to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of attendances to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of attendances to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Attendance_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Attendance",
+    "operationId": "create_attendance_attendances__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/AttendanceCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Attendance"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/attendances/{attendance_id}": {
+    "delete": {
+    "summary": "Delete Attendance",
+    "operationId": "delete_attendance_attendances__attendance_id__delete",
+    "parameters": [
+    {
+    "name": "attendance_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Attendance Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Attendance"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Attendance By Id",
+    "operationId": "get_attendance_by_id_attendances__attendance_id__get",
+    "parameters": [
+    {
+    "name": "attendance_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Attendance Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Attendance"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/enrolments/": {
+    "get": {
+    "summary": "Read Enrolments",
+    "operationId": "read_enrolments_enrolments__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of enrolments to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of enrolments to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of enrolments to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of enrolments to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Enrolment_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Enrolment",
+    "operationId": "create_enrolment_enrolments__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/EnrolmentCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Enrolment"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/enrolments/{enrolment_id}": {
+    "delete": {
+    "summary": "Delete Enrolment",
+    "operationId": "delete_enrolment_enrolments__enrolment_id__delete",
+    "parameters": [
+    {
+    "name": "enrolment_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Enrolment Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Enrolment"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Enrolment By Id",
+    "operationId": "get_enrolment_by_id_enrolments__enrolment_id__get",
+    "parameters": [
+    {
+    "name": "enrolment_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Enrolment Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Enrolment"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/incidents/": {
+    "get": {
+    "summary": "Read Incidents",
+    "operationId": "read_incidents_incidents__get",
+    "parameters": [
+    {
+    "name": "page",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Page number (only use one of page or offset)",
+    "title": "Page"
+    },
+    "description": "Page number (only use one of page or offset)"
+    },
+    {
+    "name": "limit",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "type": "integer",
+    "description": "Number of incidents to retrieve",
+    "default": 10,
+    "title": "Limit"
+    },
+    "description": "Number of incidents to retrieve"
+    },
+    {
+    "name": "offset",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Number of incidents to skip (only use one of page or offset)",
+    "title": "Offset"
+    },
+    "description": "Number of incidents to skip (only use one of page or offset)"
+    },
+    {
+    "name": "sort",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Field to sort by",
+    "title": "Sort"
+    },
+    "description": "Field to sort by"
+    },
+    {
+    "name": "order",
+    "in": "query",
+    "required": false,
+    "schema": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "description": "Sort order (asc or desc)",
+    "title": "Order"
+    },
+    "description": "Sort order (asc or desc)"
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/PaginatedResponse_Incident_"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "post": {
+    "summary": "Create Incident",
+    "operationId": "create_incident_incidents__post",
+    "requestBody": {
+    "required": true,
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/IncidentCreate"
+    }
+    }
+    }
+    },
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Incident"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/incidents/{incident_id}": {
+    "delete": {
+    "summary": "Delete Incident",
+    "operationId": "delete_incident_incidents__incident_id__delete",
+    "parameters": [
+    {
+    "name": "incident_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Incident Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Incident"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    },
+    "get": {
+    "summary": "Get Incident By Id",
+    "operationId": "get_incident_by_id_incidents__incident_id__get",
+    "parameters": [
+    {
+    "name": "incident_id",
+    "in": "path",
+    "required": true,
+    "schema": {
+    "type": "integer",
+    "title": "Incident Id"
+    }
+    }
+    ],
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/Incident"
+    }
+    }
+    }
+    },
+    "422": {
+    "description": "Validation Error",
+    "content": {
+    "application/json": {
+    "schema": {
+    "$ref": "#/components/schemas/HTTPValidationError"
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "/reset/": {
+    "post": {
+    "summary": "Reset State",
+    "operationId": "reset_state_reset__post",
+    "responses": {
+    "200": {
+    "description": "Successful Response",
+    "content": {
+    "application/json": {
+    "schema": {}
+    }
+    }
+    }
+    }
+    }
+    }
+    },
+    "components": {
+    "schemas": {
+    "Attendance": {
+    "properties": {
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    },
+    "class_id": {
+    "type": "integer",
+    "title": "Class Id"
+    },
+    "present": {
+    "type": "boolean",
+    "title": "Present"
+    },
+    "attendance_date": {
+    "type": "string",
+    "format": "date",
+    "title": "Attendance Date"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "student_id",
+    "class_id",
+    "present",
+    "attendance_date",
+    "id"
+    ],
+    "title": "Attendance"
+    },
+    "AttendanceCreate": {
+    "properties": {
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    },
+    "class_id": {
+    "type": "integer",
+    "title": "Class Id"
+    },
+    "present": {
+    "type": "boolean",
+    "title": "Present"
+    },
+    "attendance_date": {
+    "type": "string",
+    "format": "date",
+    "title": "Attendance Date"
+    }
+    },
+    "type": "object",
+    "required": [
+    "student_id",
+    "class_id",
+    "present",
+    "attendance_date"
+    ],
+    "title": "AttendanceCreate"
+    },
+    "Class": {
+    "properties": {
+    "name": {
+    "type": "string",
+    "title": "Name"
+    },
+    "scholastic_year_id": {
+    "type": "integer",
+    "title": "Scholastic Year Id"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "name",
+    "scholastic_year_id",
+    "id"
+    ],
+    "title": "Class"
+    },
+    "ClassCreate": {
+    "properties": {
+    "name": {
+    "type": "string",
+    "title": "Name"
+    },
+    "scholastic_year_id": {
+    "type": "integer",
+    "title": "Scholastic Year Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "name",
+    "scholastic_year_id"
+    ],
+    "title": "ClassCreate"
+    },
+    "Enrolment": {
+    "properties": {
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    },
+    "start_date": {
+    "type": "string",
+    "format": "date",
+    "title": "Start Date"
+    },
+    "end_date": {
+    "anyOf": [
+    {
+    "type": "string",
+    "format": "date"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "End Date"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "student_id",
+    "start_date",
+    "end_date",
+    "id"
+    ],
+    "title": "Enrolment"
+    },
+    "EnrolmentCreate": {
+    "properties": {
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    },
+    "start_date": {
+    "type": "string",
+    "format": "date",
+    "title": "Start Date"
+    },
+    "end_date": {
+    "anyOf": [
+    {
+    "type": "string",
+    "format": "date"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "End Date"
+    }
+    },
+    "type": "object",
+    "required": [
+    "student_id",
+    "start_date",
+    "end_date"
+    ],
+    "title": "EnrolmentCreate"
+    },
+    "Geography": {
+    "properties": {
+    "city": {
+    "type": "string",
+    "title": "City"
+    },
+    "region": {
+    "type": "string",
+    "title": "Region"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "city",
+    "region",
+    "id"
+    ],
+    "title": "Geography"
+    },
+    "GeographyCreate": {
+    "properties": {
+    "city": {
+    "type": "string",
+    "title": "City"
+    },
+    "region": {
+    "type": "string",
+    "title": "Region"
+    }
+    },
+    "type": "object",
+    "required": [
+    "city",
+    "region"
+    ],
+    "title": "GeographyCreate"
+    },
+    "HTTPValidationError": {
+    "properties": {
+    "detail": {
+    "items": {
+    "$ref": "#/components/schemas/ValidationError"
+    },
+    "type": "array",
+    "title": "Detail"
+    }
+    },
+    "type": "object",
+    "title": "HTTPValidationError"
+    },
+    "Incident": {
+    "properties": {
+    "incident_type": {
+    "type": "string",
+    "title": "Incident Type"
+    },
+    "reported_datetime": {
+    "type": "string",
+    "format": "date-time",
+    "title": "Reported Datetime"
+    },
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "incident_type",
+    "reported_datetime",
+    "student_id",
+    "id"
+    ],
+    "title": "Incident"
+    },
+    "IncidentCreate": {
+    "properties": {
+    "incident_type": {
+    "type": "string",
+    "title": "Incident Type"
+    },
+    "reported_datetime": {
+    "type": "string",
+    "format": "date-time",
+    "title": "Reported Datetime"
+    },
+    "student_id": {
+    "type": "integer",
+    "title": "Student Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "incident_type",
+    "reported_datetime",
+    "student_id"
+    ],
+    "title": "IncidentCreate"
+    },
+    "PaginatedResponse_Attendance_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Attendance"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Attendance]"
+    },
+    "PaginatedResponse_Class_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Class"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Class]"
+    },
+    "PaginatedResponse_Enrolment_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Enrolment"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Enrolment]"
+    },
+    "PaginatedResponse_Geography_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Geography"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Geography]"
+    },
+    "PaginatedResponse_Incident_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Incident"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Incident]"
+    },
+    "PaginatedResponse_School_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/School"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[School]"
+    },
+    "PaginatedResponse_Student_": {
+    "properties": {
+    "items": {
+    "items": {
+    "$ref": "#/components/schemas/Student"
+    },
+    "type": "array",
+    "title": "Items"
+    },
+    "total": {
+    "type": "integer",
+    "title": "Total"
+    },
+    "next": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "null"
+    }
+    ],
+    "title": "Next"
+    }
+    },
+    "type": "object",
+    "required": [
+    "items",
+    "total"
+    ],
+    "title": "PaginatedResponse[Student]"
+    },
+    "School": {
+    "properties": {
+    "name": {
+    "type": "string",
+    "title": "Name"
+    },
+    "geography_id": {
+    "type": "integer",
+    "title": "Geography Id"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "name",
+    "geography_id",
+    "id"
+    ],
+    "title": "School"
+    },
+    "SchoolCreate": {
+    "properties": {
+    "name": {
+    "type": "string",
+    "title": "Name"
+    },
+    "geography_id": {
+    "type": "integer",
+    "title": "Geography Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "name",
+    "geography_id"
+    ],
+    "title": "SchoolCreate"
+    },
+    "Student": {
+    "properties": {
+    "first_name": {
+    "type": "string",
+    "title": "First Name"
+    },
+    "last_name": {
+    "type": "string",
+    "title": "Last Name"
+    },
+    "id": {
+    "type": "integer",
+    "title": "Id"
+    }
+    },
+    "type": "object",
+    "required": [
+    "first_name",
+    "last_name",
+    "id"
+    ],
+    "title": "Student"
+    },
+    "StudentCreate": {
+    "properties": {
+    "first_name": {
+    "type": "string",
+    "title": "First Name"
+    },
+    "last_name": {
+    "type": "string",
+    "title": "Last Name"
+    }
+    },
+    "type": "object",
+    "required": [
+    "first_name",
+    "last_name"
+    ],
+    "title": "StudentCreate"
+    },
+    "ValidationError": {
+    "properties": {
+    "loc": {
+    "items": {
+    "anyOf": [
+    {
+    "type": "string"
+    },
+    {
+    "type": "integer"
+    }
+    ]
+    },
+    "type": "array",
+    "title": "Location"
+    },
+    "msg": {
+    "type": "string",
+    "title": "Message"
+    },
+    "type": {
+    "type": "string",
+    "title": "Error Type"
+    }
+    },
+    "type": "object",
+    "required": [
+    "loc",
+    "msg",
+    "type"
+    ],
+    "title": "ValidationError"
+    }
+    }
+    }
+    }

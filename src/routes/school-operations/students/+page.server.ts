@@ -1,16 +1,11 @@
-import { Inspect } from "lucide-svelte";
-import type { PageServerLoad } from "./$types.ts";
-import type {Student} from "./columns.ts"
+import type { PageServerLoad } from "./$types";
+import { getAllStudents } from "$lib/api/client";
+import type { Student } from "$lib/api/types/api";
 
-
-export const load: PageServerLoad = async ( {fetch}) => {
-    // logic to fetch payments data here
-
-    const res = await fetch("http://127.0.0.1:8000/students/?limit=100000")
-    const data = (await res.json()) as {
-        items: Student[]
-    }
-    console.log(data)
-
-    return {students: data.items};
-}
+export const load: PageServerLoad = async () => {
+    const response = await getAllStudents({ limit: 100000 });
+    
+    return { 
+        students: response.items 
+    };
+};

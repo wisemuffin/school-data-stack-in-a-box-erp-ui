@@ -1,15 +1,15 @@
 <script lang="ts">
-   import { invalidate, invalidateAll } from '$app/navigation';
+   import { invalidateAll } from '$app/navigation';
 
-    import Ellipsis from "lucide-svelte/icons/ellipsis";
-    import { Button } from "$lib/components/ui/button/index.js";
-    import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-    import * as api from "$lib/api/client.ts";
+    import { Ellipsis } from "lucide-svelte";
+    import { Button } from "$lib/components/ui/button";
+    import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+    import { deleteSchool } from "$lib/api/client";
     
     let { id }: { id: string } = $props();
 
     const deleteRow = async (id: string) => {
-        await api.del("schools/"+id);
+        await deleteSchool(id);
         invalidateAll();
     };
    </script>
@@ -36,6 +36,9 @@
       </DropdownMenu.Item>
      </DropdownMenu.Group>
      <DropdownMenu.Separator />
+     <DropdownMenu.Item>
+        <a href="/school-operations/schools/edit/{id}">Edit School</a>
+     </DropdownMenu.Item>
      <DropdownMenu.Item>View students 🚧</DropdownMenu.Item>
      <DropdownMenu.Item onclick={() => deleteRow(id)}>
         Delete School
