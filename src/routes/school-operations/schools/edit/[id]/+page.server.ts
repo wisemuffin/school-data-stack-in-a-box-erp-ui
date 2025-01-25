@@ -3,13 +3,12 @@ import { fail, redirect, error } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
 import { formSchema } from "../../add/schema";
 import { zod } from "sveltekit-superforms/adapters";
-import { getSchoolById, updateSchool, getAllGeographies } from "$lib/api/client";
+import { getSchoolById, updateSchool } from "$lib/api/client";
 
 export const load: PageServerLoad = (async ({ params }) => {
-    const [form, school, geographiesResponse] = await Promise.all([
+    const [form, school] = await Promise.all([
         superValidate(zod(formSchema)),
-        getSchoolById(params.id),
-        getAllGeographies()
+        getSchoolById(params.id)
     ]);
 
     if (!school) {
@@ -24,8 +23,7 @@ export const load: PageServerLoad = (async ({ params }) => {
 
     return {
         form,
-        school,
-        geographies: geographiesResponse.items
+        school
     };
 });
 
