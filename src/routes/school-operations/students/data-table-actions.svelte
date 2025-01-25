@@ -1,6 +1,6 @@
 <script lang="ts">
     import { invalidateAll, goto } from '$app/navigation';
-    import { Ellipsis, Pencil } from "lucide-svelte";
+    import { Ellipsis, Pencil, Trash, Copy } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as api from "$lib/api/client.ts";
@@ -32,11 +32,13 @@
                 Edit student
             </DropdownMenu.Item>
             <DropdownMenu.Item onclick={() => navigator.clipboard.writeText(id)}>
+                <Copy class="mr-2 h-4 w-4" />
                 Copy student ID
             </DropdownMenu.Item>
         </DropdownMenu.Group>
         <DropdownMenu.Separator />
         <DropdownMenu.Item onclick={() => deleteStudent(id)}>
+            <Trash class="mr-2 h-4 w-4" />
             Delete Student
         </DropdownMenu.Item>
     </DropdownMenu.Content>

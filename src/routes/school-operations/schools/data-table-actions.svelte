@@ -1,7 +1,7 @@
 <script lang="ts">
    import { invalidateAll } from '$app/navigation';
 
-    import { Ellipsis } from "lucide-svelte";
+    import { Ellipsis, Pencil, Trash, Copy, Search } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import { deleteSchool } from "$lib/api/client";
@@ -32,15 +32,21 @@
      <DropdownMenu.Group>
       <DropdownMenu.GroupHeading>Actions</DropdownMenu.GroupHeading>
       <DropdownMenu.Item onclick={() => navigator.clipboard.writeText(id)}>
+       <Copy class="mr-2 h-4 w-4" />
        Copy school ID
       </DropdownMenu.Item>
      </DropdownMenu.Group>
-     <DropdownMenu.Separator />
      <DropdownMenu.Item>
-        <a href="/school-operations/schools/edit/{id}">Edit School</a>
+      <Pencil class="mr-2 h-4 w-4" />
+      <a href="/school-operations/schools/edit/{id}">Edit School</a>
      </DropdownMenu.Item>
-     <DropdownMenu.Item>View students 🚧</DropdownMenu.Item>
+     <DropdownMenu.Item>
+      <Search class="mr-2 h-4 w-4" />
+      View students 🚧</DropdownMenu.Item>
+     <DropdownMenu.Separator />
+
      <DropdownMenu.Item onclick={() => deleteRow(id)}>
+        <Trash class="mr-2 h-4 w-4" />
         Delete School
        </DropdownMenu.Item>
     </DropdownMenu.Content>

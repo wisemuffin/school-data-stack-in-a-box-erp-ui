@@ -1,7 +1,7 @@
 import type { PageServerLoad, Actions } from "./$types";
 import { fail, redirect } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
-import { formSchema } from "./schema";
+import { formSchema } from "../student-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
 import { getAllSchools, createStudent } from "$lib/api/client";
 import type { School } from "$lib/api/types/api";

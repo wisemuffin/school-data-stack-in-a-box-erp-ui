@@ -1,7 +1,7 @@
 <script lang="ts">
     import { superForm } from "sveltekit-superforms/client";
     import { zodClient } from "sveltekit-superforms/adapters";
-    import { formSchema } from "../../add/schema";
+    import { formSchema } from "../../school-form-schema";
     import SchoolForm from "../../school-form.svelte";
 
     let { data } = $props();
