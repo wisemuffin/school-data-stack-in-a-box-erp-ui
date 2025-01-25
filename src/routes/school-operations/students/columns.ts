@@ -13,7 +13,7 @@ export type Student = {
 };
  
  
-export const columns: ColumnDef<Student>[] = [
+export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) => Promise<void>): ColumnDef<Student>[] => [
   {
    id: "select",
    header: ({ table }) =>
@@ -23,13 +23,16 @@ export const columns: ColumnDef<Student>[] = [
       table.getIsSomePageRowsSelected() &&
       !table.getIsAllPageRowsSelected(),
      onCheckedChange: (value) => table.toggleAllPageRowsSelected(!!value),
-     "aria-label": "Select all"
+     "aria-label": "Select all",
+     checkedRows
     }),
    cell: ({ row }) =>
     renderComponent(DataTableCheckbox, {
      checked: row.getIsSelected(),
      onCheckedChange: (value) => row.toggleSelected(!!value),
-     "aria-label": "Select row"
+     "aria-label": "Select row",
+     id: row.getValue("id") as string,
+     checkedRows
     }),
    enableSorting: false,
    enableHiding: false
@@ -51,6 +54,10 @@ export const columns: ColumnDef<Student>[] = [
    id: "actions",
    enableHiding: false,
    cell: ({ row }) =>
-    renderComponent(DataTableActions, { id: row.original.id })
+    renderComponent(DataTableActions, {
+     id: row.getValue("id") as string,
+     checkedRows,
+     onDelete: handleDelete
+    })
   }
  ];

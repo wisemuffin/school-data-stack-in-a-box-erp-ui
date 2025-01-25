@@ -1,12 +1,21 @@
 <script lang="ts">
-    import type { ComponentProps } from "svelte";
-    import { Checkbox } from "$lib/components/ui/checkbox/index.js";
+    import { Checkbox } from "$lib/components/ui/checkbox";
     
-    let {
-     checked = false,
-     controlledChecked = true,
-     ...restProps
-    }: ComponentProps<typeof Checkbox> = $props();
-   </script>
-    
-   <Checkbox {checked} {controlledChecked} {...restProps} />
+    let { id, checkedRows } = $props<{
+        id: string;
+        checkedRows: Set<string>;
+    }>();
+
+    const toggleRow = () => {
+        if (checkedRows.has(id)) {
+            checkedRows.delete(id);
+        } else {
+            checkedRows.add(id);
+        }
+    };
+</script>
+
+<Checkbox 
+    checked={checkedRows.has(id)}
+    onCheckedChange={toggleRow}
+/>

@@ -5,11 +5,18 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as api from "$lib/api/client.ts";
     
-    let { id }: { id: string } = $props();
+    let { id, checkedRows, onDelete } = $props<{
+        id: string;
+        checkedRows: Set<string>;
+        onDelete: (ids: string[]) => Promise<void>;
+    }>();
 
-    const deleteStudent = async (id: string) => {
-        await api.del("students/"+id);
-        invalidateAll();
+    const deleteRow = async () => {
+        if (checkedRows.size > 0) {
+            await onDelete(Array.from(checkedRows));
+        } else {
+            await onDelete([id]);
+        }
     };
 
     const editStudent = (id: string) => {
@@ -37,9 +44,9 @@
             </DropdownMenu.Item>
         </DropdownMenu.Group>
         <DropdownMenu.Separator />
-        <DropdownMenu.Item onclick={() => deleteStudent(id)}>
+        <DropdownMenu.Item onclick={deleteRow}>
             <Trash class="mr-2 h-4 w-4" />
-            Delete Student
+            Delete {checkedRows.size > 0 ? 'Selected Students' : 'Student'}
         </DropdownMenu.Item>
     </DropdownMenu.Content>
 </DropdownMenu.Root>

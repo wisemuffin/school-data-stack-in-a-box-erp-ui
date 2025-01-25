@@ -8,14 +8,24 @@
 
     import {columns} from "./columns.js"
     
+    import { deleteStudent } from "$lib/api/client";
+    import { invalidateAll } from "$app/navigation";
 
     let { data } = $props();
 
     const filterColumns = ["first_name", "last_name"]
 
+    let checkedRows = $state(new Set<string>());
     
+    const handleDelete = async (ids: string[]) => {
+        for (const id of ids) {
+            await deleteStudent(id);
+        }
+        checkedRows.clear();
+        await invalidateAll();
+    };
 
-   </script>
+</script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card class="col-span-4 p-4">
                 <Button 
@@ -25,7 +35,7 @@
                 <PlusCircleIcon/>Add Student
                 </Button>
                 <DataTableDg 
-                    columns={columns} 
+                    columns={columns(checkedRows, handleDelete)} 
                     data={data.students} 
                     filterColumns={filterColumns} 
                     showColumnVisibility={true}
