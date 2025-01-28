@@ -1,23 +1,26 @@
 <script lang="ts">
 import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-import * as Tabs from "$lib/components/ui/tabs/index.js";
+import * as Tabs from "$lib/components/ui/tabs";
 import * as Card from "$lib/components/ui/card/index.js"
 
-import { Button } from "$lib/components/ui/button/index.js";
+import { Button } from "$lib/components/ui/button";
 
 import DatePickerWithRange from "$lib/components/ui/date-picker-with-range.svelte";
 
 import Activity from "lucide-svelte/icons/activity";
 	import CreditCard from "lucide-svelte/icons/credit-card";
 import DollarSign from "lucide-svelte/icons/dollar-sign";
-import Download from "lucide-svelte/icons/download";
+import { Download } from "lucide-svelte";
 import Users from "lucide-svelte/icons/users";
+
+import { page } from "$app/stores";
 
 // import Overview from "./overview.svelte"
 
 let { children } = $props();
 
-    
+let currentPath = $derived($page.url.pathname);
+let currentTab = $derived(currentPath.split('/').pop() || 'overview');
 </script>
 
 <div class="flex-col">
@@ -33,7 +36,7 @@ let { children } = $props();
 				</Button>
 			</div>
 		</div>
-		<Tabs.Root value="overview" class="space-y-4">
+		<Tabs.Root value={currentTab} class="space-y-4">
 			<Tabs.List>
 				<Tabs.Trigger value="overview" class="text-nsw-brand-dark/80 dark:text-white/80">
 					<a href="/school-operations">Overview</a>
