@@ -18,7 +18,7 @@
 <header
 	class="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
 >
-	<Svelte5Banner />
+	<!-- <Svelte5Banner /> -->
 	<div class="container flex h-14 max-w-screen-2xl items-center">
 		<MainNav class="hidden md:flex text-nsw-brand-dark dark:text-white" />
 		<div class="md:hidden">

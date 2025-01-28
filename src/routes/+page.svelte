@@ -38,9 +38,9 @@
 <!-- <div class="w-full h-screen flex items-center justify-center"></div>     -->
 <div class="flex h-full w-full grow flex-col items-center justify-center">
 	<!-- Hero Section -->
-	<div class="relative w-full bg-white dark:bg-gray-950 py-32">
+	<div class="relative w-full bg-white dark:bg-gray-950 py-8 md:py-32">
 		<div class="container mx-auto px-4">
-			<div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+			<div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
 				<div class="flex flex-col gap-8 max-w-xl">
 					<h1 class="text-6xl font-bold leading-tight text-nsw-brand-dark dark:text-white">
 						Transform Your School Operations
