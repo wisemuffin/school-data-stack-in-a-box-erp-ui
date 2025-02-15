@@ -30,15 +30,6 @@
             >
                 <PlusCircleIcon/>Add Course
             </Button>
-            <Button 
-                variant="outline"
-                onclick={() => handleDelete(Array.from(checkedRows))}
-                disabled={checkedRows.size === 0}
-                class="gap-2 border-nsw-brand-dark text-nsw-brand-dark dark:border-white dark:text-white hover:bg-nsw-brand-dark/10 dark:hover:bg-white/10"
-            >
-                <Trash class="size-4" />
-                Delete Selected ({checkedRows.size})
-            </Button>
         </div>
         <DataTableDg 
             columns={createColumns(checkedRows, handleDelete)} 
