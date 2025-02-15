@@ -4,18 +4,24 @@
 
 
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
-	import { PlusCircleIcon } from "lucide-svelte";
+	import { PlusCircleIcon, Trash } from "lucide-svelte";
 
     import {columns} from "./data-table-columns.js"
     
     import { deleteStudent } from "$lib/api/client";
     import { invalidateAll } from "$app/navigation";
+    import StudentDialogForm from "./student-dialog-form.svelte";
+    import { superForm } from "sveltekit-superforms/client";
+    import { zodClient } from "sveltekit-superforms/adapters";
+    import { formSchema } from "./student-form-schema";
 
     let { data } = $props();
 
     const filterColumns = ["first_name", "last_name"]
 
     let checkedRows = $state(new Set<string>());
+    
+    let dialogOpen = $state(false);
     
     const handleDelete = async (ids: string[]) => {
         for (const id of ids) {
@@ -25,15 +31,27 @@
         await invalidateAll();
     };
 
+    const form = superForm(data.form, {
+        validators: zodClient(formSchema),
+        dataType: 'json',
+        onResult: ({ result }) => {
+            if (result.type === 'success') {
+                dialogOpen = false;
+            }
+        }
+    });
+
 </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
             <Card class="col-span-4 p-4">
-                <Button 
-                    href="/school-operations/students/add" 
-                    class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100 mb-4"
-                >
-                <PlusCircleIcon/>Add Student
-                </Button>
+                <div class="flex gap-2 mb-4">
+                    <Button 
+                        onclick={() => dialogOpen = true}
+                        class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
+                    >
+                        <PlusCircleIcon/>Add Student
+                    </Button>
+                </div>
                 <DataTableDg 
                     columns={columns(checkedRows, handleDelete)} 
                     data={data.students} 
@@ -47,4 +65,6 @@
             </Card>
 
 </div>
+
+<StudentDialogForm {form} bind:open={dialogOpen} />
    
