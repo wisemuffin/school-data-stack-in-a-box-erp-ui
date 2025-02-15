@@ -37,6 +37,9 @@
         onResult: ({ result }) => {
             if (result.type === 'success') {
                 dialogOpen = false;
+                const url = new URL(window.location.href);
+                url.searchParams.delete('id');
+                history.pushState({}, '', url.toString());
             }
         }
     });
@@ -53,7 +56,7 @@
                     </Button>
                 </div>
                 <DataTableDg 
-                    columns={columns(checkedRows, handleDelete)} 
+                    columns={columns(checkedRows, handleDelete, (open) => dialogOpen = open)} 
                     data={data.students} 
                     filterColumns={filterColumns} 
                     showColumnVisibility={true}

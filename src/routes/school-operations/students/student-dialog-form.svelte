@@ -5,6 +5,7 @@
     import * as Dialog from "$lib/components/ui/dialog";
     import type { SuperForm } from "sveltekit-superforms";
     import type { FormSchema } from "./student-form-schema";
+    import { page } from '$app/stores';
 
     let { form, open = $bindable() } = $props<{
         form: SuperForm<FormSchema>;
@@ -12,17 +13,25 @@
     }>();
     
     const { form: formData, enhance } = form;
+    
+    let isEdit = $derived(!!$page.url.searchParams.get('id'));
+    let title = $derived(isEdit ? 'Edit Student' : 'Add Student');
+    let description = $derived(isEdit ? 'Update student information.' : 'Create a new student record.');
+    let submitLabel = $derived(isEdit ? 'Update' : 'Create');
 </script>
 
 <Dialog.Root bind:open>
     <Dialog.Content class="sm:max-w-[425px]">
         <Dialog.Header>
-            <Dialog.Title>Add Student</Dialog.Title>
+            <Dialog.Title>{title}</Dialog.Title>
             <Dialog.Description>
-                Create a new student record.
+                {description}
             </Dialog.Description>
         </Dialog.Header>
         <form method="POST" use:enhance class="space-y-6">
+            {#if isEdit}
+                <input type="hidden" name="id" value={$page.url.searchParams.get('id')} />
+            {/if}
             <Field {form} name="first_name">
                 <Control>
                     <Label>First Name</Label>
@@ -47,7 +56,7 @@
 
             <Dialog.Footer>
                 <Button type="submit" class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
-                    Create Student
+                    {submitLabel}
                 </Button>
             </Dialog.Footer>
         </form>

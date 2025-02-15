@@ -13,7 +13,11 @@ export type Student = {
 };
  
  
-export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) => Promise<void>): ColumnDef<Student>[] => [
+export const columns = (
+    checkedRows: Set<string>, 
+    handleDelete: (ids: string[]) => Promise<void>,
+    setDialogOpen: (open: boolean) => void
+): ColumnDef<Student>[] => [
   {
    id: "select",
    header: ({ table }) =>
@@ -57,7 +61,8 @@ export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) 
     renderComponent(DataTableActions, {
      id: row.getValue("id") as string,
      checkedRows,
-     onDelete: handleDelete
+     onDelete: handleDelete,
+     setDialogOpen
     })
   }
  ];

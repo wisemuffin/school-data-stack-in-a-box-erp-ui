@@ -5,10 +5,11 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import * as api from "$lib/api/client.ts";
     
-    let { id, checkedRows, onDelete } = $props<{
+    let { id, checkedRows, onDelete, setDialogOpen } = $props<{
         id: string;
         checkedRows: Set<string>;
         onDelete: (ids: string[]) => Promise<void>;
+        setDialogOpen: (open: boolean) => void;
     }>();
 
     const deleteRow = async () => {
@@ -20,7 +21,10 @@
     };
 
     const editStudent = (id: string) => {
-        goto(`/school-operations/students/edit/${id}`);
+        const url = new URL(window.location.href);
+        url.searchParams.set('id', id);
+        goto(url.toString());
+        setDialogOpen(true);
     };
 </script>
     
