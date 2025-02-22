@@ -3,7 +3,7 @@ import { fail, redirect } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
 import { formSchema } from "../course-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
-import { createClass } from "$lib/api/client";
+import { createClass } from "$lib/api/erp/erp_client";
 
 export const load: PageServerLoad = (async () => {
     const form = await superValidate(zod(formSchema));

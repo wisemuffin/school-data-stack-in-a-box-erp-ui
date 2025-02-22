@@ -2,7 +2,7 @@ import type { ColumnDef } from "@tanstack/table-core";
 import { renderComponent } from "$lib/components/ui/data-table/index.js";
 import DataTableActions from "./data-table-actions.svelte";
 import DataTableCheckbox from "./data-table-checkbox.svelte";
-import type { Class } from "$lib/api/types/api";
+import type { Class } from "$lib/api/erp/types/erp_api";
 
 export const createColumns = (checkedRows: Set<string>, handleDelete: (ids: string[]) => Promise<void>): ColumnDef<Class>[] => [
     {

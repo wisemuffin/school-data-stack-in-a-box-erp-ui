@@ -20,7 +20,7 @@ import type {
     IncidentCreate,
     GetListResponse,
     GetOneResponse
-} from './types/api';
+} from './types/erp_api';
 
 const base = 'http://127.0.0.1:8000';
 

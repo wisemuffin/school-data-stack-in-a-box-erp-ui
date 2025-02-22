@@ -4,7 +4,7 @@
     import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
     import { PlusCircleIcon, Trash } from "lucide-svelte";
     import { createColumns } from "./data-table-columns.js";
-    import { deleteClass } from "$lib/api/client";
+    import { deleteClass } from "$lib/api/erp/erp_client.js";
     import { invalidateAll } from "$app/navigation";
 
     let { data } = $props();

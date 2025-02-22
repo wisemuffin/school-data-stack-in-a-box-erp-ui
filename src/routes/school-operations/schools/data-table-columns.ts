@@ -3,7 +3,7 @@ import { createRawSnippet } from "svelte";
 import { renderSnippet, renderComponent } from "$lib/components/ui/data-table/index.js";
 import DataTableActions from "./data-table-actions.svelte";
 import DataTableCheckbox from "./data-table-checkbox.svelte";
-import type { School } from "$lib/api/types/api";
+import type { School } from "$lib/api/erp/types/erp_api";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.

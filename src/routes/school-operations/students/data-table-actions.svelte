@@ -3,7 +3,7 @@
     import { Ellipsis, Pencil, Trash, Copy } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-    import * as api from "$lib/api/client.ts";
+    import * as api from "$lib/api/erp/erp_client";
     
     let { id, checkedRows, onDelete, setDialogOpen } = $props<{
         id: string;

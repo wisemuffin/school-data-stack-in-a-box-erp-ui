@@ -3,7 +3,7 @@ import { fail, redirect } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
 import { formSchema } from "../school-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
-import { getAllGeographies, createSchool } from "$lib/api/client";
+import { getAllGeographies, createSchool } from "$lib/api/erp/erp_client";
 
 export const load: PageServerLoad = (async () => {
     const [form, geographiesResponse] = await Promise.all([

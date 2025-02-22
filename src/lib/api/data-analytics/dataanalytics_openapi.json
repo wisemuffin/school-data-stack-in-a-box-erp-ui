@@ -1,0 +1,208 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+      "title": "MetricFlow API",
+      "description": "Open source API for dbt's MetricFlow",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/metrics": {
+        "get": {
+          "summary": "List Metrics",
+          "description": "List all available metrics from MetricFlow",
+          "operationId": "list_metrics_metrics_get",
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/query": {
+        "post": {
+          "summary": "Query Metrics",
+          "description": "Query metrics using MetricFlow.\n    \n    Dimensions should be specified in the format: <entity>__<dimension>\n    For time-based queries, use 'metric_time' as a dimension.\n    \n    Time ranges can be specified using start_time and end_time in YYYY-MM-DD format.",
+          "operationId": "query_metrics_query_post",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricQuery"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Successful query",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/MetricQueryResponse"
+                  },
+                  "examples": {
+                    "simple_query": {
+                      "summary": "Simple enrollment count by student",
+                      "value": {
+                        "sql": "SELECT COUNT(DISTINCT subq_1.enrollment_count) AS total_enrollments...",
+                        "results": [
+                          {
+                            "total_enrollments": 150,
+                            "student__student_id": "1"
+                          }
+                        ]
+                      }
+                    },
+                    "time_series": {
+                      "summary": "Daily enrollment counts over time",
+                      "value": {
+                        "sql": "SELECT DATE_TRUNC('day', metric_time) as date...",
+                        "results": [
+                          {
+                            "date": "2024-01-01",
+                            "total_enrollments": 145
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "422": {
+              "description": "Validation Error",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "detail": [
+                      {
+                        "loc": [
+                          "body",
+                          "metrics"
+                        ],
+                        "msg": "field required",
+                        "type": "value_error.missing"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "MetricQuery": {
+          "properties": {
+            "metrics": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array",
+              "title": "Metrics",
+              "description": "Names of metrics to include in the query. Required.",
+              "example": [
+                "total_enrollments"
+              ]
+            },
+            "group_by": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Group By",
+              "description": "Dimensions to group the metrics by. Format: <entity>__<dimension>. Use 'metric_time' for time-based grouping.",
+              "example": [
+                "metric_time"
+              ]
+            },
+            "where": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Where",
+              "description": "SQL WHERE clause to filter the metrics. References dimensions in the form <entity>__<dimension>.",
+              "example": "student__total_enrollments > 1"
+            },
+            "start_time": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Start Time",
+              "description": "Start of the time range to query. Format: YYYY-MM-DD. If set, filters metric_time >= start_time.",
+              "example": "2024-01-01"
+            },
+            "end_time": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "End Time",
+              "description": "End of the time range to query. Format: YYYY-MM-DD. If set, filters metric_time <= end_time.",
+              "example": "2024-03-01"
+            }
+          },
+          "type": "object",
+          "required": [
+            "metrics"
+          ],
+          "title": "MetricQuery"
+        },
+        "MetricQueryResponse": {
+          "properties": {
+            "sql": {
+              "type": "string",
+              "title": "Sql",
+              "description": "The SQL query that was executed"
+            },
+            "results": {
+              "items": {
+                "type": "object"
+              },
+              "type": "array",
+              "title": "Results",
+              "description": "Query results with metrics and dimensions"
+            }
+          },
+          "type": "object",
+          "required": [
+            "sql",
+            "results"
+          ],
+          "title": "MetricQueryResponse",
+          "description": "Response model for metric queries"
+        }
+      }
+    }
+  }

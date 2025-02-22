@@ -8,7 +8,7 @@
 
     import {columns} from "./data-table-columns.js"
     
-    import { deleteStudent } from "$lib/api/client";
+    import { deleteStudent } from "$lib/api/erp/erp_client.js";
     import { invalidateAll } from "$app/navigation";
     import StudentDialogForm from "./student-dialog-form.svelte";
     import { superForm } from "sveltekit-superforms/client";

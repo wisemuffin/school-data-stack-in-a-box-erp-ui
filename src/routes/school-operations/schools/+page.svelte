@@ -14,7 +14,7 @@
 
     const filterColumns = ["name"]
     import { PlusCircleIcon } from "lucide-svelte";
-	import { deleteSchool } from "$lib/api/client.js";
+	import { deleteSchool } from "$lib/api/erp/erp_client.js";
 	import { invalidateAll } from "$app/navigation";
 
     let checkedRows = $state(new Set<string>());

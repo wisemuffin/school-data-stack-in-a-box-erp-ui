@@ -3,7 +3,7 @@ import { fail, redirect, error } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
 import { formSchema } from "../../course-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
-import { getClassById, updateClass } from "$lib/api/client";
+import { getClassById, updateClass } from "$lib/api/erp/erp_client";
 
 export const load: PageServerLoad = (async ({ params }) => {
     const [form, course] = await Promise.all([

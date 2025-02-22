@@ -4,7 +4,7 @@
     import { Ellipsis, Pencil, Trash, Copy, Search } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-    import { deleteSchool } from "$lib/api/client";
+    import { deleteSchool } from "$lib/api/erp/erp_client";
     
     let { id, checkedRows, onDelete } = $props<{
         id: string;
