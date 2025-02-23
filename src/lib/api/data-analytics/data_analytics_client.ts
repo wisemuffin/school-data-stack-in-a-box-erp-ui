@@ -2,7 +2,10 @@ import type { MetricQuery, MetricQueryResponse } from './types/data_analytics_ap
 
 const API_URL = 'http://localhost:8001';
 
-export async function queryMetrics(query: MetricQuery): Promise<MetricQueryResponse> {
+export async function queryMetrics<
+    M extends MetricQuery['metrics'],
+    D extends NonNullable<MetricQuery['group_by']>
+>(query: MetricQuery & { metrics: M; group_by?: D }): Promise<MetricQueryResponse<M, D>> {
     const response = await fetch(`${API_URL}/query`, {
         method: 'POST',
         headers: {
@@ -16,5 +19,4 @@ export async function queryMetrics(query: MetricQuery): Promise<MetricQueryRespo
     }
 
     return await response.json();
-
 } 
