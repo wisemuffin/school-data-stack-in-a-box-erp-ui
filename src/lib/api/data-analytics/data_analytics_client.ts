@@ -15,5 +15,6 @@ export async function queryMetrics(query: MetricQuery): Promise<MetricQueryRespo
         throw new Error(`API error: ${response.statusText}`);
     }
 
-    return response.json();
+    return await response.json();
+
 } 
