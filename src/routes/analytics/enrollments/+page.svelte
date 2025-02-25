@@ -18,24 +18,27 @@
     // });
 
     // Simulate loading state
-    $effect(() => {
-        loading = true;
-        if (data.enrollments) {
-            loading = false;
-        }
-    });
+    // $effect(() => {
+    //     loading = true;
+    //     if (data.enrollments) {
+    //         loading = false;
+    //     }
+    // });
 </script>
 
 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
     <Card class="col-span-4 p-4">
 
-        {#if loading}
+        {#await data.enrollments}
             <EnrollmentTableSkeleton />
-        {:else}
+        {:then response}
             <div class="rounded-md border">
-                {JSON.stringify(data.enrollments)}
-                dave
+                {JSON.stringify(response.results)}
             </div>
-        {/if}
+        {:catch error}
+            <div class="rounded-md border p-4 text-red-500">
+                Error loading data: {error.message}
+            </div>
+        {/await}
     </Card>
 </div> 

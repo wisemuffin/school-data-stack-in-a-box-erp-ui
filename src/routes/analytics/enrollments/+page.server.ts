@@ -3,7 +3,7 @@ import { queryMetrics } from '$lib/api/data-analytics/data_analytics_client';
 
 export const load: PageServerLoad = async () => {
     // Using default metric_time
-    const response1 = await queryMetrics({
+    const response1 =  queryMetrics({
         metrics: ['total_enrollments'],
         group_by: ['metric_time__month'], // Will use default granularity
         where: null,
@@ -14,6 +14,6 @@ export const load: PageServerLoad = async () => {
     
     // response.results will be typed as Array<{ total_enrollments: number, metric_time: string }>
     return {
-        enrollments: response1.results
+        enrollments: response1
     };
 }; 
