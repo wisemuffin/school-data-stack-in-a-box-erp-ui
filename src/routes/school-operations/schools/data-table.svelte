@@ -4,7 +4,7 @@
     import { Button } from "$lib/components/ui/button";
     import { Badge } from "$lib/components/ui/badge";
     import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "$lib/components/ui/table";
-    import { Select, SelectContent, SelectItem, SelectTrigger } from "$lib/components/ui/select";
+    import * as Select from "$lib/components/ui/select/index.js";
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
     import { Checkbox } from "$lib/components/ui/checkbox";
     import type { School } from "$lib/api/types/api";
@@ -24,6 +24,7 @@
     let selectedRows = $state(new Set<string>());
     let currentPage = $state(0);
     let pageSize = $state(10);
+    const pageSizeOptions = [5, 10, 20, 50];
 
     // Derived values
     const filteredSchools = $derived.by(() => {
@@ -180,26 +181,70 @@
 </div>
 
 <!-- Pagination -->
-<div class="flex items-center justify-between space-x-4 py-4">
-    <div class="text-sm text-muted-foreground">
-        Showing {paginatedSchools.length} of {filteredSchools.length} schools
+<div class="flex items-center justify-between px-2 py-4">
+    <div class="flex items-center gap-2">
+        <p class="text-sm text-muted-foreground">
+            Rows per page
+        </p>
+        <Select.Root type="single" value={pageSize.toString()} onValueChange={(value) => {
+            pageSize = parseInt(value);
+            currentPage = 0;
+        }}>
+            <Select.Trigger class="h-8 w-[70px]">
+                {pageSize}
+            </Select.Trigger>
+            <Select.Content>
+                <Select.Group>
+                    {#each pageSizeOptions as size}
+                        <Select.Item value={size.toString()}>{size}</Select.Item>
+                    {/each}
+                </Select.Group>
+            </Select.Content>
+        </Select.Root>
     </div>
-    <div class="flex items-center space-x-2">
+    <div class="flex items-center gap-1 text-sm text-muted-foreground">
+        <div>Page {currentPage + 1} of {Math.max(1, pageCount())}</div>
+    </div>
+    <div class="flex items-center gap-2">
         <Button
             variant="outline"
-            size="sm"
-            onclick={() => currentPage--}
+            size="icon"
+            class="h-8 w-8"
             disabled={!hasPreviousPage}
+            onclick={() => currentPage = 0}
         >
-            Previous
+            <span class="sr-only">Go to first page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg>
         </Button>
         <Button
             variant="outline"
-            size="sm"
-            onclick={() => currentPage++}
-            disabled={!hasNextPage}
+            size="icon"
+            class="h-8 w-8"
+            disabled={!hasPreviousPage}
+            onclick={() => currentPage--}
         >
-            Next
+            <span class="sr-only">Go to previous page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+        </Button>
+        <Button
+            variant="outline"
+            size="icon"
+            class="h-8 w-8"
+            disabled={!hasNextPage}
+            onclick={() => currentPage++}
+        >
+            <span class="sr-only">Go to next page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        </Button>
+        <Button
+            variant="outline"
+            size="icon"
+            class="h-8 w-8"
+            disabled={!hasNextPage}
+            onclick={() => currentPage = Math.max(0, Math.ceil(filteredSchools.length / pageSize) - 1)}
+        >
+            <span class="sr-only">Go to last page</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-right"><path d="m13 17 5-5-5-5"/><path d="m6 17 5-5-5-5"/></svg>
         </Button>
     </div>
 </div>
