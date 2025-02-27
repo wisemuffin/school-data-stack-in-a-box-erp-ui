@@ -1,21 +1,34 @@
 <script lang="ts" generics="TData, TValue">
 	import {
 		type ColumnDef,
-		type PaginationState,
-		type SortingState,
 		type ColumnFiltersState,
+		type PaginationState,
+		type RowSelectionState,
+		type SortingState,
 		type VisibilityState,
 		getCoreRowModel,
+		getFacetedRowModel,
+		getFacetedUniqueValues,
+		getFilteredRowModel,
 		getPaginationRowModel,
 		getSortedRowModel,
-		getFilteredRowModel
 	} from '@tanstack/table-core';
+
+	import DataTableToolbar from "./data-table-toolbar.svelte";
+	import DataTablePagination from "./data-table-pagination.svelte";
+
 	import { createSvelteTable, FlexRender } from '$lib/components/ui/data-table/index.js';
 	import ChevronDown from 'lucide-svelte/icons/chevron-down';
 	import * as Table from '$lib/components/ui/table/index.js';
+
+	// should be able to remove once refactor over
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
+
+	// let { columns, data }: { columns: ColumnDef<TData, TValue>[]; data: TData[] } = $props();
+
+
 
 	type DataTableProps<TData, TValue> = {
 		columns: ColumnDef<TData, TValue>[];
@@ -37,6 +50,7 @@
 		textSubtleClass = "text-nsw-brand-dark/70 dark:text-white/70"
 	}: DataTableProps<TData, TValue> = $props();
 
+	let rowSelection = $state<RowSelectionState>({});
 	let pagination = $state<PaginationState>({ pageIndex: 0, pageSize: 10 });
 	let sorting = $state<SortingState>([]);
 	let columnFilters = $state<ColumnFiltersState>([]);
@@ -46,11 +60,32 @@
 		get data() {
 			return data;
 		},
+		state: {
+			get pagination() {
+				return pagination;
+			},
+			get sorting() {
+				return sorting;
+			},
+			get columnFilters() {
+				return columnFilters;
+			},
+			get columnVisibility() {
+				return columnVisibility;
+			},
+			get rowSelection() {
+				return rowSelection;
+			},
+		},
 		columns,
-		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		getFilteredRowModel: getFilteredRowModel(),
+		enableRowSelection: true,
+		onRowSelectionChange: (updater) => {
+			if (typeof updater === "function") {
+				rowSelection = updater(rowSelection);
+			} else {
+				rowSelection = updater;
+			}
+		},
 		onSortingChange: (updater) => {
 			if (typeof updater === 'function') {
 				sorting = updater(sorting);
@@ -79,26 +114,19 @@
 				columnVisibility = updater;
 			}
 		},
-		state: {
-			get pagination() {
-				return pagination;
-			},
-			get sorting() {
-				return sorting;
-			},
-			get columnFilters() {
-				return columnFilters;
-			},
-			get columnVisibility() {
-				return columnVisibility;
-			}
-		},
+		getCoreRowModel: getCoreRowModel(),
+		getPaginationRowModel: getPaginationRowModel(),
+		getSortedRowModel: getSortedRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
+		getFacetedRowModel: getFacetedRowModel(),
+		getFacetedUniqueValues: getFacetedUniqueValues(),
 		// rowCount: 100
 	});
 </script>
 
 <div class="w-full">
-	<div class="flex items-center py-4">
+	<DataTableToolbar {table} />
+	<!-- <div class="flex items-center py-4">
 		{#if filterColumns}
 			{#each filterColumns as filterColumn}
 				<Input
@@ -138,15 +166,14 @@
 			
 		{/if}
 
-		
-	</div>
+	</div> -->
 	<div class="rounded-md border">
 		<Table.Root>
 			<Table.Header>
 				{#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
 					<Table.Row>
 						{#each headerGroup.headers as header (header.id)}
-							<Table.Head class={textClass}>
+							<Table.Head class={textClass} colspan={header.colSpan}>
 								{#if !header.isPlaceholder}
 									<FlexRender
 										content={header.column.columnDef.header}
@@ -177,24 +204,6 @@
 			</Table.Body>
 		</Table.Root>
 	</div>
-	<div class="flex items-center justify-end space-x-2 py-4">
-		<Button
-			variant="outline"
-			size="sm"
-			onclick={() => table.previousPage()}
-			disabled={!table.getCanPreviousPage()}
-			class={textClass}
-		>
-			Previous
-		</Button>
-		<Button
-			variant="outline"
-			size="sm"
-			onclick={() => table.nextPage()}
-			disabled={!table.getCanNextPage()}
-			class={textClass}
-		>
-			Next
-		</Button>
-	</div>
+	<DataTablePagination {table} />
+
 </div>

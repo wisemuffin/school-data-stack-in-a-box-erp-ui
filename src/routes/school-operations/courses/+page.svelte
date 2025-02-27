@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button/index.js";
     import { Card } from "$lib/components/ui/card/index.js";
-    import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
+    import DataTableDg from "$lib/components/ui/data-table-general/data-table-general.svelte";
     import { PlusCircleIcon, Trash } from "lucide-svelte";
     import { createColumns } from "./data-table-columns.js";
     import { deleteClass } from "$lib/api/erp/erp_client.js";

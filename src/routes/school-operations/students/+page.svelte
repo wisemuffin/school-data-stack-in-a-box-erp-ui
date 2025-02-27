@@ -3,10 +3,13 @@
 	import { Card } from "$lib/components/ui/card/index.js";
 
 
-    import DataTableDg from "$lib/components/ui/data-table-dg.svelte";
+    import DataTable from "$lib/components/ui/data-table-general/data-table-general.svelte";
 	import { PlusCircleIcon, Trash } from "lucide-svelte";
 
     import {columns} from "./data-table-columns.js"
+
+    import {columns as columns_task} from '$lib/components/ui/data-table-general/columns.js'
+    import {data as data_task} from '$lib/components/ui/data-table-general/data/tasks.js'
     
     import { deleteStudent } from "$lib/api/erp/erp_client.js";
     import { invalidateAll } from "$app/navigation";
@@ -46,6 +49,10 @@
 
 </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
+        <DataTable 
+            columns={columns_task} 
+            data={data_task} 
+        />
             <Card class="col-span-4 p-4">
                 <div class="flex gap-2 mb-4">
                     <Button 
@@ -55,7 +62,7 @@
                         <PlusCircleIcon/>Add Student
                     </Button>
                 </div>
-                <DataTableDg 
+                <DataTable 
                     columns={columns(checkedRows, handleDelete, (open) => dialogOpen = open)} 
                     data={data.students} 
                     filterColumns={filterColumns} 
