@@ -26,7 +26,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 
-	import type { DataTableFilterOption } from "./types";
+	import type { DataTableFilterOption, TextFilterColumn, FacetedFilterColumn } from "./types";
 
 
 	type DataTableProps<TData, TValue> = {
@@ -36,15 +36,8 @@
 		textClass?: string;
 		textMutedClass?: string;
 		textSubtleClass?: string;
-		filterableColumns?: {
-			id: string;
-			title: string;
-			options?: DataTableFilterOption[];
-		}[];
-		textFilterColumns?: {
-			id: string;
-			placeholder?: string;
-		}[];
+		filterableColumns?: FacetedFilterColumn[];
+		textFilterColumns?: TextFilterColumn[];
 	};
 
 	let { 

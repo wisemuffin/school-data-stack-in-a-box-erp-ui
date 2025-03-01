@@ -11,20 +11,13 @@
 	import { Search } from "lucide-svelte";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 	// import { Cross2Icon } from "$lib/components/ui/icons/index.js";
-	import type { DataTableFilterOption } from "./types";
+	import type { DataTableFilterOption, TextFilterColumn, FacetedFilterColumn } from "./types";
 
 	let { table, showColumnVisibility, filterableColumns = [], textFilterColumns = [] } = $props<{
 		table: Table<TData>;
 		showColumnVisibility?: boolean;
-		filterableColumns?: {
-			id: string;
-			title: string;
-			options?: DataTableFilterOption[];
-		}[];
-		textFilterColumns?: {
-			id: string;
-			placeholder?: string;
-		}[];
+		filterableColumns?: FacetedFilterColumn[];
+		textFilterColumns?: TextFilterColumn[];
 	}>();
 
 	let globalFilter = $state(table.getState().globalFilter || "");
@@ -87,7 +80,7 @@
 		{#if isFiltered}
 			<Button
 				variant="ghost"
-				on:click={clearFilters}
+				onclick={clearFilters}
 				class="h-8 px-2 lg:px-3"
 			>
 				Reset
