@@ -124,7 +124,7 @@
 	});
 </script>
 
-<div class="w-full">
+<div class="space-y-4">
 	<DataTableToolbar {table} />
 	<!-- <div class="flex items-center py-4">
 		{#if filterColumns}

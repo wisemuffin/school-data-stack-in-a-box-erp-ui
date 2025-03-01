@@ -49,10 +49,13 @@
 
 </script>
     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-        <DataTable 
-            columns={columns_task} 
-            data={data_task} 
-        />
+        <div class="h-full flex-1 flex-col space-y-8 p-8 md:flex">
+
+            <DataTable 
+                columns={columns_task} 
+                data={data_task} 
+            />
+        </div>
             <Card class="col-span-4 p-4">
                 <div class="flex gap-2 mb-4">
                     <Button 

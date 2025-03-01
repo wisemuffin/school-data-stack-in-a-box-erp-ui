@@ -35,5 +35,15 @@ export const mainNav = [
         title: "Enrollments",
         href: "/analytics/enrollments",
         icon: ChartBar,
+    },
+    {
+        title: "Demo Table",
+        href: "/demo/table",
+        icon: ChartBar,
+    },
+    {
+        title: "Demos",
+        href: "/demo",
+        icon: ChartBar,
     }
 ] as const; 
