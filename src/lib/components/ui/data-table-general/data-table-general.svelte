@@ -41,6 +41,10 @@
 			title: string;
 			options?: DataTableFilterOption[];
 		}[];
+		textFilterColumns?: {
+			id: string;
+			placeholder?: string;
+		}[];
 	};
 
 	let { 
@@ -50,7 +54,8 @@
 		textClass = "text-nsw-brand-dark dark:text-white",
 		textMutedClass = "text-nsw-brand-dark/80 dark:text-white/80",
 		textSubtleClass = "text-nsw-brand-dark/70 dark:text-white/70",
-		filterableColumns = []
+		filterableColumns = [],
+		textFilterColumns = []
 	}: DataTableProps<TData, TValue> = $props();
 
 	let rowSelection = $state<RowSelectionState>({});
@@ -135,7 +140,7 @@
 </script>
 
 <div class="space-y-4">
-	<DataTableToolbar {table} {showColumnVisibility} {filterableColumns} />
+	<DataTableToolbar {table} {showColumnVisibility} {filterableColumns} {textFilterColumns} />
 	<div class="rounded-md border">
 		<Table.Root>
 			<Table.Header>

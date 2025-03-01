@@ -11,6 +11,12 @@
         columns={columns_task} 
         data={data_task} 
         showColumnVisibility={true}
+        textFilterColumns={[
+            {
+                id: "title",
+                placeholder: "Filter by title..."
+            },
+        ]}
         filterableColumns={[
             {
                 id: "status",

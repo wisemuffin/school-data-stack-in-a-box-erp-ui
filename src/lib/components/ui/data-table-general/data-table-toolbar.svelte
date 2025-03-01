@@ -13,13 +13,17 @@
 	// import { Cross2Icon } from "$lib/components/ui/icons/index.js";
 	import type { DataTableFilterOption } from "./types";
 
-	let { table, showColumnVisibility, filterableColumns = [] } = $props<{
+	let { table, showColumnVisibility, filterableColumns = [], textFilterColumns = [] } = $props<{
 		table: Table<TData>;
 		showColumnVisibility?: boolean;
 		filterableColumns?: {
 			id: string;
 			title: string;
 			options?: DataTableFilterOption[];
+		}[];
+		textFilterColumns?: {
+			id: string;
+			placeholder?: string;
 		}[];
 	}>();
 
@@ -50,17 +54,25 @@
 		table.resetColumnFilters();
 	}
 </script>
-{@debug globalFilter}
-{@debug filterableColumns}
 <div class="flex items-center justify-between">
 	<div class="flex flex-1 items-center space-x-2">
-		<Input
-			placeholder="Filter tasks..."
-			bind:value={globalFilter}
-			class="h-8 w-[150px] lg:w-[250px]"
-		>
-			<Search slot="leading" class="h-4 w-4" />
-		</Input>
+		{#each textFilterColumns as column}
+			{#if table.getColumn(column.id)}
+				<Input
+					placeholder={column.placeholder || `Filter ${column.id}...`}
+					value={(table.getColumn(column.id)?.getFilterValue() as string) ?? ""}
+					oninput={(e) => {
+						table.getColumn(column.id)?.setFilterValue(e.currentTarget.value);
+					}}
+					onchange={(e) => {
+						table.getColumn(column.id)?.setFilterValue(e.currentTarget.value);
+					}}
+					class="h-8 w-[150px] lg:w-[250px]"
+				>
+					<Search slot="leading" class="h-4 w-4" />
+				</Input>
+			{/if}
+		{/each}
 
 		{#each filterableColumns as column}
 			{#if table.getColumn(column.id) && table.getColumn(column.id).getCanFilter()}
