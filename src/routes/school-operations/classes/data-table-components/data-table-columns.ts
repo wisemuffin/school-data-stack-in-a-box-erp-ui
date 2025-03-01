@@ -5,7 +5,7 @@ import DataTableActions from "./data-table-actions.svelte";
 import DataTableCheckbox from "./data-table-checkbox.svelte";
 import type { Class } from "$lib/api/erp/types/erp_api";
 
-
+// This type is used to define the shape of our data.
 export const columns = (
     checkedRows: Set<string>, 
     handleDelete: (ids: string[]) => Promise<void>,
@@ -38,7 +38,10 @@ export const columns = (
     accessorKey: "name",
     header: "Name",
   },
-  // Add other columns as needed
+  {
+    accessorKey: "scholastic_year_id",
+    header: "Scholastic Year ID",
+  },
   
   {
     id: "actions",

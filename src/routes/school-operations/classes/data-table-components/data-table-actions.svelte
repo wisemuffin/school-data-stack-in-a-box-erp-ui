@@ -12,7 +12,7 @@
     }>();
     
     function handleEdit() {
-        goto(`/school-operations/classes/edit/${id}`);
+        goto(`/school-operations/classes?id=${id}`);
     }
     
     async function handleDelete() {

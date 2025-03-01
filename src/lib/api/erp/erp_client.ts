@@ -183,6 +183,10 @@ export function createClass(data: ClassCreate): Promise<CreateResponse<Class>> {
     return send<CreateResponse<Class>>({ method: 'POST', path: 'classes', data });
 }
 
+export function updateClass(data: { id: number } & ClassCreate): Promise<UpdateResponse<Class>> {
+    return send<UpdateResponse<Class>>({ method: 'PUT', path: `classes/${data.id}`, data });
+}
+
 export function deleteClass(id: string): Promise<DeleteResponse<Class>> {
     return send<DeleteResponse<Class>>({ method: 'DELETE', path: `classes/${id}` });
 }
@@ -207,6 +211,10 @@ export function getAttendanceById(id: string): Promise<GetOneResponse<Attendance
 
 export function createAttendance(data: AttendanceCreate): Promise<CreateResponse<Attendance>> {
     return send<CreateResponse<Attendance>>({ method: 'POST', path: 'attendances', data });
+}
+
+export function updateAttendance(data: { id: number } & AttendanceCreate): Promise<UpdateResponse<Attendance>> {
+    return send<UpdateResponse<Attendance>>({ method: 'PUT', path: `attendances/${data.id}`, data });
 }
 
 export function deleteAttendance(id: string): Promise<DeleteResponse<Attendance>> {
@@ -235,6 +243,10 @@ export function createEnrolment(data: EnrolmentCreate): Promise<CreateResponse<E
     return send<CreateResponse<Enrolment>>({ method: 'POST', path: 'enrolments', data });
 }
 
+export function updateEnrolment(data: { id: number } & EnrolmentCreate): Promise<UpdateResponse<Enrolment>> {
+    return send<UpdateResponse<Enrolment>>({ method: 'PUT', path: `enrolments/${data.id}`, data });
+}
+
 export function deleteEnrolment(id: string): Promise<DeleteResponse<Enrolment>> {
     return send<DeleteResponse<Enrolment>>({ method: 'DELETE', path: `enrolments/${id}` });
 }
@@ -259,6 +271,10 @@ export function getIncidentById(id: string): Promise<GetOneResponse<Incident>> {
 
 export function createIncident(data: IncidentCreate): Promise<CreateResponse<Incident>> {
     return send<CreateResponse<Incident>>({ method: 'POST', path: 'incidents', data });
+}
+
+export function updateIncident(data: { id: number } & IncidentCreate): Promise<UpdateResponse<Incident>> {
+    return send<UpdateResponse<Incident>>({ method: 'PUT', path: `incidents/${data.id}`, data });
 }
 
 export function deleteIncident(id: string): Promise<DeleteResponse<Incident>> {
