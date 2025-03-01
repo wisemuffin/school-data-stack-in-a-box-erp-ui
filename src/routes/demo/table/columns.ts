@@ -1,14 +1,13 @@
 import type { ColumnDef } from "@tanstack/table-core";
 import { createRawSnippet } from "svelte";
 import type { Task } from "./data/schemas.js";
-import {
-	DataTableCheckbox,
-	DataTableColumnHeader,
-	DataTablePriorityCell,
-	DataTableRowActions,
-	DataTableStatusCell,
-	DataTableTitleCell,
-} from "./index.js";
+import {  DataTableCheckbox  } from "./data-table-components/index.js"
+import {  DataTableColumnHeader  } from "./data-table-components/index.js"
+import {  DataTablePriorityCell  } from "./data-table-components/index.js"
+import {  DataTableRowActions  } from "./data-table-components/index.js"
+import {  DataTableStatusCell  } from "./data-table-components/index.js"
+import {  DataTableTitleCell  } from "./data-table-components/index.js"
+
 import { renderComponent, renderSnippet } from "$lib/components/ui/data-table/index.js";
 
 export const columns: ColumnDef<Task>[] = [

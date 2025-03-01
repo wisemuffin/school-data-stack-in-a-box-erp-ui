@@ -5,50 +5,85 @@
 <script lang="ts" generics="TData">
 	import X from "lucide-svelte/icons/x";
 	import type { Table } from "@tanstack/table-core";
-	import { priorities, statuses } from "./data/data.ts";
 	import { DataTableFacetedFilter, DataTableViewOptions } from "./index.ts";
 	import Button from "$lib/components/ui/button/button.svelte";
 	import { Input } from "$lib/components/ui/input/index.js";
+	import { Search } from "lucide-svelte";
+	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	// import { Cross2Icon } from "$lib/components/ui/icons/index.js";
+	import type { DataTableFilterOption } from "./types";
 
-	let { table }: { table: Table<TData> } = $props();
+	let { table, showColumnVisibility, filterableColumns = [] } = $props<{
+		table: Table<TData>;
+		showColumnVisibility?: boolean;
+		filterableColumns?: {
+			id: string;
+			title: string;
+			options?: DataTableFilterOption[];
+		}[];
+	}>();
 
-	const isFiltered = $derived(table.getState().columnFilters.length > 0);
-	const statusCol = $derived(table.getColumn("status"));
-	const priorityCol = $derived(table.getColumn("priority"));
+	let globalFilter = $state(table.getState().globalFilter || "");
+	
+	
+	const isFiltered = $derived(
+		!!globalFilter || table.getState().columnFilters.length > 0
+	);
 
+	function getOptionsForColumn(columnId: string): DataTableFilterOption[] {
+		const column = table.getColumn(columnId);
+		if (!column) return [];
+		
+		const facetedValues = column.getFacetedUniqueValues();
+		if (!facetedValues) return [];
+		
+		return Array.from(facetedValues.entries())
+			.filter(([value]) => value != null && value !== '')
+			.map(([value, count]) => ({
+				value: String(value),
+				label: `${String(value)} (${count})`,
+			}));
+	}
+
+	function clearFilters() {
+		globalFilter = "";
+		table.resetColumnFilters();
+	}
 </script>
-
+{@debug globalFilter}
+{@debug filterableColumns}
 <div class="flex items-center justify-between">
 	<div class="flex flex-1 items-center space-x-2">
 		<Input
 			placeholder="Filter tasks..."
-			value={(table.getColumn("Status")?.getFilterValue() as string) ?? ""}
-			oninput={(e) => {
-				table.getColumn("Status")?.setFilterValue(e.currentTarget.value);
-			}}
-			onchange={(e) => {
-				table.getColumn("Status")?.setFilterValue(e.currentTarget.value);
-			}}
-			class="h-8 w-[150px] lg:w-[350px]"
-		/>
+			bind:value={globalFilter}
+			class="h-8 w-[150px] lg:w-[250px]"
+		>
+			<Search slot="leading" class="h-4 w-4" />
+		</Input>
 
-		{#if statusCol}
-			<DataTableFacetedFilter column={statusCol} title="Status" options={statuses} />
-		{/if}
-		{#if priorityCol}
-			<DataTableFacetedFilter column={priorityCol} title="Priority" options={priorities} />
-		{/if}
+		{#each filterableColumns as column}
+			{#if table.getColumn(column.id) && table.getColumn(column.id).getCanFilter()}
+				<DataTableFacetedFilter
+					column={table.getColumn(column.id)}
+					title={column.title}
+					options={column.options || getOptionsForColumn(column.id)}
+				/>
+			{/if}
+		{/each}
 
 		{#if isFiltered}
 			<Button
 				variant="ghost"
-				onclick={() => table.resetColumnFilters()}
+				on:click={clearFilters}
 				class="h-8 px-2 lg:px-3"
 			>
 				Reset
-				<X />
+				<X class="ml-2 h-4 w-4" />
 			</Button>
 		{/if}
 	</div>
-	<DataTableViewOptions {table} />
+	{#if showColumnVisibility}
+		<DataTableViewOptions {table} />
+	{/if}
 </div>

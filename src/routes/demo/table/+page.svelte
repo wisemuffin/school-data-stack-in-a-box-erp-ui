@@ -1,7 +1,7 @@
 <script lang="ts">
     import DataTable from "$lib/components/ui/data-table-general/data-table-general.svelte";
-    import {columns as columns_task} from '$lib/components/ui/data-table-general/columns.js'
-    import {data as data_task} from '$lib/components/ui/data-table-general/data/tasks.js'
+    import {columns as columns_task} from "./columns"
+    import {data as data_task} from './data/tasks.js'
    
 </script>
 
@@ -10,7 +10,27 @@
     <DataTable 
         columns={columns_task} 
         data={data_task} 
-    />
+        showColumnVisibility={true}
+        filterableColumns={[
+            {
+                id: "status",
+                title: "Status",
+                // options: [
+                //     { value: "actives", label: "Actives" },
+                //     { value: "inactive", label: "Inactive" }
+                // ]
+            },
+            {
+                id: "priority",
+                title: "Priority",
+                // options: [
+                //     { value: "Z", label: "Z" },
+                //     { value: "B", label: "B" },
+                //     { value: "C", label: "C" }
+                // ]
+            }
+        ]}
+/>
 </div>
 
 

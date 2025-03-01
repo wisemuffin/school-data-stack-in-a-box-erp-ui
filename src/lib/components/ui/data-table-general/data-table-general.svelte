@@ -26,28 +26,31 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 
-	// let { columns, data }: { columns: ColumnDef<TData, TValue>[]; data: TData[] } = $props();
-
+	import type { DataTableFilterOption } from "./types";
 
 
 	type DataTableProps<TData, TValue> = {
 		columns: ColumnDef<TData, TValue>[];
 		data: TData[];
-		filterColumns?: string[];
 		showColumnVisibility?: boolean;
 		textClass?: string;
 		textMutedClass?: string;
 		textSubtleClass?: string;
+		filterableColumns?: {
+			id: string;
+			title: string;
+			options?: DataTableFilterOption[];
+		}[];
 	};
 
 	let { 
 		data, 
 		columns, 
-		filterColumns, 
 		showColumnVisibility = true,
 		textClass = "text-nsw-brand-dark dark:text-white",
 		textMutedClass = "text-nsw-brand-dark/80 dark:text-white/80",
-		textSubtleClass = "text-nsw-brand-dark/70 dark:text-white/70"
+		textSubtleClass = "text-nsw-brand-dark/70 dark:text-white/70",
+		filterableColumns = []
 	}: DataTableProps<TData, TValue> = $props();
 
 	let rowSelection = $state<RowSelectionState>({});
@@ -102,9 +105,16 @@
 		},
 		onColumnFiltersChange: (updater) => {
 			if (typeof updater === 'function') {
-				columnFilters = updater(columnFilters);
+				const newFilters = updater(columnFilters);
+				columnFilters = newFilters;
+				// Force a re-render when filters change
+				table.getColumn(newFilters[0]?.id)?.getCanFilter();
 			} else {
 				columnFilters = updater;
+				// Force a re-render when filters change
+				if (updater.length > 0) {
+					table.getColumn(updater[0]?.id)?.getCanFilter();
+				}
 			}
 		},
 		onColumnVisibilityChange: (updater) => {
@@ -125,48 +135,7 @@
 </script>
 
 <div class="space-y-4">
-	<DataTableToolbar {table} />
-	<!-- <div class="flex items-center py-4">
-		{#if filterColumns}
-			{#each filterColumns as filterColumn}
-				<Input
-					placeholder="Filter {filterColumn}..."
-					value={(table.getColumn(filterColumn)?.getFilterValue() as string) ?? ''}
-					oninput={(e) => table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value)}
-					onchange={(e) => {
-						table.getColumn(filterColumn)?.setFilterValue(e.currentTarget.value);
-					}}
-					class="max-w-sm {textClass}"
-				/>
-			{/each}
-		{/if}
-
-		{#if showColumnVisibility}
-		<DropdownMenu.Root>
-			<DropdownMenu.Trigger>
-				{#snippet child({ props })}
-					<Button {...props} variant="outline" class="ml-auto {textClass}">
-						Columns <ChevronDown class="ml-2 size-4" />
-					</Button>
-				{/snippet}
-			</DropdownMenu.Trigger>
-			<DropdownMenu.Content align="end">
-				{#each table.getAllColumns().filter((col) => col.getCanHide()) as column}
-					<DropdownMenu.CheckboxItem
-						class="capitalize {textClass}"
-						controlledChecked
-						checked={column.getIsVisible()}
-						onCheckedChange={(value) => column.toggleVisibility(!!value)}
-					>
-						{column.id}
-					</DropdownMenu.CheckboxItem>
-				{/each}
-			</DropdownMenu.Content>
-		</DropdownMenu.Root>
-			
-		{/if}
-
-	</div> -->
+	<DataTableToolbar {table} {showColumnVisibility} {filterableColumns} />
 	<div class="rounded-md border">
 		<Table.Root>
 			<Table.Header>

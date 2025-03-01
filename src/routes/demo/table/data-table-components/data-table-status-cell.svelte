@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { statuses } from "./data/data.js";
+	import { statuses } from "../data/data.js";
 
 	let { value }: { value?: string } = $props();
 

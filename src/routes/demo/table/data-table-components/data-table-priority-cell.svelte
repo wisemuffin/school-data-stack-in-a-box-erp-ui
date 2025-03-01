@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { priorities } from "./data/data.js";
+	import { priorities } from "../data/data.ts";
 
 	let { value }: { value?: string } = $props();
 

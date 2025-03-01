@@ -14,23 +14,19 @@
 	import { cn } from "$lib/utils.js";
 	import { Separator } from "$lib/components/ui/separator/index.js";
 	import { Badge } from "$lib/components/ui/badge/index.js";
+	import type { DataTableFilterOption } from "./types";
 
 	type Props<TData, TValue> = {
 		column: Column<TData, TValue>;
 		title: string;
-		options: {
-			label: string;
-			value: string;
-			// This should be `Component` after lucide-svelte updates types
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			icon?: any;
-		}[];
+		options?: DataTableFilterOption[];
 	};
 
-	let { column, title, options }: Props<TData, TValue> = $props();
+	let { column, title, options } = $props<Props<TData, TValue>>();
 
 	const facets = $derived(column?.getFacetedUniqueValues());
 	const selectedValues = $derived(new SvelteSet(column?.getFilterValue() as string[]));
+
 </script>
 
 <Popover.Root>
