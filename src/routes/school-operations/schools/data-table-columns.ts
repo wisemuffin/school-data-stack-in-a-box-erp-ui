@@ -1,13 +1,17 @@
 import type { ColumnDef } from "@tanstack/table-core";
 import { createRawSnippet } from "svelte";
 import { renderSnippet, renderComponent } from "$lib/components/ui/data-table/index.js";
-import DataTableActions from "./data-table-actions.svelte";
-import DataTableCheckbox from "./data-table-checkbox.svelte";
+import DataTableActions from "./data-table-components/data-table-actions.svelte";
+import DataTableCheckbox from "./data-table-components/data-table-checkbox.svelte";
 import type { School } from "$lib/api/erp/types/erp_api";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) => Promise<void>): ColumnDef<School>[] => [
+export const columns = (
+    checkedRows: Set<string>, 
+    handleDelete: (ids: string[]) => Promise<void>,
+    setDialogOpen: (open: boolean) => void
+): ColumnDef<School>[] => [
   {
     id: "select",
     header: ({ table }) => renderComponent(DataTableCheckbox, {
@@ -44,6 +48,10 @@ export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) 
   //   return renderSnippet(nameSnippet, row.getValue("name"));
   //  }
   },
+  {
+    accessorKey: "geography_id",
+    header: "Geography ID",
+  },
   
   {
     id: "actions",
@@ -51,7 +59,8 @@ export const columns = (checkedRows: Set<string>, handleDelete: (ids: string[]) 
     cell: ({ row }) => renderComponent(DataTableActions, {
       id: row.getValue("id") as string,
       checkedRows,
-      onDelete: handleDelete
+      onDelete: handleDelete,
+      setDialogOpen
     })
   }
  ];

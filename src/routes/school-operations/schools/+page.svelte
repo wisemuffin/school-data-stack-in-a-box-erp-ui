@@ -2,15 +2,37 @@
     
     import { Button } from "$lib/components/ui/button/index.js";
 	import { Card } from "$lib/components/ui/card/index.js";
-
-    import { PlusCircleIcon } from "lucide-svelte";
+    import DataTable from "$lib/components/ui/data-table-general/data-table-general.svelte";
+    import type { FacetedFilterColumn, TextFilterColumn } from "$lib/components/ui/data-table-general/types.js";
+	import { PlusCircleIcon, Trash } from "lucide-svelte";
 	import { deleteSchool } from "$lib/api/erp/erp_client.js";
 	import { invalidateAll } from "$app/navigation";
-    import DataTable from "./data-table.svelte";
+    import { goto } from "$app/navigation";
+    import {columns} from "./data-table-columns.js";
 
     let { data } = $props();
 
+    const filterColumns: FacetedFilterColumn[] = [ 
+        {
+            id: "name",
+            title: "School Name",
+            options: data.schools.map((school) => ({
+                value: school.name,
+                label: school.name
+            }))
+        }
+    ];
+
+    const textFilterColumns: TextFilterColumn[] = [
+        {
+            id: "name",
+            placeholder: "Filter by school name..."
+        }
+    ];
+
     let checkedRows = $state(new Set<string>());
+
+    let dialogOpen = $state(false);
     
     const handleDelete = async (ids: string[]) => {
         for (const id of ids) {
@@ -26,23 +48,25 @@
     
 
    </script>
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card class="col-span-4 p-4">
-                <div class="flex gap-2 mb-4">
-                    <Button 
-                        href="/school-operations/schools/add" 
-                        onclick={greet} 
-                        class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
-                    >
-                        <PlusCircleIcon/>Add School
-                    </Button>
-                </div>
-                <DataTable 
-                    data={data.schools} 
-                    onDelete={handleDelete} 
-                />
-
-            </Card>
-
-</div>
+    <div class="h-full flex-1 flex-col space-y-8 p-8 md:flex">
+        <div class="flex gap-2 mb-4">
+            <Button 
+                href="/school-operations/schools/add" 
+                onclick={greet} 
+                class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
+            >
+                <PlusCircleIcon/>Add School
+            </Button>
+        </div>
+        <DataTable 
+            columns={columns(checkedRows, handleDelete, (open) => dialogOpen = open)} 
+            data={data.schools} 
+            filterableColumns={filterColumns}
+            textFilterColumns={textFilterColumns}
+            showColumnVisibility={true}
+            textClass="text-nsw-brand-dark dark:text-white"
+            textMutedClass="text-nsw-brand-dark/80 dark:text-white/80"
+            textSubtleClass="text-nsw-brand-dark/70 dark:text-white/70"
+        />
+    </div>
    
