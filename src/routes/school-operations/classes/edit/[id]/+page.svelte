@@ -1,8 +1,8 @@
 <script lang="ts">
     import { superForm } from "sveltekit-superforms/client";
     import { zodClient } from "sveltekit-superforms/adapters";
-    import { formSchema } from "../course-form-schema";
-    import CourseForm from "../course-form.svelte";
+    import { formSchema } from "../../class-form-schema";
+    import ClassForm from "../../class-form.svelte";
 
     let { data } = $props();
     
@@ -12,9 +12,9 @@
     });
 </script>
 
-<CourseForm
+<ClassForm
     {form}
-    title="Add Course"
-    description="Create a new course record."
-    submitLabel="Create"
+    title="Edit Class"
+    description="Update class information."
+    submitLabel="Update"
 /> 

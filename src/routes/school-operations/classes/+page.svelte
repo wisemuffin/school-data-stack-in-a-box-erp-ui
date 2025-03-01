@@ -14,10 +14,10 @@
     const filterColumns: FacetedFilterColumn[] = [ 
         {
             id: "name",
-            title: "Course Name",
-            options: data.courses.map((course) => ({
-                value: course.name,
-                label: course.name
+            title: "Class Name",
+            options: data.classes.map((x) => ({
+                value: x.name,
+                label: x.name
             }))
         }
     ];
@@ -25,7 +25,7 @@
     const textFilterColumns: TextFilterColumn[] = [
         {
             id: "name",
-            placeholder: "Filter by course name..."
+            placeholder: "Filter by class name..."
         }
     ];
 
@@ -45,15 +45,15 @@
 <div class="h-full flex-1 flex-col space-y-8 p-8 md:flex">
     <div class="flex gap-2 mb-4">
         <Button 
-            onclick={() => goto('/school-operations/courses/add')}
+            onclick={() => goto('/school-operations/classes/add')}
             class="gap-2 bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100"
         >
-            <PlusCircleIcon/>Add Course
+            <PlusCircleIcon/>Add Class
         </Button>
     </div>
     <DataTable 
         columns={columns(checkedRows, handleDelete, (open) => dialogOpen = open)} 
-        data={data.courses} 
+        data={data.classes} 
         filterableColumns={filterColumns}
         textFilterColumns={textFilterColumns}
         showColumnVisibility={true}

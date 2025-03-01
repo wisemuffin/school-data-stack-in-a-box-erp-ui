@@ -5,6 +5,6 @@ export const load: PageServerLoad = async () => {
     const response = await getAllClasses({ limit: 100000 });
     
     return { 
-        courses: response.items 
+        classes: response.items 
     };
 }; 

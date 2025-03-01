@@ -1,7 +1,7 @@
 import type { PageServerLoad, Actions } from "./$types";
 import { fail, redirect } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
-import { formSchema } from "../course-form-schema";
+import { formSchema } from "../class-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
 import { createClass } from "$lib/api/erp/erp_client";
 
@@ -22,6 +22,6 @@ export const actions: Actions = {
         }
 
         await createClass(form.data);
-        redirect(302, "/school-operations/courses");
+        redirect(302, "/school-operations/classes");
     },
 }; 

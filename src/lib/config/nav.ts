@@ -22,8 +22,8 @@ export const mainNav = [
         icon: Users
     },
     {
-        title: "Courses",
-        href: "/school-operations/courses",
+        title: "Classes",
+        href: "/school-operations/classes",
         icon: BookOpen
     },
     {

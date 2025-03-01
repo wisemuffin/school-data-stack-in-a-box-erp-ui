@@ -4,7 +4,7 @@
     import { Input } from "$lib/components/ui/input";
     import * as Card from "$lib/components/ui/card";
     import type { SuperForm } from "sveltekit-superforms";
-    import type { FormSchema } from "./course-form-schema";
+    import type { FormSchema } from "./class-form-schema";
 
     let { form, title, description, submitLabel } = $props<{
         form: SuperForm<FormSchema>;
@@ -40,7 +40,7 @@
                 <div class="flex justify-end gap-4 pt-4">
                     <Button 
                         variant="outline" 
-                        href="/school-operations/courses" 
+                        href="/school-operations/classes" 
                         class="border-nsw-brand-dark text-nsw-brand-dark dark:border-white dark:text-white hover:bg-nsw-brand-dark/10 dark:hover:bg-white/10"
                     >
                         Cancel

@@ -1,29 +1,29 @@
 import type { PageServerLoad, Actions } from "./$types";
 import { fail, redirect, error } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms/server";
-import { formSchema } from "../../course-form-schema";
+import { formSchema } from "../../class-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
 import { getClassById, updateClass } from "$lib/api/erp/erp_client";
 
 export const load: PageServerLoad = (async ({ params }) => {
-    const [form, course] = await Promise.all([
+    const [form, class] = await Promise.all([
         superValidate(zod(formSchema)),
         getClassById(params.id)
     ]);
 
-    if (!course) {
-        throw error(404, 'Course not found');
+    if (!class) {
+        throw error(404, 'Class not found');
     }
 
-    // Pre-populate form with course data
+    // Pre-populate form with class data
     form.data = {
-        name: course.name,
-        scholastic_year_id: course.scholastic_year_id,
+        name: class.name,
+        scholastic_year_id: class.scholastic_year_id,
     };
 
     return {
         form,
-        course
+        class
     };
 });
 
@@ -36,7 +36,7 @@ export const actions: Actions = {
         }
 
         await updateClass(params.id, form.data);
-        redirect(302, "/school-operations/courses");
+        redirect(302, "/school-operations/classes");
 
     },
 }; 
