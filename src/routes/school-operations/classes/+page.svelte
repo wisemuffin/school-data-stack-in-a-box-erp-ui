@@ -4,7 +4,7 @@
     import DataTable from "$lib/components/ui/data-table-general/data-table-general.svelte";
     import type { FacetedFilterColumn, TextFilterColumn } from "$lib/components/ui/data-table-general/types.js";
     import { PlusCircleIcon, Trash } from "lucide-svelte";
-    import { columns } from "./data-table-columns.js";
+    import { columns } from "./data-table-components/data-table-columns.ts";
     import { deleteClass } from "$lib/api/erp/erp_client.js";
     import { invalidateAll } from "$app/navigation";
     import { goto } from "$app/navigation";

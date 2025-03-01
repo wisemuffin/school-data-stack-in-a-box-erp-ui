@@ -2,7 +2,7 @@ import type { PageServerLoad, Actions } from "./$types";
 import { getAllStudents, createStudent, getStudentById, updateStudent } from "$lib/api/erp/erp_client";
 import type { Student } from "$lib/api/erp/types/erp_api";
 import { superValidate } from "sveltekit-superforms/server";
-import { formSchema } from "./student-form-schema";
+import { formSchema } from "./form/student-form-schema";
 import { zod } from "sveltekit-superforms/adapters";
 import { fail } from "@sveltejs/kit";
 

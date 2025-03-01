@@ -1,17 +1,16 @@
 import type { ColumnDef } from "@tanstack/table-core";
 import { createRawSnippet } from "svelte";
 import { renderSnippet, renderComponent } from "$lib/components/ui/data-table/index.js";
-import DataTableActions from "./data-table-components/data-table-actions.svelte";
-import DataTableCheckbox from "./data-table-components/data-table-checkbox.svelte";
-import type { School } from "$lib/api/erp/types/erp_api";
+import DataTableActions from "./data-table-actions.svelte";
+import DataTableCheckbox from "./data-table-checkbox.svelte";
+import type { Class } from "$lib/api/erp/types/erp_api";
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
+
 export const columns = (
     checkedRows: Set<string>, 
     handleDelete: (ids: string[]) => Promise<void>,
     setDialogOpen: (open: boolean) => void
-): ColumnDef<School>[] => [
+): ColumnDef<Class>[] => [
   {
     id: "select",
     header: ({ table }) => renderComponent(DataTableCheckbox, {
@@ -36,22 +35,10 @@ export const columns = (
     header: "ID",
   },
   {
-   accessorKey: "name",
-   header: "Name",
-  //  cell: ({ row }) => {
-  //   const nameSnippet = createRawSnippet<[string]>((getName) => {
-  //    const name = getName();
-  //    return {
-  //     render: () => `<div class="capitalize">${name}</div>`
-  //    };
-  //   });
-  //   return renderSnippet(nameSnippet, row.getValue("name"));
-  //  }
+    accessorKey: "name",
+    header: "Name",
   },
-  {
-    accessorKey: "geography_id",
-    header: "Geography ID",
-  },
+  // Add other columns as needed
   
   {
     id: "actions",
@@ -63,4 +50,4 @@ export const columns = (
       setDialogOpen
     })
   }
- ];
+]; 

@@ -8,7 +8,7 @@
 	import { deleteSchool } from "$lib/api/erp/erp_client.js";
 	import { invalidateAll } from "$app/navigation";
     import { goto } from "$app/navigation";
-    import {columns} from "./data-table-columns.js";
+    import {columns} from "./data-table-components/data-table-columns.js";
 
     let { data } = $props();
 

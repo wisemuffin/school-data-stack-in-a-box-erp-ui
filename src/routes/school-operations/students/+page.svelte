@@ -7,14 +7,14 @@
     import type { FacetedFilterColumn, TextFilterColumn } from "$lib/components/ui/data-table-general/types.js";
 	import { PlusCircleIcon, Trash } from "lucide-svelte";
 
-    import {columns} from "./data-table-columns.js"
+    import {columns} from "./data-table-components/data-table-columns.js"
 
     import { deleteStudent } from "$lib/api/erp/erp_client.js";
     import { invalidateAll } from "$app/navigation";
-    import StudentDialogForm from "./student-dialog-form.svelte";
+    import StudentDialogForm from "./form/student-dialog-form.svelte";
     import { superForm } from "sveltekit-superforms/client";
     import { zodClient } from "sveltekit-superforms/adapters";
-    import { formSchema } from "./student-form-schema";
+    import { formSchema } from "./form/student-form-schema.js";
 
     let { data } = $props();
 
