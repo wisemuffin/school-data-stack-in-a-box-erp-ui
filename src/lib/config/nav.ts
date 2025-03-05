@@ -1,4 +1,4 @@
-import { Home, School, Users, BookOpen, Building, GraduationCap, ChartBar } from 'lucide-svelte';
+import { Home, School, Users, BookOpen, Building, GraduationCap, ChartBar, LineChart } from 'lucide-svelte';
 
 export const mainNav = [
     {
@@ -37,13 +37,18 @@ export const mainNav = [
         icon: ChartBar,
     },
     {
+        title: "Demos",
+        href: "/demo",
+        icon: ChartBar,
+    },
+    {
+        title: "Graphs",
+        href: "/demo/graphs",
+        icon: LineChart,
+    },
+    {
         title: "Demo Table",
         href: "/demo/table",
         icon: ChartBar,
     },
-    {
-        title: "Demos",
-        href: "/demo",
-        icon: ChartBar,
-    }
 ] as const; 
