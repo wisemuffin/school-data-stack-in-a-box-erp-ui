@@ -12,13 +12,15 @@
         const segments = href.split('/').filter(segment => segment);
         
         // Return the nesting level (0 for root, 1 for first level, etc.)
-        return segments.length > 1 ? segments.length - 1 : 0;
+        return segments.length;
     }
     
     // Function to get the appropriate padding class based on nesting level
     function getPaddingClass(href: string) {
         const level = getItemNestingLevel(href);
-        return level > 0 ? `pl-${level * 6}` : '';
+        if (level === 2) return 'pl-6';
+        if (level === 3) return 'pl-12';
+        return '';
     }
 </script>
 
@@ -40,7 +42,7 @@
                             href={item.href}
                             class="flex items-center gap-2 text-lg font-semibold text-nsw-brand-dark dark:text-white hover:text-nsw-brand-dark/80 dark:hover:text-white/80 {getPaddingClass(item.href)}"
                         >
-                            <svelte:component this={item.icon} class="h-5 w-5" />
+                            <item.icon class="h-5 w-5" />
                             {item.title}
                         </a>
                     {/each}
