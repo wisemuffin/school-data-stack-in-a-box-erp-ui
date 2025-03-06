@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 'nsw-brand-dark': '#002664', 
+'nsw-brand-light': '#CBEDFD', 
+'nsw-brand-supplementary': '#146CFD', 
+'nsw-brand-accent': '#D7153A', */
+
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 30 100% 50%;
+    --foreground: 222.2 84% 4.9%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
     --popover: 0 0% 100%;
@@ -14,13 +19,12 @@
     --card-foreground: 222.2 84% 4.9%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --text-color: 30 100% 50%;
-    --primary: 30 100% 50%;
-    --primary-foreground: 30 100% 50%;
-    --secondary: 30 100% 50%;
-    --secondary-foreground: 30 100% 50%;
-    --accent: 30 100% 50%;
-    --accent-foreground: 30 100% 50%;
+    --primary: 38.8 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 38.8 100% 50%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 38.8 100% 50%;
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 210 40% 98%;
     --ring: 222.2 84% 4.9%;

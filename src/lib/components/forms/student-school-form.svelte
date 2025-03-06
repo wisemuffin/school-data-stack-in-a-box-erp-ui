@@ -12,8 +12,8 @@
 <div class="container mx-auto p-6">
     <Card.Root class="max-w-md mx-auto">
         <Card.Header>
-            <Card.Title class="text-nsw-brand-dark dark:text-white">{title}</Card.Title>
-            <Card.Description class="text-nsw-brand-dark/70 dark:text-white/70">
+            <Card.Title >{title}</Card.Title>
+            <Card.Description >
                 {description}
             </Card.Description>
         </Card.Header>
@@ -25,11 +25,11 @@
                     <Button 
                         variant="outline" 
                         href={cancelHref}
-                        class="border-nsw-brand-dark text-nsw-brand-dark dark:border-white dark:text-white hover:bg-nsw-brand-dark/10 dark:hover:bg-white/10"
+                        
                     >
                         Cancel
                     </Button>
-                    <Button type="submit" class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
+                    <Button type="submit" >
                         {submitLabel}
                     </Button>
                 </div>

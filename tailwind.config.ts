@@ -20,10 +20,6 @@ const config: Config = {
 		},
 		extend: {
 			colors: {
-				'nsw-brand-dark': '#002664', 
-				'nsw-brand-light': '#CBEDFD', 
-				'nsw-brand-supplementary': '#146CFD', 
-				'nsw-brand-accent': '#D7153A',
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",

@@ -56,7 +56,7 @@
             </Field>
 
             <Dialog.Footer>
-                <Button type="submit" class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
+                <Button type="submit" >
                     {submitLabel}
                 </Button>
             </Dialog.Footer>

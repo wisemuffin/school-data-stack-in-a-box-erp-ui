@@ -4,7 +4,7 @@
     import { Input } from "$lib/components/ui/input";
     import * as Dialog from "$lib/components/ui/dialog";
     import type { SuperForm } from "sveltekit-superforms";
-    import type { FormSchema } from "./student-form-schema";
+    import type { FormSchema } from "./form/student-form-schema";
     import { page } from '$app/stores';
 
     let { form, open = $bindable() } = $props<{

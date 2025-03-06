@@ -23,7 +23,7 @@
 				class={cn(
 					"hover:text-foreground/80 transition-colors",
 					page.url.pathname.endsWith(item.href) ? "font-bold" : "font-normal",
-					"text-nsw-brand-dark dark:text-white"
+					""
 				)}
 			>
 				{item.title}

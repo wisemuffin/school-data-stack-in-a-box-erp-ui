@@ -1,6 +1,5 @@
 {
     "github.copilot.chat.codeGeneration.instructions": [{
         "file": "https://svelte.dev/llms-full.txt"
-    }
-]
+    }],
 }

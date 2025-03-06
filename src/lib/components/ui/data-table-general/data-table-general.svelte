@@ -44,9 +44,9 @@
 		data, 
 		columns, 
 		showColumnVisibility = true,
-		textClass = "", // "text-nsw-brand-dark dark:text-white",
-		textMutedClass = "", // "text-nsw-brand-dark/80 dark:text-white/80",
-		textSubtleClass = "", // "text-nsw-brand-dark/70 dark:text-white/70",
+		textClass = "", // "",
+		textMutedClass = "", // "",
+		textSubtleClass = "", // "",
 		filterableColumns = [],
 		textFilterColumns = []
 	}: DataTableProps<TData, TValue> = $props();

@@ -42,44 +42,44 @@
 		<div class="container mx-auto px-4">
 			<div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
 				<div class="flex flex-col gap-8 max-w-xl">
-					<h1 class="text-6xl font-bold leading-tight text-nsw-brand-dark dark:text-white">
+					<h1 class="text-6xl font-bold leading-tight ">
 						Transform Your School Operations
 					</h1>
-					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">
+					<p class="text-xl ">
 						Streamline administration, enhance communication, and improve efficiency with our comprehensive school management platform.
 					</p>
 					<div class="flex gap-4">
-						<Button class="bg-nsw-brand-dark dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
+						<Button >
 							<a href="/school-operations">Get Started</a>
 						</Button>
-						<Button variant="outline" class="border-nsw-brand-dark text-nsw-brand-dark dark:border-white dark:text-white hover:bg-nsw-brand-dark/10 dark:hover:bg-white/10">
+						<Button variant="outline" >
 							Learn More
 						</Button>
 					</div>
 				</div>
 				<div class="w-full max-w-md">
-					<Image class="w-full h-auto fill-nsw-brand-dark dark:fill-white" />
+					<Image class="w-full h-auto fill-primary dark:fill-primary" />
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- Features Section -->
-	<div class="w-full bg-gray-50 dark:bg-gray-900 py-24">
+	<div class="w-full  py-24">
 		<div class="container mx-auto px-4">
 			<div class="flex flex-col items-center gap-12">
 				<div class="text-center max-w-2xl">
-					<h2 class="text-4xl font-bold text-nsw-brand-dark dark:text-white mb-4">Powerful Features</h2>
-					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">Everything you need to manage your school operations effectively</p>
+					<h2 class="text-4xl font-bold  mb-4">Powerful Features</h2>
+					<p class="text-xl ">Everything you need to manage your school operations effectively</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 					<Card.Root class="dark:bg-gray-800">
 						<Card.Content class="pt-6">
-							<Image2 class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
+							<Image2 class="size-20 fill-primary dark:fill-primary mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Student Management</Card.Title>
-								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
+								<Card.Title class="text-xl font-semibold text-center ">Student Management</Card.Title>
+								<Card.Description class="text-center ">
 									Efficiently manage student records, attendance, and academic progress all in one place.
 								</Card.Description>
 							</Card.Header>
@@ -88,10 +88,10 @@
 
 					<Card.Root class="dark:bg-gray-800">
 						<Card.Content class="pt-6">
-							<Image class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
+							<Image class="size-20 fill-primary dark:fill-primary mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Resource Planning</Card.Title>
-								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
+								<Card.Title class="text-xl font-semibold text-center ">Resource Planning</Card.Title>
+								<Card.Description class="text-center ">
 									Optimize resource allocation and scheduling for better operational efficiency.
 								</Card.Description>
 							</Card.Header>
@@ -100,10 +100,10 @@
 
 					<Card.Root class="dark:bg-gray-800">
 						<Card.Content class="pt-6">
-							<SquiggleAndImage class="size-20 fill-nsw-brand-dark dark:fill-white mx-auto mb-4" />
+							<SquiggleAndImage class="size-20 fill-primary dark:fill-primary mx-auto mb-4" />
 							<Card.Header>
-								<Card.Title class="text-xl font-semibold text-center text-nsw-brand-dark dark:text-white">Data Analytics</Card.Title>
-								<Card.Description class="text-center text-nsw-brand-dark/70 dark:text-white/70">
+								<Card.Title class="text-xl font-semibold text-center ">Data Analytics</Card.Title>
+								<Card.Description class="text-center ">
 									Make data-driven decisions with powerful analytics and reporting tools.
 								</Card.Description>
 							</Card.Header>
@@ -119,8 +119,8 @@
 		<div class="container mx-auto px-4">
 			<div class="flex flex-col items-center gap-12">
 				<div class="text-center max-w-2xl">
-					<h2 class="text-4xl font-bold text-nsw-brand-dark dark:text-white mb-4">What People Say</h2>
-					<p class="text-xl text-nsw-brand-dark/80 dark:text-white/80">Trusted by education professionals worldwide</p>
+					<h2 class="text-4xl font-bold  mb-4">What People Say</h2>
+					<p class="text-xl ">Trusted by education professionals worldwide</p>
 				</div>
 
 				<div class="w-full max-w-4xl">
@@ -133,7 +133,7 @@
 							{#each data.testimonials as testimonial (testimonial.author)}
 								<Carousel.Item class="pl-4 md:basis-1/2">
 									<div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg h-full">
-										<p class="text-lg text-nsw-brand-dark dark:text-white mb-6">"{testimonial.text}"</p>
+										<p class="text-lg  mb-6">"{testimonial.text}"</p>
 										<div class="flex items-center gap-4">
 											<Avatar.Root>
 												<Avatar.Image
@@ -145,8 +145,8 @@
 												</Avatar.Fallback>
 											</Avatar.Root>
 											<div class="flex flex-col">
-												<span class="text-nsw-brand-dark dark:text-white font-medium">{testimonial.author}</span>
-												<span class="text-sm text-nsw-brand-dark/60 dark:text-white/60">{testimonial.time}</span>
+												<span class=" font-medium">{testimonial.author}</span>
+												<span class="text-sm ">{testimonial.time}</span>
 											</div>
 										</div>
 									</div>

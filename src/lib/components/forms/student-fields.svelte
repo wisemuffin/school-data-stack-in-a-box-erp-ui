@@ -12,7 +12,7 @@
 
 <Field {form} name="first_name">
     <Control>
-        <Label class="text-nsw-brand-dark dark:text-white">First Name</Label>
+        <Label >First Name</Label>
         <Input 
             bind:value={$formData.first_name} 
             class="w-full"
@@ -23,7 +23,7 @@
 
 <Field {form} name="last_name">
     <Control>
-        <Label class="text-nsw-brand-dark dark:text-white">Last Name</Label>
+        <Label >Last Name</Label>
         <Input 
             bind:value={$formData.last_name} 
             class="w-full"

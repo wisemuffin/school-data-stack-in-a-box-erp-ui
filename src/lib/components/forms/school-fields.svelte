@@ -12,7 +12,7 @@
 
 <Field {form} name="name">
     <Control>
-        <Label class="text-nsw-brand-dark dark:text-white">Name</Label>
+        <Label >Name</Label>
         <Input 
             bind:value={$formData.name} 
             class="w-full"

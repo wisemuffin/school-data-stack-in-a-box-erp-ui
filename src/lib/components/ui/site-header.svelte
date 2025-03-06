@@ -20,7 +20,7 @@
 >
 	<!-- <Svelte5Banner /> -->
 	<div class="container flex h-14 max-w-screen-2xl items-center">
-		<MainNav class="hidden md:flex text-nsw-brand-dark dark:text-white" />
+		<MainNav class="hidden md:flex " />
 		<div class="md:hidden">
 			<MobileNav />
 		</div>
@@ -40,14 +40,14 @@
 								size: "sm",
 								variant: "ghost",
 							}),
-							"h-8 w-8 px-0 text-nsw-brand-dark dark:text-white"
+							"h-8 w-8 px-0 "
 						)}
 					>
 						<Icon.GitHub class="h-4 w-4" />
 						<span class="sr-only">GitHub</span>
 					</div>
 				</a>
-				<ModeToggle class="text-nsw-brand-dark dark:text-white" />
+				<ModeToggle  />
 				<!-- <Search />
 				<UserNav /> -->
 			</nav>

@@ -27,10 +27,10 @@ let currentTab = $derived(currentPath.split('/').pop() || 'overview');
 	
 	<div class="flex-1 space-y-4 p-8 pt-6">
 		<div class="flex items-center justify-between space-y-2">
-			<h2 class="text-3xl font-bold tracking-tight text-nsw-brand-dark dark:text-white">School Operations</h2>
+			<h2 class="text-3xl font-bold tracking-tight ">School Operations</h2>
 			<div class="hidden md:flex flex items-center space-x-2">
 				<DatePickerWithRange />
-				<Button size="sm" class="bg-nsw-brand-dark text-white dark:bg-white dark:text-nsw-brand-dark hover:bg-nsw-brand-dark/90 dark:hover:bg-gray-100">
+				<Button size="sm" >
 					<Download class="mr-2 size-4" />
 					Download
 				</Button>
@@ -38,16 +38,16 @@ let currentTab = $derived(currentPath.split('/').pop() || 'overview');
 		</div>
 		<Tabs.Root value={currentTab} class="space-y-4">
 			<Tabs.List>
-				<Tabs.Trigger value="overview" class="text-nsw-brand-dark/80 dark:text-white/80">
+				<Tabs.Trigger value="overview" class="">
 					<a href="/school-operations">Overview</a>
 				</Tabs.Trigger>
-				<Tabs.Trigger value="schools" class="text-nsw-brand-dark/80 dark:text-white/80">
+				<Tabs.Trigger value="schools" class="">
 					<a href="/school-operations/schools">Schools</a>
 				</Tabs.Trigger>
-				<Tabs.Trigger value="students" class="text-nsw-brand-dark/80 dark:text-white/80">
+				<Tabs.Trigger value="students" class="">
 					<a href="/school-operations/students">Students</a>
 				</Tabs.Trigger>
-				<Tabs.Trigger value="classes" class="text-nsw-brand-dark/80 dark:text-white/80">
+				<Tabs.Trigger value="classes" class="">
 					<a href="/school-operations/classes">Classes</a>
 				</Tabs.Trigger>
 			</Tabs.List>
