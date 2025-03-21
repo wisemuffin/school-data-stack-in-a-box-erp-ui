@@ -5,7 +5,7 @@
     import type { FacetedFilterColumn, TextFilterColumn } from "$lib/components/ui/data-table-general/types.js";
     import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs";
     import { lboteColumns, lboteAggPivotColumns } from "./data-table-components/lbote-columns";
-    import SchoolFilter from "$lib/components/ui/school-filter.svelte";
+    import Filter from "$lib/components/ui/filter.svelte";
 
     let { data } = $props();
     
@@ -77,7 +77,7 @@
     ];
 
     // Filter columns for LBOTE Aggregate Pivot data
-    const lboteAggPivotFilterColumns = $derived(() => [ 
+    const lboteAggPivotFilterColumns = $derived([ 
         {
             id: "language_nm",
             title: "Language",
@@ -101,13 +101,15 @@
     <h1 class="text-2xl font-bold">LBOTE Report</h1>
     
     <div class="w-full max-w-sm">
-        <SchoolFilter 
-            schools={data.lboteData.map(item => ({
-                school_code: item.school_code,
-                school_name: item.school_name
+        <Filter 
+            items={data.lboteData.map(item => ({
+                value: item.school_code,
+                label: item.school_name
             }))} 
-            selectedSchool={selectedSchool}
-            onSchoolChange={handleSchoolChange}
+            selectedValue={selectedSchool}
+            onValueChange={handleSchoolChange}
+            title="School"
+            placeholder="Select school..."
         />
     </div>
     
