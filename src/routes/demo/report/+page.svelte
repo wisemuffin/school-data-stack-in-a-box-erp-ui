@@ -113,7 +113,7 @@
         />
     </div>
     
-    <Tabs defaultValue="student-data" class="w-full">
+    <Tabs value="student-data" class="w-full">
         <TabsList>
             <TabsTrigger value="student-data">Student Data</TabsTrigger>
             <TabsTrigger value="aggregate-data">Aggregate Data</TabsTrigger>
