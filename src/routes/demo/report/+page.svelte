@@ -14,27 +14,23 @@
     let filteredLboteData = $state(data.lboteData);
     let filteredLboteAggPivotData = $state(data.lboteAggPivotData);
     
-    // Selected school code
-    let selectedSchool = $state(null);
-    let selectedLanguages = $state<string[]>([]);
+    // Selected schools
+    let selectedSchools = $state<string[]>([]);
 
-
-    // Handle multiple languages filter change
-    function handleLanguagesChange(languages) {
-        selectedLanguages = languages;
+    // Handle multiple schools filter change
+    function handleSchoolsChange(schools) {
+        selectedSchools = schools;
         
-        if (languages.length > 0) {
-            // Apply language filter for multiple languages
-            filteredLboteData = data.lboteData.filter(item => languages.includes(item.language_nm));
-            filteredLboteAggPivotData = data.lboteAggPivotData.filter(item => languages.includes(item.language_nm));
+        if (schools.length > 0) {
+            // Apply school filter for multiple schools
+            filteredLboteData = data.lboteData.filter(item => schools.includes(item.school_name));
+            filteredLboteAggPivotData = data.lboteAggPivotData.filter(item => schools.includes(item.school_name));
         } else {
-            // Just use the base data (which might already be filtered by school)
+            // Just use the original data
             filteredLboteData = data.lboteData;
             filteredLboteAggPivotData = data.lboteAggPivotData;
         }
     }
-
-
 
     // Filter columns for LBOTE data
     const lboteFilterColumns: FacetedFilterColumn[] = [ 
@@ -105,15 +101,15 @@
        
         <div class="w-full max-w-sm">
             <ComboboxFilter 
-                items={Array.from(new Set(data.lboteData.map(item => item.language_nm))).map(lang => ({
-                    value: lang,
-                    label: lang
+                items={Array.from(new Set(data.lboteData.map(item => item.school_name))).map(school => ({
+                    value: school,
+                    label: school
                 }))} 
-                selected={selectedLanguages}
-                onChange={handleLanguagesChange}
+                selected={selectedSchools}
+                onChange={handleSchoolsChange}
                 multiSelect={true}
-                title="Language"
-                placeholder="Select language..."
+                title="School"
+                placeholder="Select schools..."
             />
         </div>
     </div>
