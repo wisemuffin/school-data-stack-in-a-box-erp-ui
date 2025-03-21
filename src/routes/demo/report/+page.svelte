@@ -6,6 +6,7 @@
     import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs";
     import { lboteColumns, lboteAggPivotColumns } from "./data-table-components/lbote-columns";
     import Filter from "$lib/components/ui/filter.svelte";
+    import ComboboxFilter from "$lib/components/ui/combobox-filter.svelte";
 
     let { data } = $props();
     
@@ -15,25 +16,25 @@
     
     // Selected school code
     let selectedSchool = $state(null);
-    
-    // Handle school filter change
-    function handleSchoolChange(schoolCode) {
-        selectedSchool = schoolCode;
+    let selectedLanguages = $state<string[]>([]);
+
+
+    // Handle multiple languages filter change
+    function handleLanguagesChange(languages) {
+        selectedLanguages = languages;
         
-        if (schoolCode) {
-            // Filter data by selected school
-            filteredLboteData = data.lboteData.filter(
-                (item) => item.school_code === schoolCode
-            );
-            filteredLboteAggPivotData = data.lboteAggPivotData.filter(
-                (item) => item.school_code === schoolCode
-            );
+        if (languages.length > 0) {
+            // Apply language filter for multiple languages
+            filteredLboteData = data.lboteData.filter(item => languages.includes(item.language_nm));
+            filteredLboteAggPivotData = data.lboteAggPivotData.filter(item => languages.includes(item.language_nm));
         } else {
-            // Reset to original data
+            // Just use the base data (which might already be filtered by school)
             filteredLboteData = data.lboteData;
             filteredLboteAggPivotData = data.lboteAggPivotData;
         }
     }
+
+
 
     // Filter columns for LBOTE data
     const lboteFilterColumns: FacetedFilterColumn[] = [ 
@@ -100,17 +101,21 @@
 <div class="h-full flex-1 flex-col space-y-8 p-8 md:flex">
     <h1 class="text-2xl font-bold">LBOTE Report</h1>
     
-    <div class="w-full max-w-sm">
-        <Filter 
-            items={data.lboteData.map(item => ({
-                value: item.school_code,
-                label: item.school_name
-            }))} 
-            selectedValue={selectedSchool}
-            onValueChange={handleSchoolChange}
-            title="School"
-            placeholder="Select school..."
-        />
+    <div class="flex flex-wrap gap-4">
+       
+        <div class="w-full max-w-sm">
+            <ComboboxFilter 
+                items={Array.from(new Set(data.lboteData.map(item => item.language_nm))).map(lang => ({
+                    value: lang,
+                    label: lang
+                }))} 
+                selected={selectedLanguages}
+                onChange={handleLanguagesChange}
+                multiSelect={true}
+                title="Language"
+                placeholder="Select language..."
+            />
+        </div>
     </div>
     
     <Tabs value="student-data" class="w-full">
