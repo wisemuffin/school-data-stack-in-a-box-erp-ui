@@ -5,16 +5,43 @@
     import type { FacetedFilterColumn, TextFilterColumn } from "$lib/components/ui/data-table-general/types.js";
     import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs";
     import { lboteColumns, lboteAggPivotColumns } from "./data-table-components/lbote-columns";
+    import SchoolFilter from "$lib/components/ui/school-filter.svelte";
 
     let { data } = $props();
+    
+    // Filtered data with state
+    let filteredLboteData = $state(data.lboteData);
+    let filteredLboteAggPivotData = $state(data.lboteAggPivotData);
+    
+    // Selected school code
+    let selectedSchool = $state(null);
+    
+    // Handle school filter change
+    function handleSchoolChange(schoolCode) {
+        selectedSchool = schoolCode;
+        
+        if (schoolCode) {
+            // Filter data by selected school
+            filteredLboteData = data.lboteData.filter(
+                (item) => item.school_code === schoolCode
+            );
+            filteredLboteAggPivotData = data.lboteAggPivotData.filter(
+                (item) => item.school_code === schoolCode
+            );
+        } else {
+            // Reset to original data
+            filteredLboteData = data.lboteData;
+            filteredLboteAggPivotData = data.lboteAggPivotData;
+        }
+    }
 
     // Filter columns for LBOTE data
     const lboteFilterColumns: FacetedFilterColumn[] = [ 
         {
             id: "language_nm",
             title: "Language",
-            options: Array.from(new Set(data.lboteData.map((item: any) => item.language_nm)))
-                .map((language: string) => ({
+            options: Array.from(new Set(data.lboteData.map((item) => item.language_nm)))
+                .map((language) => ({
                     value: language,
                     label: language
                 }))
@@ -30,15 +57,15 @@
         {
             id: "scholastic_year",
             title: "Year",
-            options: Array.from(new Set(data.lboteData.map((item: any) => item.scholastic_year)))
-                .map((year: string) => ({
+            options: Array.from(new Set(data.lboteData.map((item) => item.scholastic_year)))
+                .map((year) => ({
                     value: year,
                     label: year
                 }))
         }
     ];
 
-    const lboteTextFilterColumns: TextFilterColumn[] = [
+    const lboteTextFilterColumns = [
         {
             id: "first_nm",
             placeholder: "Filter first name..."
@@ -50,19 +77,19 @@
     ];
 
     // Filter columns for LBOTE Aggregate Pivot data
-    const lboteAggPivotFilterColumns: FacetedFilterColumn[] = [ 
+    const lboteAggPivotFilterColumns = $derived(() => [ 
         {
             id: "language_nm",
             title: "Language",
-            options: Array.from(new Set(data.lboteAggPivotData.map((item: any) => item.language_nm)))
-                .map((language: string) => ({
+            options: Array.from(new Set(filteredLboteAggPivotData.map((item) => item.language_nm)))
+                .map((language) => ({
                     value: language,
                     label: language
                 }))
         }
-    ];
+    ]);
 
-    const lboteAggPivotTextFilterColumns: TextFilterColumn[] = [
+    const lboteAggPivotTextFilterColumns = [
         {
             id: "school_name",
             placeholder: "Filter school name..."
@@ -72,6 +99,17 @@
 
 <div class="h-full flex-1 flex-col space-y-8 p-8 md:flex">
     <h1 class="text-2xl font-bold">LBOTE Report</h1>
+    
+    <div class="w-full max-w-sm">
+        <SchoolFilter 
+            schools={data.lboteData.map(item => ({
+                school_code: item.school_code,
+                school_name: item.school_name
+            }))} 
+            selectedSchool={selectedSchool}
+            onSchoolChange={handleSchoolChange}
+        />
+    </div>
     
     <Tabs defaultValue="student-data" class="w-full">
         <TabsList>
@@ -84,7 +122,7 @@
                 <h2 class="text-xl font-semibold mb-4">Student LBOTE Data</h2>
                 <DataTable 
                     columns={lboteColumns} 
-                    data={data.lboteData} 
+                    data={filteredLboteData} 
                     filterableColumns={lboteFilterColumns}
                     textFilterColumns={lboteTextFilterColumns}
                     showColumnVisibility={true}
@@ -100,7 +138,7 @@
                 <h2 class="text-xl font-semibold mb-4">Aggregate LBOTE Data</h2>
                 <DataTable 
                     columns={lboteAggPivotColumns} 
-                    data={data.lboteAggPivotData} 
+                    data={filteredLboteAggPivotData} 
                     filterableColumns={lboteAggPivotFilterColumns}
                     textFilterColumns={lboteAggPivotTextFilterColumns}
                     showColumnVisibility={true}

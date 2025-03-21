@@ -1,4 +1,5 @@
-import type { ColumnDef } from "@tanstack/table-core";
+import type { LboteData, LboteAggPivotData } from '../schemas';
+import type { ColumnDef } from "@tanstack/svelte-table";
 
 // Define the type for LBOTE data
 export type LboteData = {
