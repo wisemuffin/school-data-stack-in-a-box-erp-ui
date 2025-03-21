@@ -1,0 +1,373 @@
+school_code,school_name,srn,family_nm,first_nm,scholastic_year,grade_original,stu_enroltype,language_nm,stu_english_at_home,gender,calyear
+1001,Abbotsford Public School,xxxxxx1,Family_name_1,First_Name_1,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx2,Family_name_2,First_Name_2,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx3,Family_name_3,First_Name_3,Year 3,Year 3,Mainstream Enrolment,Bisaya,Y,F,2025
+1001,Abbotsford Public School,xxxxxx4,Family_name_4,First_Name_4,Year 4,Year 4,Mainstream Enrolment,Greek,Y,F,2025
+1001,Abbotsford Public School,xxxxxx5,Family_name_5,First_Name_5,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx6,Family_name_6,First_Name_6,Year 6,Year 6,Mainstream Enrolment,Japanese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx7,Family_name_7,First_Name_7,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx8,Family_name_8,First_Name_8,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx9,Family_name_9,First_Name_9,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx10,Family_name_10,First_Name_10,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx11,Family_name_11,First_Name_11,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx12,Family_name_12,First_Name_12,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx13,Family_name_13,First_Name_13,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx14,Family_name_14,First_Name_14,Year 2,Year 2,Mainstream Enrolment,Portuguese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx15,Family_name_15,First_Name_15,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx16,Family_name_16,First_Name_16,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx17,Family_name_17,First_Name_17,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx18,Family_name_18,First_Name_18,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx19,Family_name_19,First_Name_19,Year 5,Year 5,Mainstream Enrolment,Spanish,N,M,2025
+1001,Abbotsford Public School,xxxxxx20,Family_name_20,First_Name_20,Year 5,Year 5,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx21,Family_name_21,First_Name_21,Year 6,Year 6,Mainstream Enrolment,Mandarin,N,F,2025
+1001,Abbotsford Public School,xxxxxx22,Family_name_22,First_Name_22,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx23,Family_name_23,First_Name_23,Year 3,Year 3,Mainstream Enrolment,Assyrian Neo-Aramaic,N,F,2025
+1001,Abbotsford Public School,xxxxxx24,Family_name_24,First_Name_24,Year 4,Year 4,Mainstream Enrolment,Tongan,N,M,2025
+1001,Abbotsford Public School,xxxxxx25,Family_name_25,First_Name_25,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx26,Family_name_26,First_Name_26,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx27,Family_name_27,First_Name_27,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx28,Family_name_28,First_Name_28,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx29,Family_name_29,First_Name_29,Year 6,Year 6,Mainstream Enrolment,Italian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx30,Family_name_30,First_Name_30,Year 2,Year 2,Mainstream Enrolment,Persian (excluding Dari),Y,M,2025
+1001,Abbotsford Public School,xxxxxx31,Family_name_31,First_Name_31,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx32,Family_name_32,First_Name_32,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx33,Family_name_33,First_Name_33,Year 2,Year 2,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx34,Family_name_34,First_Name_34,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx35,Family_name_35,First_Name_35,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx36,Family_name_36,First_Name_36,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx37,Family_name_37,First_Name_37,Year 1,Year 1,Mainstream Enrolment,Mandarin,N,F,2025
+1001,Abbotsford Public School,xxxxxx38,Family_name_38,First_Name_38,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx39,Family_name_39,First_Name_39,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx40,Family_name_40,First_Name_40,Year 2,Year 2,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx41,Family_name_41,First_Name_41,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx42,Family_name_42,First_Name_42,Year 5,Year 5,Mainstream Enrolment,Samoan,N,F,2025
+1001,Abbotsford Public School,xxxxxx43,Family_name_43,First_Name_43,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx44,Family_name_44,First_Name_44,Year 5,Year 5,Mainstream Enrolment,Serbian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx45,Family_name_45,First_Name_45,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx46,Family_name_46,First_Name_46,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx47,Family_name_47,First_Name_47,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx48,Family_name_48,First_Name_48,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx49,Family_name_49,First_Name_49,Year 4,Year 4,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx50,Family_name_50,First_Name_50,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx51,Family_name_51,First_Name_51,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx52,Family_name_52,First_Name_52,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx53,Family_name_53,First_Name_53,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx54,Family_name_54,First_Name_54,Year 2,Year 2,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx55,Family_name_55,First_Name_55,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx56,Family_name_56,First_Name_56,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx57,Family_name_57,First_Name_57,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx58,Family_name_58,First_Name_58,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx59,Family_name_59,First_Name_59,Year 3,Year 3,Mainstream Enrolment,Greek,N,M,2025
+1001,Abbotsford Public School,xxxxxx60,Family_name_60,First_Name_60,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx61,Family_name_61,First_Name_61,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx62,Family_name_62,First_Name_62,Year 2,Year 2,Mainstream Enrolment,Hungarian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx63,Family_name_63,First_Name_63,Year 3,Year 3,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx64,Family_name_64,First_Name_64,Year 2,Year 2,Mainstream Enrolment,Vietnamese,N,M,2025
+1001,Abbotsford Public School,xxxxxx65,Family_name_65,First_Name_65,Year 5,Year 5,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx66,Family_name_66,First_Name_66,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx67,Family_name_67,First_Name_67,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx68,Family_name_68,First_Name_68,Kindergarten,Kindergarten,Mainstream Enrolment,Spanish,N,M,2025
+1001,Abbotsford Public School,xxxxxx69,Family_name_69,First_Name_69,Year 3,Year 3,Mainstream Enrolment,Korean,Y,M,2025
+1001,Abbotsford Public School,xxxxxx70,Family_name_70,First_Name_70,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx71,Family_name_71,First_Name_71,Year 2,Year 2,Mainstream Enrolment,Korean,N,M,2025
+1001,Abbotsford Public School,xxxxxx72,Family_name_72,First_Name_72,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx73,Family_name_73,First_Name_73,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx74,Family_name_74,First_Name_74,Year 3,Year 3,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx75,Family_name_75,First_Name_75,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx76,Family_name_76,First_Name_76,Year 2,Year 2,Mainstream Enrolment,Japanese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx77,Family_name_77,First_Name_77,Year 5,Year 5,Mainstream Enrolment,Russian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx78,Family_name_78,First_Name_78,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx79,Family_name_79,First_Name_79,Kindergarten,Kindergarten,Mainstream Enrolment,Hindi,N,F,2025
+1001,Abbotsford Public School,xxxxxx80,Family_name_80,First_Name_80,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx81,Family_name_81,First_Name_81,Year 1,Year 1,Mainstream Enrolment,Mandarin,Y,F,2025
+1001,Abbotsford Public School,xxxxxx82,Family_name_82,First_Name_82,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx83,Family_name_83,First_Name_83,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx84,Family_name_84,First_Name_84,Year 6,Year 6,Mainstream Enrolment,Teochew,Y,F,2025
+1001,Abbotsford Public School,xxxxxx85,Family_name_85,First_Name_85,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx86,Family_name_86,First_Name_86,Year 2,Year 2,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx87,Family_name_87,First_Name_87,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx88,Family_name_88,First_Name_88,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx89,Family_name_89,First_Name_89,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx90,Family_name_90,First_Name_90,Year 1,Year 1,Mainstream Enrolment,Turkish,N,M,2025
+1001,Abbotsford Public School,xxxxxx91,Family_name_91,First_Name_91,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx92,Family_name_92,First_Name_92,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx93,Family_name_93,First_Name_93,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx94,Family_name_94,First_Name_94,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx95,Family_name_95,First_Name_95,Year 2,Year 2,Mainstream Enrolment,Mandarin,N,F,2025
+1001,Abbotsford Public School,xxxxxx96,Family_name_96,First_Name_96,Year 3,Year 3,Mainstream Enrolment,Urdu,Y,F,2025
+1001,Abbotsford Public School,xxxxxx97,Family_name_97,First_Name_97,Kindergarten,Kindergarten,Mainstream Enrolment,Turkish,Y,F,2025
+1001,Abbotsford Public School,xxxxxx98,Family_name_98,First_Name_98,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx99,Family_name_99,First_Name_99,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx100,Family_name_100,First_Name_100,Year 4,Year 4,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx101,Family_name_101,First_Name_101,Year 4,Year 4,Mainstream Enrolment,Spanish,Y,F,2025
+1001,Abbotsford Public School,xxxxxx102,Family_name_102,First_Name_102,Year 4,Year 4,Mainstream Enrolment,Arabic,Y,F,2025
+1001,Abbotsford Public School,xxxxxx103,Family_name_103,First_Name_103,Year 2,Year 2,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx104,Family_name_104,First_Name_104,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx105,Family_name_105,First_Name_105,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx106,Family_name_106,First_Name_106,Kindergarten,Kindergarten,Mainstream Enrolment,Punjabi,Y,M,2025
+1001,Abbotsford Public School,xxxxxx107,Family_name_107,First_Name_107,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx108,Family_name_108,First_Name_108,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx109,Family_name_109,First_Name_109,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx110,Family_name_110,First_Name_110,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx111,Family_name_111,First_Name_111,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx112,Family_name_112,First_Name_112,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx113,Family_name_113,First_Name_113,Year 4,Year 4,Mainstream Enrolment,Swedish,N,F,2025
+1001,Abbotsford Public School,xxxxxx114,Family_name_114,First_Name_114,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx115,Family_name_115,First_Name_115,Year 4,Year 4,Mainstream Enrolment,Croatian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx116,Family_name_116,First_Name_116,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx117,Family_name_117,First_Name_117,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx118,Family_name_118,First_Name_118,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx119,Family_name_119,First_Name_119,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx120,Family_name_120,First_Name_120,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx121,Family_name_121,First_Name_121,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx122,Family_name_122,First_Name_122,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx123,Family_name_123,First_Name_123,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx124,Family_name_124,First_Name_124,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx125,Family_name_125,First_Name_125,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx126,Family_name_126,First_Name_126,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx127,Family_name_127,First_Name_127,Year 1,Year 1,Mainstream Enrolment,Cantonese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx128,Family_name_128,First_Name_128,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx129,Family_name_129,First_Name_129,Year 4,Year 4,Mainstream Enrolment,Japanese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx130,Family_name_130,First_Name_130,Year 3,Year 3,Mainstream Enrolment,Cantonese,N,F,2025
+1001,Abbotsford Public School,xxxxxx131,Family_name_131,First_Name_131,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx132,Family_name_132,First_Name_132,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx133,Family_name_133,First_Name_133,Year 2,Year 2,Mainstream Enrolment,Greek,Y,F,2025
+1001,Abbotsford Public School,xxxxxx134,Family_name_134,First_Name_134,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx135,Family_name_135,First_Name_135,Kindergarten,Kindergarten,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx136,Family_name_136,First_Name_136,Year 1,Year 1,Mainstream Enrolment,Serbian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx137,Family_name_137,First_Name_137,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx138,Family_name_138,First_Name_138,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx139,Family_name_139,First_Name_139,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx140,Family_name_140,First_Name_140,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx141,Family_name_141,First_Name_141,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx142,Family_name_142,First_Name_142,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx143,Family_name_143,First_Name_143,Year 4,Year 4,Mainstream Enrolment,Vietnamese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx144,Family_name_144,First_Name_144,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx145,Family_name_145,First_Name_145,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx146,Family_name_146,First_Name_146,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx147,Family_name_147,First_Name_147,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx148,Family_name_148,First_Name_148,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx149,Family_name_149,First_Name_149,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx150,Family_name_150,First_Name_150,Year 4,Year 4,Mainstream Enrolment,Mandarin,N,M,2025
+1001,Abbotsford Public School,xxxxxx151,Family_name_151,First_Name_151,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx152,Family_name_152,First_Name_152,Year 6,Year 6,Mainstream Enrolment,Spanish,Y,F,2025
+1001,Abbotsford Public School,xxxxxx153,Family_name_153,First_Name_153,Kindergarten,Kindergarten,Mainstream Enrolment,Persian (excluding Dari),Y,M,2025
+1001,Abbotsford Public School,xxxxxx154,Family_name_154,First_Name_154,Kindergarten,Kindergarten,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx155,Family_name_155,First_Name_155,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx156,Family_name_156,First_Name_156,Year 1,Year 1,Mainstream Enrolment,Hungarian,N,F,2025
+1001,Abbotsford Public School,xxxxxx157,Family_name_157,First_Name_157,Year 3,Year 3,Mainstream Enrolment,Mandarin,Y,F,2025
+1001,Abbotsford Public School,xxxxxx158,Family_name_158,First_Name_158,Kindergarten,Kindergarten,Mainstream Enrolment,Arabic,N,M,2025
+1001,Abbotsford Public School,xxxxxx159,Family_name_159,First_Name_159,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx160,Family_name_160,First_Name_160,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx161,Family_name_161,First_Name_161,Year 2,Year 2,Mainstream Enrolment,Turkish,N,M,2025
+1001,Abbotsford Public School,xxxxxx162,Family_name_162,First_Name_162,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx163,Family_name_163,First_Name_163,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx164,Family_name_164,First_Name_164,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx165,Family_name_165,First_Name_165,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx166,Family_name_166,First_Name_166,Year 1,Year 1,Mainstream Enrolment,Tagalog,N,M,2025
+1001,Abbotsford Public School,xxxxxx167,Family_name_167,First_Name_167,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx168,Family_name_168,First_Name_168,Year 4,Year 4,Mainstream Enrolment,Indonesian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx169,Family_name_169,First_Name_169,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx170,Family_name_170,First_Name_170,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx171,Family_name_171,First_Name_171,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx172,Family_name_172,First_Name_172,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx173,Family_name_173,First_Name_173,Year 1,Year 1,Mainstream Enrolment,Mandarin,N,M,2025
+1001,Abbotsford Public School,xxxxxx174,Family_name_174,First_Name_174,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx175,Family_name_175,First_Name_175,Year 4,Year 4,Mainstream Enrolment,Bengali,N,F,2025
+1001,Abbotsford Public School,xxxxxx176,Family_name_176,First_Name_176,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx177,Family_name_177,First_Name_177,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx178,Family_name_178,First_Name_178,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx179,Family_name_179,First_Name_179,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx180,Family_name_180,First_Name_180,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx181,Family_name_181,First_Name_181,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx182,Family_name_182,First_Name_182,Year 3,Year 3,Mainstream Enrolment,Mandarin,Y,F,2025
+1001,Abbotsford Public School,xxxxxx183,Family_name_183,First_Name_183,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx184,Family_name_184,First_Name_184,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx185,Family_name_185,First_Name_185,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx186,Family_name_186,First_Name_186,Year 2,Year 2,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx187,Family_name_187,First_Name_187,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx188,Family_name_188,First_Name_188,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx189,Family_name_189,First_Name_189,Kindergarten,Kindergarten,Mainstream Enrolment,Polish,Y,F,2025
+1001,Abbotsford Public School,xxxxxx190,Family_name_190,First_Name_190,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx191,Family_name_191,First_Name_191,Year 6,Year 6,Mainstream Enrolment,Vietnamese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx192,Family_name_192,First_Name_192,Year 1,Year 1,Mainstream Enrolment,Tongan,Y,M,2025
+1001,Abbotsford Public School,xxxxxx193,Family_name_193,First_Name_193,Kindergarten,Kindergarten,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx194,Family_name_194,First_Name_194,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx195,Family_name_195,First_Name_195,Year 2,Year 2,Mainstream Enrolment,Korean,N,F,2025
+1001,Abbotsford Public School,xxxxxx196,Family_name_196,First_Name_196,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx197,Family_name_197,First_Name_197,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx198,Family_name_198,First_Name_198,Year 1,Year 1,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx199,Family_name_199,First_Name_199,Year 1,Year 1,Mainstream Enrolment,Italian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx200,Family_name_200,First_Name_200,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx201,Family_name_201,First_Name_201,Year 4,Year 4,Mainstream Enrolment,French,N,F,2025
+1001,Abbotsford Public School,xxxxxx202,Family_name_202,First_Name_202,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx203,Family_name_203,First_Name_203,Year 6,Year 6,Mainstream Enrolment,Chinese Other,Y,F,2025
+1001,Abbotsford Public School,xxxxxx204,Family_name_204,First_Name_204,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx205,Family_name_205,First_Name_205,Year 3,Year 3,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx206,Family_name_206,First_Name_206,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx207,Family_name_207,First_Name_207,Kindergarten,Kindergarten,Mainstream Enrolment,Mandarin,N,F,2025
+1001,Abbotsford Public School,xxxxxx208,Family_name_208,First_Name_208,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx209,Family_name_209,First_Name_209,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx210,Family_name_210,First_Name_210,Year 4,Year 4,Mainstream Enrolment,French,Y,M,2025
+1001,Abbotsford Public School,xxxxxx211,Family_name_211,First_Name_211,Kindergarten,Kindergarten,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx212,Family_name_212,First_Name_212,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx213,Family_name_213,First_Name_213,Year 3,Year 3,Mainstream Enrolment,Hindi,N,M,2025
+1001,Abbotsford Public School,xxxxxx214,Family_name_214,First_Name_214,Year 4,Year 4,Mainstream Enrolment,Cantonese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx215,Family_name_215,First_Name_215,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx216,Family_name_216,First_Name_216,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx217,Family_name_217,First_Name_217,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx218,Family_name_218,First_Name_218,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx219,Family_name_219,First_Name_219,Year 2,Year 2,Mainstream Enrolment,Mandarin,N,M,2025
+1001,Abbotsford Public School,xxxxxx220,Family_name_220,First_Name_220,Kindergarten,Kindergarten,Mainstream Enrolment,Italian,N,F,2025
+1001,Abbotsford Public School,xxxxxx221,Family_name_221,First_Name_221,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx222,Family_name_222,First_Name_222,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx223,Family_name_223,First_Name_223,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx224,Family_name_224,First_Name_224,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx225,Family_name_225,First_Name_225,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx226,Family_name_226,First_Name_226,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx227,Family_name_227,First_Name_227,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx228,Family_name_228,First_Name_228,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx229,Family_name_229,First_Name_229,Year 4,Year 4,Mainstream Enrolment,Dutch,N,F,2025
+1001,Abbotsford Public School,xxxxxx230,Family_name_230,First_Name_230,Kindergarten,Kindergarten,Mainstream Enrolment,Vietnamese,N,M,2025
+1001,Abbotsford Public School,xxxxxx231,Family_name_231,First_Name_231,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx232,Family_name_232,First_Name_232,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx233,Family_name_233,First_Name_233,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx234,Family_name_234,First_Name_234,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx235,Family_name_235,First_Name_235,Year 4,Year 4,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx236,Family_name_236,First_Name_236,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx237,Family_name_237,First_Name_237,Year 3,Year 3,Mainstream Enrolment,Serbian,N,F,2025
+1001,Abbotsford Public School,xxxxxx238,Family_name_238,First_Name_238,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx239,Family_name_239,First_Name_239,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx240,Family_name_240,First_Name_240,Year 1,Year 1,Mainstream Enrolment,Russian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx241,Family_name_241,First_Name_241,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx242,Family_name_242,First_Name_242,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx243,Family_name_243,First_Name_243,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx244,Family_name_244,First_Name_244,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx245,Family_name_245,First_Name_245,Year 6,Year 6,Mainstream Enrolment,Turkish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx246,Family_name_246,First_Name_246,Year 4,Year 4,Mainstream Enrolment,Samoan,N,F,2025
+1001,Abbotsford Public School,xxxxxx247,Family_name_247,First_Name_247,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx248,Family_name_248,First_Name_248,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx249,Family_name_249,First_Name_249,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx250,Family_name_250,First_Name_250,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx251,Family_name_251,First_Name_251,Year 3,Year 3,Mainstream Enrolment,Mandarin,Y,M,2025
+1001,Abbotsford Public School,xxxxxx252,Family_name_252,First_Name_252,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx253,Family_name_253,First_Name_253,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx254,Family_name_254,First_Name_254,Year 3,Year 3,Mainstream Enrolment,Thai,Y,F,2025
+1001,Abbotsford Public School,xxxxxx255,Family_name_255,First_Name_255,Year 3,Year 3,Mainstream Enrolment,Italian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx256,Family_name_256,First_Name_256,Year 1,Year 1,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx257,Family_name_257,First_Name_257,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx258,Family_name_258,First_Name_258,Year 2,Year 2,Mainstream Enrolment,Mandarin,N,F,2025
+1001,Abbotsford Public School,xxxxxx259,Family_name_259,First_Name_259,Year 1,Year 1,Mainstream Enrolment,Tamil,N,M,2025
+1001,Abbotsford Public School,xxxxxx260,Family_name_260,First_Name_260,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx261,Family_name_261,First_Name_261,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx262,Family_name_262,First_Name_262,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx263,Family_name_263,First_Name_263,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx264,Family_name_264,First_Name_264,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx265,Family_name_265,First_Name_265,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx266,Family_name_266,First_Name_266,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx267,Family_name_267,First_Name_267,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx268,Family_name_268,First_Name_268,Year 3,Year 3,Mainstream Enrolment,Cantonese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx269,Family_name_269,First_Name_269,Year 6,Year 6,Mainstream Enrolment,Cantonese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx270,Family_name_270,First_Name_270,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx271,Family_name_271,First_Name_271,Year 2,Year 2,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx272,Family_name_272,First_Name_272,Year 3,Year 3,Mainstream Enrolment,Bosnian,N,F,2025
+1001,Abbotsford Public School,xxxxxx273,Family_name_273,First_Name_273,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx274,Family_name_274,First_Name_274,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx275,Family_name_275,First_Name_275,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx276,Family_name_276,First_Name_276,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx277,Family_name_277,First_Name_277,Kindergarten,Kindergarten,Mainstream Enrolment,Serbian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx278,Family_name_278,First_Name_278,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx279,Family_name_279,First_Name_279,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx280,Family_name_280,First_Name_280,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx281,Family_name_281,First_Name_281,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx282,Family_name_282,First_Name_282,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx283,Family_name_283,First_Name_283,Year 1,Year 1,Mainstream Enrolment,French,Y,M,2025
+1001,Abbotsford Public School,xxxxxx284,Family_name_284,First_Name_284,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx285,Family_name_285,First_Name_285,Year 6,Year 6,Mainstream Enrolment,Italian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx286,Family_name_286,First_Name_286,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx287,Family_name_287,First_Name_287,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx288,Family_name_288,First_Name_288,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx289,Family_name_289,First_Name_289,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx290,Family_name_290,First_Name_290,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx291,Family_name_291,First_Name_291,Year 5,Year 5,Mainstream Enrolment,Tagalog,N,F,2025
+1001,Abbotsford Public School,xxxxxx292,Family_name_292,First_Name_292,Kindergarten,Kindergarten,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx293,Family_name_293,First_Name_293,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx294,Family_name_294,First_Name_294,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx295,Family_name_295,First_Name_295,Year 5,Year 5,Mainstream Enrolment,Italian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx296,Family_name_296,First_Name_296,Kindergarten,Kindergarten,Mainstream Enrolment,Vietnamese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx297,Family_name_297,First_Name_297,Kindergarten,Kindergarten,Mainstream Enrolment,Hindi,Y,F,2025
+1001,Abbotsford Public School,xxxxxx298,Family_name_298,First_Name_298,Year 2,Year 2,Mainstream Enrolment,Russian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx299,Family_name_299,First_Name_299,Year 1,Year 1,Mainstream Enrolment,Spanish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx300,Family_name_300,First_Name_300,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx301,Family_name_301,First_Name_301,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx302,Family_name_302,First_Name_302,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx303,Family_name_303,First_Name_303,Year 6,Year 6,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx304,Family_name_304,First_Name_304,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx305,Family_name_305,First_Name_305,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx306,Family_name_306,First_Name_306,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx307,Family_name_307,First_Name_307,Year 6,Year 6,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx308,Family_name_308,First_Name_308,Year 1,Year 1,Mainstream Enrolment,Mandarin,Y,F,2025
+1001,Abbotsford Public School,xxxxxx309,Family_name_309,First_Name_309,Year 4,Year 4,Mainstream Enrolment,Hindi,Y,F,2025
+1001,Abbotsford Public School,xxxxxx310,Family_name_310,First_Name_310,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx311,Family_name_311,First_Name_311,Year 5,Year 5,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx312,Family_name_312,First_Name_312,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx313,Family_name_313,First_Name_313,Year 3,Year 3,Mainstream Enrolment,Cantonese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx314,Family_name_314,First_Name_314,Year 4,Year 4,Mainstream Enrolment,Serbian,Y,F,2025
+1001,Abbotsford Public School,xxxxxx315,Family_name_315,First_Name_315,Kindergarten,Kindergarten,Mainstream Enrolment,Greek,N,F,2025
+1001,Abbotsford Public School,xxxxxx316,Family_name_316,First_Name_316,Year 1,Year 1,Mainstream Enrolment,Turkish,Y,M,2025
+1001,Abbotsford Public School,xxxxxx317,Family_name_317,First_Name_317,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx318,Family_name_318,First_Name_318,Year 4,Year 4,Mainstream Enrolment,Cantonese,Y,M,2025
+1001,Abbotsford Public School,xxxxxx319,Family_name_319,First_Name_319,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx320,Family_name_320,First_Name_320,Year 6,Year 6,Mainstream Enrolment,Tagalog,Y,M,2025
+1001,Abbotsford Public School,xxxxxx321,Family_name_321,First_Name_321,Year 3,Year 3,Mainstream Enrolment,Hungarian,N,F,2025
+1001,Abbotsford Public School,xxxxxx322,Family_name_322,First_Name_322,Year 5,Year 5,Mainstream Enrolment,French,Y,F,2025
+1001,Abbotsford Public School,xxxxxx323,Family_name_323,First_Name_323,Year 1,Year 1,Mainstream Enrolment,Tagalog,N,F,2025
+1001,Abbotsford Public School,xxxxxx324,Family_name_324,First_Name_324,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx325,Family_name_325,First_Name_325,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx326,Family_name_326,First_Name_326,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx327,Family_name_327,First_Name_327,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx328,Family_name_328,First_Name_328,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx329,Family_name_329,First_Name_329,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx330,Family_name_330,First_Name_330,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx331,Family_name_331,First_Name_331,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx332,Family_name_332,First_Name_332,Year 1,Year 1,Mainstream Enrolment,Korean,N,F,2025
+1001,Abbotsford Public School,xxxxxx333,Family_name_333,First_Name_333,Year 4,Year 4,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx334,Family_name_334,First_Name_334,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx335,Family_name_335,First_Name_335,Year 5,Year 5,Mainstream Enrolment,Bulgarian,Y,M,2025
+1001,Abbotsford Public School,xxxxxx336,Family_name_336,First_Name_336,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx337,Family_name_337,First_Name_337,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx338,Family_name_338,First_Name_338,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx339,Family_name_339,First_Name_339,Year 4,Year 4,Mainstream Enrolment,German,N,F,2025
+1001,Abbotsford Public School,xxxxxx340,Family_name_340,First_Name_340,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx341,Family_name_341,First_Name_341,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx342,Family_name_342,First_Name_342,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx343,Family_name_343,First_Name_343,Year 1,Year 1,Mainstream Enrolment,Arabic,N,M,2025
+1001,Abbotsford Public School,xxxxxx344,Family_name_344,First_Name_344,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx345,Family_name_345,First_Name_345,Year 1,Year 1,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx346,Family_name_346,First_Name_346,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx347,Family_name_347,First_Name_347,Year 4,Year 4,Mainstream Enrolment,Persian (excluding Dari),Y,M,2025
+1001,Abbotsford Public School,xxxxxx348,Family_name_348,First_Name_348,Year 5,Year 5,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx349,Family_name_349,First_Name_349,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx350,Family_name_350,First_Name_350,Year 2,Year 2,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx351,Family_name_351,First_Name_351,Year 3,Year 3,Mainstream Enrolment,Italian,N,F,2025
+1001,Abbotsford Public School,xxxxxx352,Family_name_352,First_Name_352,Kindergarten,Kindergarten,Mainstream Enrolment,Arabic,N,M,2025
+1001,Abbotsford Public School,xxxxxx353,Family_name_353,First_Name_353,Year 3,Year 3,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx354,Family_name_354,First_Name_354,Year 5,Year 5,Mainstream Enrolment,Tongan,N,M,2025
+1001,Abbotsford Public School,xxxxxx355,Family_name_355,First_Name_355,Kindergarten,Kindergarten,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx356,Family_name_356,First_Name_356,Year 3,Year 3,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx357,Family_name_357,First_Name_357,Year 1,Year 1,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx358,Family_name_358,First_Name_358,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx359,Family_name_359,First_Name_359,Year 4,Year 4,Mainstream Enrolment,English,N,M,2025
+1001,Abbotsford Public School,xxxxxx360,Family_name_360,First_Name_360,Year 4,Year 4,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx361,Family_name_361,First_Name_361,Year 4,Year 4,Mainstream Enrolment,Hindi,Y,F,2025
+1001,Abbotsford Public School,xxxxxx362,Family_name_362,First_Name_362,Year 6,Year 6,Mainstream Enrolment,Mandarin,X,F,2025
+1001,Abbotsford Public School,xxxxxx363,Family_name_363,First_Name_363,Year 3,Year 3,Mainstream Enrolment,Italian,N,M,2025
+1001,Abbotsford Public School,xxxxxx364,Family_name_364,First_Name_364,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx365,Family_name_365,First_Name_365,Year 4,Year 4,Mainstream Enrolment,Portuguese,Y,F,2025
+1001,Abbotsford Public School,xxxxxx366,Family_name_366,First_Name_366,Year 6,Year 6,Mainstream Enrolment,Thai,Y,F,2025
+1001,Abbotsford Public School,xxxxxx367,Family_name_367,First_Name_367,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx368,Family_name_368,First_Name_368,Kindergarten,Kindergarten,Mainstream Enrolment,Czech,Y,M,2025
+1001,Abbotsford Public School,xxxxxx369,Family_name_369,First_Name_369,Year 1,Year 1,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx370,Family_name_370,First_Name_370,Year 4,Year 4,Mainstream Enrolment,Mandarin,Y,F,2025
+1001,Abbotsford Public School,xxxxxx371,Family_name_371,First_Name_371,Year 6,Year 6,Mainstream Enrolment,English,N,F,2025
+1001,Abbotsford Public School,xxxxxx372,Family_name_372,First_Name_372,Year 2,Year 2,Mainstream Enrolment,English,N,M,2025

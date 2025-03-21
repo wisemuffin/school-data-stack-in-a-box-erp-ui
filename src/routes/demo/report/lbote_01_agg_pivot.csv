@@ -1,0 +1,40 @@
+school_code,school_name,language_nm,calyear,Kindergarten_M,Kindergarten_F,Year1_M,Year1_F,Year2_M,Year2_F,Year3_M,Year3_F,Year4_M,Year4_F,Year5_M,Year5_F,Year6_M,Year6_F,Year7_M,Year7_F,Year8_M,Year8_F,Year9_M,Year9_F,Year10_M,Year10_F,Year11_M,Year11_F,Year12_M,Year12_F,Total_Students
+1001,Abbotsford Public School,Japanese,2025,0,0,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+1001,Abbotsford Public School,Korean,2025,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4
+1001,Abbotsford Public School,Mandarin,2025,2,1,1,3,4,2,3,2,1,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,22
+1001,Abbotsford Public School,Persian (excluding Dari),2025,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+1001,Abbotsford Public School,Polish,2025,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Portuguese,2025,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+1001,Abbotsford Public School,Punjabi,2025,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Russian,2025,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+1001,Abbotsford Public School,Samoan,2025,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+1001,Abbotsford Public School,Serbian,2025,1,0,0,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+1001,Abbotsford Public School,Spanish,2025,4,0,1,0,1,0,1,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,10
+1001,Abbotsford Public School,Swedish,2025,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Tagalog,2025,0,0,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4
+1001,Abbotsford Public School,Tamil,2025,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Teochew,2025,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Thai,2025,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2
+1001,Abbotsford Public School,Tongan,2025,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+1001,Abbotsford Public School,Turkish,2025,0,1,2,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+1001,Abbotsford Public School,Urdu,2025,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Vietnamese,2025,2,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+1001,Abbotsford Public School,Arabic,2025,2,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4
+1001,Abbotsford Public School,Assyrian Neo-Aramaic,2025,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Bengali,2025,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Bisaya,2025,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Bosnian,2025,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Bulgarian,2025,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Cantonese,2025,0,0,2,1,0,0,0,3,3,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,12
+1001,Abbotsford Public School,Chinese Other,2025,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Croatian,2025,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Czech,2025,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Dutch,2025,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,English,2025,19,12,22,15,14,16,18,17,23,21,16,9,15,17,0,0,0,0,0,0,0,0,0,0,0,0,234
+1001,Abbotsford Public School,French,2025,0,0,1,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4
+1001,Abbotsford Public School,German,2025,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Greek,2025,0,1,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4
+1001,Abbotsford Public School,Hindi,2025,0,2,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+1001,Abbotsford Public School,Hungarian,2025,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3
+1001,Abbotsford Public School,Indonesian,2025,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+1001,Abbotsford Public School,Italian,2025,0,1,2,0,3,0,1,2,2,0,2,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,16
