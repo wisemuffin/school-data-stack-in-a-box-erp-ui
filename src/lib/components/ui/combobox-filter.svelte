@@ -121,17 +121,21 @@
   <div class="font-medium">{title}</div>
   <Popover.Root bind:open>
     <Popover.Trigger>
-      <Button
-        variant="outline"
-        role="combobox"
-        aria-expanded={open}
-        class="w-full justify-between"
-      >
-        {getSelectedDisplayText()}
-        <ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
-      </Button>
+      {#snippet child({ props })}
+        <div
+          {...props}
+          class="flex w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          role="combobox"
+          aria-expanded={open}
+          aria-controls="combobox-content-{title.toLowerCase().replace(/\s+/g, '-')}"
+          tabindex="0"
+        >
+          <span>{getSelectedDisplayText()}</span>
+          <ChevronsUpDown class="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </div>
+      {/snippet}
     </Popover.Trigger>
-    <Popover.Content class="w-full p-0">
+    <Popover.Content class="w-full p-0" id="combobox-content-{title.toLowerCase().replace(/\s+/g, '-')}">
       <div class="flex flex-col">
         <div class="p-2">
           <Input 
