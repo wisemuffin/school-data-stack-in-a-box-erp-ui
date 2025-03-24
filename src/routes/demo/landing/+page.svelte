@@ -11,9 +11,12 @@
   import Users from "lucide-svelte/icons/users";
   import BookOpen from "lucide-svelte/icons/book-open";
   import List from "lucide-svelte/icons/list";
+  import ChevronLeft from "lucide-svelte/icons/chevron-left";
+  import ChevronRight from "lucide-svelte/icons/chevron-right";
   import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs";
-  import { Calendar } from "$lib/components/ui/calendar";
-  import { getLocalTimeZone, today, CalendarDate } from "@internationalized/date";
+  import { Calendar as CalendarPrimitive } from "bits-ui";
+  import * as Calendar from "$lib/components/ui/calendar/index.js";
+  import { getLocalTimeZone, today, CalendarDate, parseDate, DateFormatter } from "@internationalized/date";
   
   // Icon mapping
   const iconMap = {
@@ -211,19 +214,39 @@
       case 'December': monthNum = 12; break;
     }
     
-    // Set to middle of month for display purposes
+    // Set specific due dates for each collection
+    let dueDay = 15; // Default to middle of month
+    
+    // Assign specific due dates based on collection ID
+    switch(collection.id) {
+      case "lbote": dueDay = 31; break;              // March 31
+      case "class-size": dueDay = 24; break;         // March 24
+      case "k4-language": dueDay = 15; break;        // May 15
+      case "k6-language": dueDay = 22; break;        // May 22
+      case "languages-participation": dueDay = 29; break; // May 29
+      case "eald": dueDay = 8; break;                // May 8
+      case "attendance-sem1": dueDay = 21; break;    // July 21
+      case "suspension-sem1": dueDay = 28; break;    // July 28
+      case "mid-year-census": dueDay = 14; break;    // August 14
+      case "nccd": dueDay = 21; break;               // August 21
+      case "attendance-sem2": dueDay = 17; break;    // November 17
+      case "suspension-sem2": dueDay = 12; break;    // December 12
+      case "attendance-monitoring": dueDay = 15; break; // April 15
+    }
+    
     return {
       ...collection,
-      date: new CalendarDate(parseInt(year), monthNum, 15)
+      date: new CalendarDate(parseInt(year), monthNum, dueDay)
     };
   });
   
   // Function to determine if a date has a collection due
   function getCollectionsForDate(date) {
-    return collectionDates.filter(collection => {
-      return collection.date.year === date.year && 
-             collection.date.month === date.month;
-    });
+    return collectionDates.filter(collection => 
+      collection.date.year === date.year && 
+      collection.date.month === date.month && 
+      collection.date.day === date.day
+    );
   }
   
   // Function to determine if a date is a school holiday
@@ -255,32 +278,72 @@
     });
   }
   
-  // Function to customize calendar day rendering
+  // Calendar state
+  let calendarValue = $state(undefined);
+  let calendarPlaceholder = $state(today(getLocalTimeZone()));
+  
+  // For multi-month display
+  const monthsToShow = 3;
+  let currentMonthOffset = $state(0);
+  
+  // Format month names
+  const monthFmt = new DateFormatter("en-US", { month: "long" });
+  
+  // Function to get cell class based on date
+  function getCellClass(date) {
+    const classes = ["p-0", "relative", "focus-within:relative", "focus-within:z-20"];
+    
+    if (getCollectionsForDate(date).length > 0) {
+      classes.push("collection-due");
+    }
+    
+    if (isPublicHoliday(date)) {
+      classes.push("public-holiday");
+    } else if (isHoliday(date)) {
+      classes.push("school-holiday");
+    }
+    
+    if (getTermForDate(date)) {
+      classes.push("in-term");
+    }
+    
+    return classes.join(" ");
+  }
+  
+  // Function to get day class based on date
   function getDayClass(date) {
-    const collections = getCollectionsForDate(date);
-    const isHol = isHoliday(date);
-    const isPubHol = isPublicHoliday(date);
-    const term = getTermForDate(date);
+    const classes = ["h-9", "w-9", "p-0", "font-normal", "aria-selected:opacity-100"];
     
-    let classes = "";
-    
-    if (collections.length > 0) {
-      classes += "bg-amber-100 text-amber-800 font-medium border-amber-300 border ";
+    if (getCollectionsForDate(date).length > 0) {
+      classes.push("bg-amber-500", "text-white", "font-bold", "hover:bg-amber-600", "focus:bg-amber-600");
+    } else if (isPublicHoliday(date)) {
+      classes.push("bg-blue-100", "text-blue-800", "hover:bg-blue-200", "focus:bg-blue-200");
+    } else if (isHoliday(date)) {
+      classes.push("bg-blue-50", "hover:bg-blue-100", "focus:bg-blue-100");
     }
     
-    if (isHol) {
-      classes += "bg-blue-50 ";
-    }
-    
-    if (isPubHol) {
-      classes += "bg-blue-100 text-blue-800 font-medium ";
-    }
-    
-    if (term) {
-      classes += "border-l-4 border-l-primary ";
-    }
-    
-    return classes;
+    return classes.join(" ");
+  }
+  
+  // Navigate months
+  function previousMonth() {
+    currentMonthOffset -= monthsToShow;
+    updateCalendarPlaceholder();
+  }
+  
+  function nextMonth() {
+    currentMonthOffset += monthsToShow;
+    updateCalendarPlaceholder();
+  }
+  
+  function resetToToday() {
+    currentMonthOffset = 0;
+    updateCalendarPlaceholder();
+  }
+  
+  function updateCalendarPlaceholder() {
+    const now = today(getLocalTimeZone());
+    calendarPlaceholder = now.add({ months: currentMonthOffset });
   }
 </script>
 
@@ -450,8 +513,10 @@
                     <h3 class="font-medium">Legend</h3>
                     <div class="flex flex-col gap-2 text-sm">
                       <div class="flex items-center gap-2">
-                        <div class="w-4 h-4 bg-amber-100 border border-amber-300"></div>
-                        <span>Collection Due</span>
+                        <div class="w-4 h-4 bg-amber-500 border-2 border-amber-600 text-white flex items-center justify-center text-[8px] font-bold">
+                          <span>31</span>
+                        </div>
+                        <span>Submission Due Date</span>
                       </div>
                       <div class="flex items-center gap-2">
                         <div class="w-4 h-4 bg-blue-50"></div>
@@ -480,12 +545,156 @@
                   </div>
                 </div>
                 
-                <div class="border rounded-md p-4">
-                  <Calendar 
-                    class="w-full" 
-                    placeholder={today(getLocalTimeZone())}
-                    dayClass={getDayClass}
-                  />
+                <div class="border rounded-md p-4 space-y-4">
+                  <h3 class="font-medium">School Year Calendar</h3>
+                  
+                  <!-- Custom Calendar Component -->
+                  <div class="custom-calendar">
+                    <!-- Calendar navigation controls -->
+                    <div class="flex justify-between items-center mb-4">
+                      <Button variant="outline" size="sm" class="gap-1" onclick={previousMonth}>
+                        <ChevronLeft class="h-4 w-4" />
+                        <span>Previous</span>
+                      </Button>
+                      <Button variant="outline" size="sm" onclick={resetToToday}>
+                        Today
+                      </Button>
+                      <Button variant="outline" size="sm" class="gap-1" onclick={nextMonth}>
+                        <span>Next</span>
+                        <ChevronRight class="h-4 w-4" />
+                      </Button>
+                    </div>
+                    
+                    <!-- Mobile: Single month view -->
+                    <div class="md:hidden">
+                      <CalendarPrimitive.Root
+                        type="single"
+                        weekdayFormat="short"
+                        class="rounded-md border p-3"
+                        bind:value={calendarValue}
+                        bind:placeholder={calendarPlaceholder}
+                      >
+                        {#snippet children({ months, weekdays })}
+                          <Calendar.Header class="flex justify-between items-center mb-2">
+                            <div class="font-medium">
+                              {monthFmt.format(calendarPlaceholder.toDate(getLocalTimeZone()))} {calendarPlaceholder.year}
+                            </div>
+                          </Calendar.Header>
+                          <Calendar.Months>
+                            {#each months as month}
+                              <Calendar.Grid>
+                                <Calendar.GridHead>
+                                  <Calendar.GridRow class="flex">
+                                    {#each weekdays as weekday}
+                                      <Calendar.HeadCell>
+                                        {weekday.slice(0, 2)}
+                                      </Calendar.HeadCell>
+                                    {/each}
+                                  </Calendar.GridRow>
+                                </Calendar.GridHead>
+                                <Calendar.GridBody>
+                                  {#each month.weeks as weekDates}
+                                    <Calendar.GridRow class="mt-2 w-full">
+                                      {#each weekDates as date}
+                                        <Calendar.Cell class={getCellClass(date)} {date} month={month.value}>
+                                          <Calendar.Day class={getDayClass(date)}>
+                                            {date.day}
+                                            {#if getCollectionsForDate(date).length > 0}
+                                              <div class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
+                                            {/if}
+                                          </Calendar.Day>
+                                        </Calendar.Cell>
+                                      {/each}
+                                    </Calendar.GridRow>
+                                  {/each}
+                                </Calendar.GridBody>
+                              </Calendar.Grid>
+                            {/each}
+                          </Calendar.Months>
+                        {/snippet}
+                      </CalendarPrimitive.Root>
+                    </div>
+                    
+                    <!-- Desktop: Multi-month view -->
+                    <div class="hidden md:grid grid-cols-3 gap-4">
+                      {#each Array(monthsToShow) as _, i}
+                        {@const monthOffset = currentMonthOffset + i}
+                        {@const monthDate = today(getLocalTimeZone()).add({ months: monthOffset })}
+                        <div>
+                          <h4 class="text-sm font-medium mb-2">
+                            {monthFmt.format(monthDate.toDate(getLocalTimeZone()))} {monthDate.year}
+                          </h4>
+                          <CalendarPrimitive.Root
+                            type="single"
+                            weekdayFormat="short"
+                            class="rounded-md border p-3"
+                            placeholder={monthDate}
+                            fixedWeeks={true}
+                          >
+                            {#snippet children({ months, weekdays })}
+                              <Calendar.Months>
+                                {#each months as month}
+                                  <Calendar.Grid>
+                                    <Calendar.GridHead>
+                                      <Calendar.GridRow class="flex">
+                                        {#each weekdays as weekday}
+                                          <Calendar.HeadCell>
+                                            {weekday.slice(0, 2)}
+                                          </Calendar.HeadCell>
+                                        {/each}
+                                      </Calendar.GridRow>
+                                    </Calendar.GridHead>
+                                    <Calendar.GridBody>
+                                      {#each month.weeks as weekDates}
+                                        <Calendar.GridRow class="mt-2 w-full">
+                                          {#each weekDates as date}
+                                            <Calendar.Cell class={getCellClass(date)} {date} month={month.value}>
+                                              <Calendar.Day class={getDayClass(date)}>
+                                                {date.day}
+                                                {#if getCollectionsForDate(date).length > 0}
+                                                  <div class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
+                                                {/if}
+                                              </Calendar.Day>
+                                            </Calendar.Cell>
+                                          {/each}
+                                        </Calendar.GridRow>
+                                      {/each}
+                                    </Calendar.GridBody>
+                                  </Calendar.Grid>
+                                {/each}
+                              </Calendar.Months>
+                            {/snippet}
+                          </CalendarPrimitive.Root>
+                        </div>
+                      {/each}
+                    </div>
+                  </div>
+                  
+                  <!-- Collection tooltips -->
+                  <style>
+                    :global(.collection-due) {
+                      position: relative;
+                    }
+                    
+                    :global(.collection-due:hover::after) {
+                      content: attr(data-collection);
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      background: black;
+                      color: white;
+                      padding: 0.25rem 0.5rem;
+                      border-radius: 0.25rem;
+                      font-size: 0.75rem;
+                      white-space: nowrap;
+                      z-index: 50;
+                    }
+                    
+                    :global(.in-term) {
+                      border-left: 4px solid var(--primary);
+                    }
+                  </style>
                 </div>
                 
                 <div class="space-y-4">
