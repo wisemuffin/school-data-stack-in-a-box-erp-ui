@@ -38,6 +38,8 @@
 		textSubtleClass?: string;
 		filterableColumns?: FacetedFilterColumn[];
 		textFilterColumns?: TextFilterColumn[];
+		onRowClick?: (row: TData) => void;
+		getRowClass?: (row: TData) => string;
 	};
 
 	let { 
@@ -48,7 +50,9 @@
 		textMutedClass = "", // "",
 		textSubtleClass = "", // "",
 		filterableColumns = [],
-		textFilterColumns = []
+		textFilterColumns = [],
+		onRowClick,
+		getRowClass
 	}: DataTableProps<TData, TValue> = $props();
 
 	let rowSelection = $state<RowSelectionState>({});
@@ -154,7 +158,11 @@
 			</Table.Header>
 			<Table.Body>
 				{#each table.getRowModel().rows as row (row.id)}
-					<Table.Row data-state={row.getIsSelected() && 'selected'}>
+					<Table.Row 
+						data-state={row.getIsSelected() && 'selected'} 
+						class={`${getRowClass ? getRowClass(row.original) : ''} ${onRowClick ? 'cursor-pointer' : ''}`}
+						onclick={onRowClick ? () => onRowClick(row.original) : undefined}
+					>
 						{#each row.getVisibleCells() as cell (cell.id)}
 							<Table.Cell class={textMutedClass}>
 								<FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />

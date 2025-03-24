@@ -11,12 +11,21 @@
     import Users from "lucide-svelte/icons/users";
     import Globe from "lucide-svelte/icons/globe";
     import Languages from "lucide-svelte/icons/languages";
+    import { ArrowDown } from "lucide-svelte";
 
     let { data } = $props();
     
     // Filtered data with state
     let filteredLboteData = $state(data.lboteData);
     let filteredLboteAggPivotData = $state(data.lboteAggPivotData);
+    
+    // Selected language for detailed view
+    let selectedLanguage = $state(null);
+    let selectedLanguageData = $derived(
+        selectedLanguage 
+            ? filteredLboteData.filter(item => item.language_nm === selectedLanguage)
+            : []
+    );
     
     // Selected schools
     let selectedSchools = $state<string[]>([]);
@@ -64,6 +73,26 @@
             filteredLboteData = data.lboteData;
             filteredLboteAggPivotData = data.lboteAggPivotData;
         }
+        
+        // Clear selected language when schools change
+        selectedLanguage = null;
+    }
+
+    // Handle row selection in aggregate table
+    function handleRowSelect(language) {
+        if (selectedLanguage === language) {
+            // Toggle off if already selected
+            selectedLanguage = null;
+        } else {
+            selectedLanguage = language;
+        }
+    }
+
+    // Custom row class function for highlighting selected row
+    function getRowClass(row) {
+        return row.language_nm === selectedLanguage 
+            ? "bg-primary/10 hover:bg-primary/20" 
+            : "";
     }
 
     // Filter columns for LBOTE data
@@ -222,6 +251,7 @@
         <TabsContent value="aggregate-data">
             <Card class="p-4">
                 <h2 class="text-xl font-semibold mb-4">Aggregate LBOTE Data</h2>
+                <p class="text-sm text-muted-foreground mb-4">Click on a row to view detailed student data for that language</p>
                 <DataTable 
                     columns={lboteAggPivotColumns} 
                     data={filteredLboteAggPivotData} 
@@ -231,7 +261,28 @@
                     textClass=""
                     textMutedClass=""
                     textSubtleClass=""
+                    onRowClick={(row) => handleRowSelect(row.language_nm)}
+                    getRowClass={getRowClass}
                 />
+                
+                {#if selectedLanguage}
+                    <div class="mt-8 border-t pt-6">
+                        <div class="flex items-center gap-2 mb-4">
+                            <ArrowDown class="h-5 w-5 text-primary" />
+                            <h3 class="text-lg font-semibold">Detailed Student Data for {selectedLanguage}</h3>
+                        </div>
+                        <DataTable 
+                            columns={lboteColumns} 
+                            data={selectedLanguageData} 
+                            filterableColumns={[]}
+                            textFilterColumns={lboteTextFilterColumns}
+                            showColumnVisibility={true}
+                            textClass=""
+                            textMutedClass=""
+                            textSubtleClass=""
+                        />
+                    </div>
+                {/if}
             </Card>
         </TabsContent>
     </Tabs>
