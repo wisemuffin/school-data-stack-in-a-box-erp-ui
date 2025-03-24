@@ -226,10 +226,10 @@
     
 
     
-    <Tabs value="student-data" class="w-full">
+    <Tabs value="aggregate-data" class="w-full">
         <TabsList>
+            <TabsTrigger value="aggregate-data">Students by Language</TabsTrigger>
             <TabsTrigger value="student-data">Student Data</TabsTrigger>
-            <TabsTrigger value="aggregate-data">Aggregate Data</TabsTrigger>
         </TabsList>
         
         <TabsContent value="student-data">
