@@ -366,11 +366,11 @@
                     <div class="flex justify-end gap-2 pt-2">
                       <Button variant="outline" size="sm" class="gap-1">
                         <Info class="h-4 w-4" />
-                        <span>View Guidelines</span>
+                        <span>View Instructions</span>
                       </Button>
                       <Button size="sm" class="gap-1">
                         <FileText class="h-4 w-4" />
-                        <span>Go to Report</span>
+                        <span>Go to Collection</span>
                       </Button>
                     </div>
                   </div>
