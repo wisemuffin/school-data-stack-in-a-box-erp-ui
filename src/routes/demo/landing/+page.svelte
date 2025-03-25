@@ -34,7 +34,7 @@
       description: "Collection of student language background information",
       dueDate: "March 2025",
       category: "Student Data",
-      status: "upcoming"
+      status: "submitted"
     },
     {
       id: "class-size",
@@ -42,7 +42,7 @@
       description: "Verification of class sizes across all year levels",
       dueDate: "March 2025",
       category: "Class Data",
-      status: "upcoming"
+      status: "overdue"
     },
     {
       id: "k4-language",
@@ -294,11 +294,19 @@
                       <FileText class="h-5 w-5 text-primary" />
                       <div class="text-left">
                         <div class="font-medium">Language Background other than English (LBOTE)</div>
-                        <div class="text-sm text-muted-foreground">Student language data collection</div>
+                        <div class="text-sm text-muted-foreground">Collection of student language background information</div>
                       </div>
                     </div>
                     <div class="flex items-center gap-3">
-                      <Badge variant="outline" class="bg-amber-100 text-amber-800 hover:bg-amber-100">March</Badge>
+                      <Badge variant="outline" class="bg-amber-100 text-amber-800 hover:bg-amber-100">
+                        March
+                      </Badge>
+                      <Badge 
+                        variant="default"
+                        class="ml-auto"
+                      >
+                        Submitted
+                      </Badge>
                     </div>
                   </div>
                 </Accordion.Trigger>
@@ -383,6 +391,20 @@
                       <div class="flex items-center gap-3">
                         <Badge variant="outline" class="bg-amber-100 text-amber-800 hover:bg-amber-100">
                           {collection.dueDate.split(' ')[0]}
+                        </Badge>
+                        <Badge 
+                          variant={
+                            collection.status === "overdue" ? "destructive" : 
+                            collection.status === "submitted" ? "default" : 
+                            "outline"
+                          }
+                          class="ml-auto"
+                        >
+                          {
+                            collection.status === "overdue" ? "Overdue" : 
+                            collection.status === "submitted" ? "Submitted" : 
+                            "Upcoming"
+                          }
                         </Badge>
                       </div>
                     </div>
