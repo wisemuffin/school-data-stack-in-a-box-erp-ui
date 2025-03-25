@@ -6,8 +6,8 @@ import { parseLboteData, parseLboteAggPivotData } from './schemas';
 export const load: PageServerLoad = async () => {
   try {
     // Read the CSV files
-    const lboteAggPivotPath = 'src/routes/demo/report/lbote_01_agg_pivot.csv';
-    const lbotePath = 'src/routes/demo/report/lbote_01.csv';
+    const lboteAggPivotPath = 'src/routes/demo-data-collection/lbote/lbote_01_agg_pivot.csv';
+    const lbotePath = 'src/routes/demo-data-collection/lbote/lbote_01.csv';
     
     const lboteAggPivotContent = readFileSync(lboteAggPivotPath, 'utf-8');
     const lboteContent = readFileSync(lbotePath, 'utf-8');

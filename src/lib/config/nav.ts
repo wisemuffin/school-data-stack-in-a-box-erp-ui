@@ -52,13 +52,14 @@ export const mainNav = [
         icon: ChartBar,
     },
     {
-        title: "Demo Report",
-        href: "/demo/report",
-        icon: FileText,
-    },
-    {
-        title: "Demo Landing",
-        href: "/demo/landing",
+        title: "Demo Data Collection",
+        href: "/demo-data-collection",
         icon: Layout,
     },
+    {
+        title: "Demo LBOTE",
+        href: "/demo-data-collection/lbote",
+        icon: FileText,
+    },
+
 ] as const; 
