@@ -14,6 +14,7 @@
   import { Tabs, TabsContent, TabsList, TabsTrigger } from "$lib/components/ui/tabs";
   import { CalendarDate } from "@internationalized/date";
   import CalendarView from "./CalendarView.svelte";
+	import { goto } from "$app/navigation";
   
   // Icon mapping
   const iconMap = {
@@ -34,7 +35,8 @@
       description: "Collection of student language background information",
       dueDate: "March 2025",
       category: "Student Data",
-      status: "submitted"
+      status: "submitted",
+      route: "/demo-data-collection/lbote"
     },
     {
       id: "class-size",
@@ -368,7 +370,7 @@
                         <Info class="h-4 w-4" />
                         <span>View Instructions</span>
                       </Button>
-                      <Button size="sm" class="gap-1">
+                      <Button size="sm" class="gap-1" onclick={() => goto(collections.find(c => c.id === "lbote")?.route || "")}>
                         <FileText class="h-4 w-4" />
                         <span>Go to Collection</span>
                       </Button>
